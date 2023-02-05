@@ -1,12 +1,10 @@
 class ApplicationController < ActionController::API
 
-    
     protect_from_forgery with: :exception
     before_action :snake_case_params
     before_action :attach_authenticity_token
     
     include ActionController::RequestForgeryProtection
-
 
     def current_user
         @current_user ||= User.find_by(session_token: session[:session_token])

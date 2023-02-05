@@ -1,0 +1,12 @@
+=> [32m#<User:0x00007f7af3004ba8[0m
+ id: [1;34m3[0m,
+ first_name: [31m[1;31m"[0m[31mlynsie[1;31m"[0m[31m[0m,
+ last_name: [31m[1;31m"[0m[31maragon[1;31m"[0m[31m[0m,
+ email: [31m[1;31m"[0m[31mlynsie@mail.com[1;31m"[0m[31m[0m,
+ photo_url: [1;36mnil[0m,
+ password_digest: [31m[1;31m"[0m[31m[FILTERED][1;31m"[0m[31m[0m,
+ session_token: [31m[1;31m"[0m[31m[FILTERED][1;31m"[0m[31m[0m,
+ created_at: [1;34;4mSun[0m, [1;34m05[0m [1;34;4mFeb[0m [1;34m2023[0m [1;34m20[0m:[1;34m00[0m:[1;35m42.863812000[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+ updated_at: [1;34;4mSun[0m, [1;34m05[0m [1;34;4mFeb[0m [1;34m2023[0m [1;34m20[0m:[1;34m00[0m:[1;35m42.863812000[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+ zipcode: [31m[1;31m"[0m[31m11375[1;31m"[0m[31m[0m,
+ birthday: [1;36mnil[0m[32m>[0m

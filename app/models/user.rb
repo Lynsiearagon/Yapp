@@ -10,17 +10,18 @@ class User < ApplicationRecord
     uniqueness: true, 
     length: { in: 3..255 }, 
     format: { with: URI::MailTo::EMAIL_REGEXP} 
+  validates :zipcode, zipcode: { country_code: :us }
+  validates :birthday, date: { before_or_equal_to: Date.today, message: "Cannot select future date" }
   validates :password, length: { minimum: 6 }, allow_nil: true 
   validates :session_token, presence: true, uniqueness: true 
-  has_secure_password
-
   before_validation :ensure_session_token
+  
+  has_secure_password
 
   has_many :yapps, 
     primary_key: :id, 
     foreign_key: :yapper_id,
     class_name: :Yapp
-
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -32,7 +33,6 @@ class User < ApplicationRecord
     end 
   end
 
-  
   def reset_session_token! 
     self.session_token = generate_unique_session_token
     self.save! 
