@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
 
-    protect_from_forgery with: :exception
+    # protect_from_forgery with: :exception
     before_action :snake_case_params
     before_action :attach_authenticity_token
     
