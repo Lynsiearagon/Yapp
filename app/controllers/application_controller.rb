@@ -40,20 +40,6 @@ class ApplicationController < ActionController::API
         @current_user = nil 
     end 
 
-    def test
-        if params.has_key?(:login)
-          login!(User.first)
-        elsif params.has_key?(:logout)
-          logout
-        end
-      
-        if current_user
-          render json: { user: current_user.slice('id', 'email', 'session_token') }
-        else
-          render json: ['No current user']
-        end
-      end
-
 
     private
 
@@ -69,7 +55,7 @@ class ApplicationController < ActionController::API
     def invalid_authenticity_token
         render json: { message: 'Invalid authenticity token' }, 
           status: :unprocessable_entity
-      end
+    end
       
     def unhandled_error(error)
         if request.accepts.first.html?
