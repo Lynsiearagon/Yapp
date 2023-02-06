@@ -1,3 +1,5 @@
+import { csrfFetch } from './csrf.js'
+
 const RECEIVE_USER = `users/RECEIVE_USER`; 
 const REMOVE_USER = `users/REMOVE_USER`
 
@@ -34,7 +36,7 @@ export const signUpUser = (user) => async (dispatch) => {
     });
     const data = await res.json();
     sessionStorage.setItem("currentUser", JSON.stringify(user.data))
-    dispatch(setCurrentUser(user));
+    dispatch(receiveUser(user));
 }  
 
 export const loginUser = (user) => async (dispatch) => {
@@ -46,7 +48,7 @@ export const loginUser = (user) => async (dispatch) => {
         })
     });
     const data = await res.json(); 
-    dispatch(setCurrentUser(data.user)); 
+    dispatch(getUser(data.user)); 
     return res 
 };
 
@@ -63,7 +65,7 @@ export const updateUser = (user) => async (dispatch) => {
 };
 
 export const logoutUser = (userId) => async (dispatch) => {
-    let res = await csrfFetch('/api/session', {
+    const res = await csrfFetch('/api/session', {
         method: 'DELETE'
     });
     sessionStorage.setItem('currentUser', null)
@@ -75,7 +77,7 @@ export const deleteUser = (userId) => async (dispatch) => {
         method: "DELETE"
     })
     if (res.ok) {
-        dispatch(removeUser(reportId))
+        dispatch(removeUser(userId))
     };
 };
 

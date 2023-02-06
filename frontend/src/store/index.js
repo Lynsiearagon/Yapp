@@ -1,19 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import './index.css';
-import App from './App';
-import configureStore from './store';
-import { applyMiddleware, combineReducers, createStore } from 'redux'
+import { applyMiddleware, combineReducers, createStore, compose } from 'redux'
 import userReducer from './userReducer';
-import sessionReducer from './sessionReducer';
+import thunk from 'redux-thunk'
 
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers({
     user: userReducer
 });
-
 
 let enhancer;
 
@@ -29,5 +21,7 @@ if (process.env.NODE_ENV === 'production') {
 const configureStore = (preloadedState = {}) => {
     return createStore(rootReducer, preloadedState, enhancer);
 };
+
+export default configureStore
 
 // await store.dispatch(sessionActions.login({ email: 'Lynsie@mail.com', password: 'password' }))

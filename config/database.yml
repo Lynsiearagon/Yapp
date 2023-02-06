@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: yapp_production
-  username: yapp
-  password: <%= ENV["YAPP_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

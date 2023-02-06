@@ -4,7 +4,10 @@ import './index.css';
 import App from './App';
 import { restoreSession } from './store/csrf';
 import { Provider } from 'react';
+import configureStore from './store/index.js';
+import { BrowserRouter } from 'react-router-dom'
 
+const store = configureStore();
 
 let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
 let initialState = {};
