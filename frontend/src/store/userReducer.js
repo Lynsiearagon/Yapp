@@ -19,25 +19,35 @@ export const getUser = (userId) => (state) => {
     };
 };
 
-export const createUser = (user) => async (dispatch) => {
-    let res = await csrfFetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify(user)
+export const signUpUser = (user) => async (dispatch) => {
+    const { email, first_name, last_name, password, zipcode, birthday} = user;
+    const res = await csrfFetch("/api/users/", {
+        method: "POST", 
+        body: JSON.stringify({
+            email,
+            first_name, 
+            last_name,
+            password,
+            zipcode,
+            birthday
+        })
     });
-    let data = await res.json();
-    sessionStorage.setItem('currentUser', JSON.stringify(data.user));
-    dispatch(receiveUser(data.user));
-};
+    const data = await res.json();
+    sessionStorage.setItem("currentUser", JSON.stringify(user.data))
+    dispatch(setCurrentUser(user));
+}  
 
 export const loginUser = (user) => async (dispatch) => {
-    let res = await csrfFetch('/api/session', {
-        method: 'POST',
-        body: JSON.stringify(user)
+    const { email, password } = user; 
+    const res = await csrfFetch(`/api/session`, {
+        method: "POST", 
+        body: JSON.stringify({
+            email, password
+        })
     });
-    let data = await res.json();
-    sessionStorage.setItem('currentUser', JSON.stringify(data.user));
-    debugger
-    dispatch(receiveUser(data.user))
+    const data = await res.json(); 
+    dispatch(setCurrentUser(data.user)); 
+    return res 
 };
 
 export const updateUser = (user) => async (dispatch) => {

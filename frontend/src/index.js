@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { restoreSession } from './store/csrf';
-
+import { Provider } from 'react';
 
 
 let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
@@ -21,9 +21,9 @@ let initialState = {};
 const initializeApp = () => {
   ReactDOM.render(
     <React.StrictMode>
-      {/* <Provider store={store}> */}
+      <Provider store={store}>
         <App />
-      {/* </Provider> */}
+      </Provider>
     </React.StrictMode>,
     document.getElementById('root')
   );
