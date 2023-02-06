@@ -11,66 +11,63 @@ export const removeUser = (userId) => ({
     userId
 });
 
-
 export const getUser = (userId) => (state) => {
     if (state.users) {
         return state.users[userId]
     } else {
         return null
-    }
-};
-
-
-export const fetchUser = (userId) => async (dispatch) => {
-    const res = await fetch(`/api/users/${userId}`)
-    
-    if (res.okay) {
-        const user = await res.json(); 
-        dispatch(receiveUser(user))
     };
-}
+};
 
-export const createUser = (userObj) => async (dispatch) => {
-    const res = await fetch(`/api/users/`, {
-        method: "POST", 
-        headers: {
-            "Content-Type": "application/json" 
-        }, 
-        body: JSON.stringify(userObj)
+export const createUser = (user) => async (dispatch) => {
+    let res = await csrfFetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify(user)
+    });
+    let data = await res.json();
+    sessionStorage.setItem('currentUser', JSON.stringify(data.user));
+    dispatch(receiveUser(data.user));
+};
+
+export const loginUser = (user) => async (dispatch) => {
+    let res = await csrfFetch('/api/session', {
+        method: 'POST',
+        body: JSON.stringify(user)
+    });
+    let data = await res.json();
+    sessionStorage.setItem('currentUser', JSON.stringify(data.user));
+    debugger
+    dispatch(receiveUser(data.user))
+};
+
+export const updateUser = (user) => async (dispatch) => {
+    const res = await csrfFetch(`/api/users/${user.id}`, {
+        method: "PATCH",
+        body: JSON.stringify(user)
     })
-
     if (res.ok) {
-        const user = await res.json();
-        dispatch(receiveUser(user))
+        const data = await res.json(); 
+        sessionStorage.setItem("currentUser", JSON.stringify(data.user))
+        dispatch(receiveUser(data.user))
     }
 };
 
-export const updateUser = (userObj) => async (dispatch) => {
-    const res = await fetch(`/api/users/${userObj.id}`, {
-        method: "PATCH",
-        headers: {
-            "Context-Type" : "application/json"
-        },
-        body: JSON.stringify(userObj)
-    })
-
-    if (res.ok) {
-        const user = await res.json(); 
-        dispatch(receiveUser(user))
-    }
+export const logoutUser = (userId) => async (dispatch) => {
+    let res = await csrfFetch('/api/session', {
+        method: 'DELETE'
+    });
+    sessionStorage.setItem('currentUser', null)
+    dispatch(removeUser(userId));
 };
 
 export const deleteUser = (userId) => async (dispatch) => {
-    const res = await fetch(`/api/users/${userId}`, {
+    const res = await csrfFetch(`/api/users/${userId}`, {
         method: "DELETE"
     })
-
     if (res.ok) {
         dispatch(removeUser(reportId))
-    }
+    };
 };
-
-
 
 const userReducer = (state = {}, action) => {
     const newState = { ...state };
@@ -84,7 +81,7 @@ const userReducer = (state = {}, action) => {
             return newState;
         default: 
             return state
-    }
+    };
 };
 
 export default userReducer

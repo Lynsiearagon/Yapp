@@ -7,6 +7,7 @@ import App from './App';
 import configureStore from './store';
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import userReducer from './userReducer';
+import sessionReducer from './sessionReducer';
 
 
 export const rootReducer = combineReducers({
@@ -25,7 +26,8 @@ if (process.env.NODE_ENV === 'production') {
     enhancer = composeEnhancers(applyMiddleware(thunk, logger));
 };
 
-
 const configureStore = (preloadedState = {}) => {
     return createStore(rootReducer, preloadedState, enhancer);
 };
+
+// await store.dispatch(sessionActions.login({ email: 'Lynsie@mail.com', password: 'password' }))

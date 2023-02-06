@@ -5,15 +5,29 @@ import App from './App';
 import { restoreSession } from './store/csrf';
 
 
+
+let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+let initialState = {};
+
+  if (currentUser) {
+    initialState = {
+      users: {
+        [currentUser.id]: currentUser
+      }
+    };
+  };
+
+
 const initializeApp = () => {
   ReactDOM.render(
-      <React.StrictMode>
-        {/* <Provider store={store}> */}
-            <App />
-        {/* </Provider> */}
-      </React.StrictMode>,
-      document.getElementById('root')
+    <React.StrictMode>
+      {/* <Provider store={store}> */}
+        <App />
+      {/* </Provider> */}
+    </React.StrictMode>,
+    document.getElementById('root')
   );
 }; 
 
 restoreSession().then(initializeApp)
+
