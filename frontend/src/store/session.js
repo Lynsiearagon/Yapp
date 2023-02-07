@@ -12,14 +12,6 @@ export const removeCurrentUser = () => ({
   type: REMOVE_CURRENT_USER
 });
 
-// export const getSessionUser = (state) => {
-//   if (state.session[user]) {
-//     return state.session.user
-//   } else {
-//     return null
-//   };
-// };
-
 export const storeCSRFToken = (response) => {
   const csrfToken = response.headers.get("X-CSRF-Token");
   if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
@@ -96,5 +88,3 @@ const sessionReducer = (state = initialState, action) => {
 };
 
 export default sessionReducer;
-
-// await store.dispatch(sessionActions.login({ email: 'Lynsie@mail.com', password: 'password' }))

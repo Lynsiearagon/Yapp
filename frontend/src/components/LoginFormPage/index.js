@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { Redirect } from 'react-router-dom';
-// import { getSessionUser } from '../../store/session';
-
 
 
 const LoginFormPage = () => {
@@ -33,7 +31,6 @@ const LoginFormPage = () => {
             });
     }
     
-
     return (
         <form onSubmit={handleSubmit}>
             <ul>
@@ -62,5 +59,4 @@ const LoginFormPage = () => {
     )
 };
 
-
-export default LoginFormPage
+export default LoginFormPage;
