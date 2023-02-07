@@ -1,37 +1,26 @@
-import {receiveUser} from './userReducer'
+const csrfFetch = async (url, options = {}) => {
+    options.method = options.method || 'GET';
+    options.headers = options.headers || {};
 
-
-const storeCurrentUser = user => {
-    if (user) sessionStorage.setItem("currentUser", JSON.stringify(user)); 
-    else sessionStorage.removeItem("currentUser");
-};
-
-export const restoreSession = () => async (dispatch) => {
-    const res = await csrfFetch('/api/session');
-    sessionStorage(res); 
-    const data = await res.json();
-    storeCurrentUser(data.user);
-    dispatch(receiveUser(data.user));
-    return res 
-};
-
-
-export const csrfFetch = async (url, options = {}) => {
-    options.method ||= 'GET';
-    options.headers ||= {};
-
-    // will need to modify this when using formData to attach resources like photos
-        // can't have a Content-Type header
     if (options.method.toUpperCase() !== 'GET') {
-        options.headers['Content-Type'] = 'application/json';
+        options.headers['Content-Type'] = options.headers['Content-Type'] || 'application/json';
         options.headers['X-CSRF-Token'] = sessionStorage.getItem('X-CSRF-Token');
-    }
+    };
 
     const res = await fetch(url, options);
-    return res
+    if (res.status >= 400) throw res 
+    return res;
 };
 
-const initialState = { 
-    user: JSON.parse(sessionStorage.getItem("currentUser"))
+export function storeCSRFToken(response) {
+    const csrfToken = response.headers.get("X-CSRF-Token");
+    if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
 };
   
+export async function restoreCSRF() {
+    const res = await csrfFetch("/api/session");
+    storeCSRFToken(res);
+    return res;
+};
+
+export default csrfFetch

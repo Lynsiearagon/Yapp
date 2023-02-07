@@ -1,4 +1,4 @@
-import { csrfFetch } from './csrf.js'
+import csrfFetch from './csrf.js'
 
 const RECEIVE_USER = `users/RECEIVE_USER`; 
 const REMOVE_USER = `users/REMOVE_USER`
@@ -21,36 +21,6 @@ export const getUser = (userId) => (state) => {
     };
 };
 
-export const signUpUser = (user) => async (dispatch) => {
-    const { email, first_name, last_name, password, zipcode, birthday} = user;
-    const res = await csrfFetch("/api/users/", {
-        method: "POST", 
-        body: JSON.stringify({
-            email,
-            first_name, 
-            last_name,
-            password,
-            zipcode,
-            birthday
-        })
-    });
-    const data = await res.json();
-    sessionStorage.setItem("currentUser", JSON.stringify(user.data))
-    dispatch(receiveUser(user));
-}  
-
-export const loginUser = (user) => async (dispatch) => {
-    const { email, password } = user; 
-    const res = await csrfFetch(`/api/session`, {
-        method: "POST", 
-        body: JSON.stringify({
-            email, password
-        })
-    });
-    const data = await res.json(); 
-    dispatch(getUser(data.user)); 
-    return res 
-};
 
 export const updateUser = (user) => async (dispatch) => {
     const res = await csrfFetch(`/api/users/${user.id}`, {
@@ -64,13 +34,6 @@ export const updateUser = (user) => async (dispatch) => {
     }
 };
 
-export const logoutUser = (userId) => async (dispatch) => {
-    const res = await csrfFetch('/api/session', {
-        method: 'DELETE'
-    });
-    sessionStorage.setItem('currentUser', null)
-    dispatch(removeUser(userId));
-};
 
 export const deleteUser = (userId) => async (dispatch) => {
     const res = await csrfFetch(`/api/users/${userId}`, {
