@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { Redirect } from 'react-router-dom';
-import { getSessionUser } from '../../store/session';
+// import { getSessionUser } from '../../store/session';
 
 
 
 const LoginFormPage = () => {
     const dispatch = useDispatch();
-    const sessionUser = useSelector(getSessionUser());
+    const sessionUser = useSelector(state => state.session.user);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
@@ -35,13 +35,29 @@ const LoginFormPage = () => {
     
 
     return (
-        <form>
-            <label>Email
-                <input type="text"/>
+        <form onSubmit={handleSubmit}>
+            <ul>
+                {errors.map(error => <li key={error}>{error}</li>)}
+            </ul>
+            <label htmlFor="Email">
+                <input 
+                type="text"
+                placeholder='Email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                />
             </label>
-            <label>Password
-                <input type="password"/>
+            <label htmlFor="Password">
+                <input 
+                type="password"
+                placeholder='Password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                />
             </label>
+            <button type='submit'>Log In</button>
         </form>
     )
 };

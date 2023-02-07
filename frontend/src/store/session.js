@@ -12,13 +12,13 @@ export const removeCurrentUser = () => ({
   type: REMOVE_CURRENT_USER
 });
 
-export const getSessionUser = (state) => {
-  if (state.session.user) {
-    return state.session.user
-  } else {
-    return null
-  };
-};
+// export const getSessionUser = (state) => {
+//   if (state.session[user]) {
+//     return state.session.user
+//   } else {
+//     return null
+//   };
+// };
 
 export const storeCSRFToken = (response) => {
   const csrfToken = response.headers.get("X-CSRF-Token");
