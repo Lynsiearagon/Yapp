@@ -7,18 +7,20 @@ import { Provider } from 'react';
 import configureStore from './store/index.js';
 import { BrowserRouter } from 'react-router-dom'
 
+
+
 const store = configureStore();
 
 let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
 let initialState = {};
 
-  if (currentUser) {
-    initialState = {
-      users: {
-        [currentUser.id]: currentUser
-      }
-    };
+if (currentUser) {
+  initialState = {
+    users: {
+      [currentUser.id]: currentUser
+    }
   };
+};
 
 
 const initializeApp = () => {
@@ -29,8 +31,8 @@ const initializeApp = () => {
       </Provider>
     </React.StrictMode>,
     document.getElementById('root')
-  );
-}; 
-
-restoreSession().then(initializeApp)
+    );
+  }; 
+  
+  // restoreSession().then(initializeApp())
 

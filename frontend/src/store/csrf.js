@@ -1,10 +1,20 @@
-export const restoreSession = async () => {
-    let res = await fetch('/api/session');
-    let token = res.headers.get('X-CSRF-Token');
-    sessionStorage.setItem('X-CSRF-Token', token);
-    let data = await res.json();
-    sessionStorage.setItem('currentUser', JSON.stringify(data.user));
+import {receiveUser} from './userReducer'
+
+
+const storeCurrentUser = user => {
+    if (user) sessionStorage.setItem("currentUser", JSON.stringify(user)); 
+    else sessionStorage.removeItem("currentUser");
 };
+
+export const restoreSession = () => async (dispatch) => {
+    const res = await csrfFetch('/api/session');
+    sessionStorage(res); 
+    const data = await res.json();
+    storeCurrentUser(data.user);
+    dispatch(receiveUser(data.user));
+    return res 
+};
+
 
 export const csrfFetch = async (url, options = {}) => {
     options.method ||= 'GET';
