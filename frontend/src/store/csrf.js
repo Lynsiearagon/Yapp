@@ -13,8 +13,8 @@ const csrfFetch = async (url, options = {}) => {
 };
 
 export function storeCSRFToken(response) {
-    const csrfToken = response.headers.get("X-CSRF-Token");
-    if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
+    const csrfToken = response.headers.get('X-CSRF-Token');
+    if (csrfToken) sessionStorage.setItem('X-CSRF-Token', csrfToken);
 };
   
 export async function restoreCSRF() {
@@ -23,4 +23,4 @@ export async function restoreCSRF() {
     return res;
 };
 
-export default csrfFetch
+export default csrfFetch;
