@@ -49,25 +49,25 @@ export const login = ({ email, password }) => async (dispatch) => {
     })
   });
   const data = await res.json();
-  storeCurrentUser(data.user);
+//   storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
   return res;
 };
 
 export const restoreSession = () => async dispatch => {
-    const response = await csrfFetch("/api/session");
-    storeCSRFToken(response);
-    const data = await response.json();
+    const res = await csrfFetch("/api/session");
+    storeCSRFToken(res);
+    const data = await res.json();
     storeCurrentUser(data.user);
     dispatch(setCurrentUser(data.user));
-    return response;
+    return res;
 };
 
 export const logoutUser = () => async (dispatch) => {
     const res = await csrfFetch('/api/session', {
         method: 'DELETE'
     });
-    sessionStorage.setItem('currentUser', null)
+    storeCurrentUser(null);
     dispatch(removeCurrentUser());
     return res
 };
@@ -79,7 +79,7 @@ const initialState = {
 const sessionReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CURRENT_USER:
-      return { ...state, user: action.payload };
+      return { ...state, user: action.user };
     case REMOVE_CURRENT_USER:
       return { ...state, user: null };
     default:

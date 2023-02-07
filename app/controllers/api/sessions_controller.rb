@@ -1,7 +1,7 @@
 class Api::SessionsController < ApplicationController
 
-  before_action :require_logged_in, only: [:destroy]
-  before_action :require_logged_out, only: [:create]
+  # before_action :require_logged_in, only: [:destroy]
+  # before_action :require_logged_out, only: [:create]
   
   def show
     if current_user 
@@ -22,7 +22,7 @@ class Api::SessionsController < ApplicationController
       login!(@user)
       render 'api/users/show'
     else
-      render json: { errors: ["The email address or password you entered is incorrect."] }, status: 404 
+      render json: { errors: ["The email address or password you entered is incorrect."] }, status: :unauthorized 
     end
   end
 
