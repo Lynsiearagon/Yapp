@@ -1,0 +1,14 @@
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+};
+
+#errors {
+    background-color: red;
+}
+
+button {
+    background: red;
+    color: white;
+}
