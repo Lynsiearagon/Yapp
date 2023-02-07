@@ -23,5 +23,3 @@ const configureStore = (preloadedState = {}) => {
 };
 
 export default configureStore
-
-// await store.dispatch(sessionActions.login({ email: 'Lynsie@mail.com', password: 'password' }))
