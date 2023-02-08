@@ -1,3 +1,8 @@
+#demoUserSubmitFormButton {
+    background: #d32323;
+    border: #d32323;
+}
+
 #errorsLi {
     background: #fcd6d3;
     width: 100%;
@@ -12,7 +17,7 @@
     list-style: none;
 }
 
-a.externalLoginFormLinks {
+.externalLoginFormLinks {
     text-decoration: none;
     color: #0073bb;
 }
@@ -29,12 +34,16 @@ a.externalLoginFormLinks {
     margin-bottom: 30px;
 }
 
-header > span {
+#loginHeaderDiv > span {
     display: flex;
     justify-content: center;
     width: 300px;
     font-size: 12px;
     text-align: center;
+}
+
+#imageWrapper {
+    margin: 50px;
 }
 
 #linkedInButton {
@@ -99,7 +108,7 @@ header > span {
 
 #loginPageWrapper {
     width: 300px;
-    margin: 20px;
+    margin: 80px;
     align-items: center;
 }
 

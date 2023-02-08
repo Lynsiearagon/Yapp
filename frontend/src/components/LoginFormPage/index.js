@@ -31,6 +31,13 @@ const LoginFormPage = () => {
                 
             });
     }
+
+    const demoUserLogin = (e) => {
+        e.preventDefault();
+        dispatch(sessionActions.login({
+            email: 'demo@user.io', 
+            password: 'password'}))
+    }
     
     return (
         <>
@@ -45,14 +52,14 @@ const LoginFormPage = () => {
                 <span id="signUpDivTop">
                     <p>New to Yapp? 
                         <a href="" 
-                            class="externalLoginFormLinks"> Sign Up</a>
+                            className="externalLoginFormLinks"> Sign Up</a>
                     </p>
                 </span>
                 <span>
                     <p id="termsAndConditions">By logging in, you agree to Yapp's 
-                        <a href="" class="externalLoginFormLinks"> Terms of Service</a> and 
+                        <a href="" className="externalLoginFormLinks"> Terms of Service</a> and 
                         <a href="" 
-                        class="externalLoginFormLinks"> Privacy Policy</a>.
+                        className="externalLoginFormLinks"> Privacy Policy</a>.
                     </p>
                 </span>
             </header>
@@ -106,10 +113,16 @@ const LoginFormPage = () => {
                     className="loginFormButtons" 
                     type="submit">Log In
                 </button>
+                <button 
+                    id="demoUserSubmitFormButton" 
+                    className="loginFormButtons" 
+                    onClick={demoUserLogin}
+                    type="submit">Log In as Demo User
+                </button>
             </form>
 
             <p id="signUpLinkBottom">New to Yapp? <span>
-                <a href="#" class="externalLoginFormLinks">Sign Up</a></span></p>
+                <a href="#" className="externalLoginFormLinks">Sign Up</a></span></p>
             </div>
 
             <div id="imageWrapper">

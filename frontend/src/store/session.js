@@ -49,7 +49,7 @@ export const login = ({ email, password }) => async (dispatch) => {
     })
   });
   const data = await res.json();
-//   storeCurrentUser(data.user);
+  storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
   return res;
 };
