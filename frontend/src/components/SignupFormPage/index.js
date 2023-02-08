@@ -2,49 +2,55 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { Redirect } from 'react-router-dom';
-import './LoginForm.css'
+import './SignupForm.css'
 
 
-const LoginFormPage = () => {
+const SignupFormPage = () => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [zipcode, setZipcode] = useState('');
+    const [birthday, setBirthday] = useState('');
     const [errors, setErrors] = useState([]);
 
-    if (sessionUser) return <Redirect to='/' />
-
+    if (sessionUser) return <Redirect to="/" />;
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErrors([]);
-        return dispatch(sessionActions.login({email, password}))
+        setErrors([]); 
+        return dispatch(sessionActions.signUpUser({
+            firstName,
+            lastName,
+            email,
+            password,
+            zipcode,
+            birthday
+        }))
             .catch(async (res) => {
                 let data; 
                 try {
-                data = await res.clone().json();
+                    data = await res.clone().json();
                 } catch {
-                    data = await res.text(); 
+                    data = await res.text();
                 }
                 if (data?.errors) setErrors(data.errors);
-                else if (data) setErrors([data]); 
+                else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
-                
             });
     }
+    // return setErrors()
 
-    const demoUserLogin = (e) => {
-        e.preventDefault();
-        dispatch(sessionActions.login({
-            email: 'demo@user.io', 
-            password: 'password'}))
-    }
-    
     return (
+
         <>
-            <ul >
-                {errors.map(error => <li id="errorsLi" key={error}>{error}</li>)}
+            <ul>
+            {errors.map(error => <li id="errorsLi" key={error}>{error}</li>)}
             </ul>
-        <div id="formAndImageWrapper" >
+
+            <div id="formAndImageWrapper" >
 
             <div id="loginPageWrapper">
             <header id="loginHeaderDiv">
@@ -86,6 +92,14 @@ const LoginFormPage = () => {
 
             <form onSubmit={handleSubmit} id="loginForm">
 
+                <div id="nameDiv"></div>
+                    <label id="firstName">
+
+                    </label>
+                    <label>
+                        
+                    </label>
+
                 <label htmlFor="Email">
                     <input 
                     type="text"
@@ -116,12 +130,6 @@ const LoginFormPage = () => {
 
                 <p id="altLoginMessage">No account?</p>
 
-                <button 
-                    id="demoUserSubmitFormButton" 
-                    className="loginFormButtons" 
-                    onClick={demoUserLogin}
-                    type="submit">Log In as Demo User
-                </button>
             </form>
 
             <p id="signUpLinkBottom">New to Yapp? <span>
@@ -136,6 +144,9 @@ const LoginFormPage = () => {
         </div>
         </>
     )
-};
+    
+}
 
-export default LoginFormPage;
+
+
+export default SignupFormPage
