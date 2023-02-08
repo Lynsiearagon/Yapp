@@ -33,11 +33,26 @@ const LoginFormPage = () => {
     }
     
     return (
-        // <div id='form'>
+        <>
+            <ul >
+                {errors.map(error => <li id="errorsLi" key={error}>{error}</li>)}
+            </ul>
+        <div id="formAndImageWrapper" >
+
+            <div id="loginPageWrapper">
+            <header>
+                <h2>Log in to Yapp</h2>
+                <span id="signUpDivTop">
+                    <p>New to Yapp? <a href="#">Sign Up</a></p>
+                </span>
+                <span>
+                    <p>By logging in, you agree to Yapp's <a href="">Terms of Service</a> and 
+                    <a href=""> Privacy Policy</a></p>
+                </span>
+            </header>
+
             <form onSubmit={handleSubmit} id="loginForm">
-                <ul id="errors">
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
+
                 <label htmlFor="Email">
                     <input 
                     type="text"
@@ -56,9 +71,18 @@ const LoginFormPage = () => {
                     required
                     />
                 </label>
-                <button type="submit">Log In</button>
+                <button id="submitFormButton" type="submit">Log In</button>
             </form>
 
+            <p id="signUpLinkBottom">New to Yapp? <span><a href="#">Sign Up</a></span></p>
+            </div>
+
+            <div id="imageWrapper">
+                <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="Cartoon art of restaurant entry-way" />            
+            </div>
+        
+        </div>
+        </>
     )
 };
 
