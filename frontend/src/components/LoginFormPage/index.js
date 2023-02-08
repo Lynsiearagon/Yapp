@@ -40,16 +40,42 @@ const LoginFormPage = () => {
         <div id="formAndImageWrapper" >
 
             <div id="loginPageWrapper">
-            <header>
-                <h2>Log in to Yapp</h2>
+            <header id="loginHeaderDiv">
+                <h2 id="loginHeader">Log in to Yapp</h2>
                 <span id="signUpDivTop">
-                    <p>New to Yapp? <a href="#">Sign Up</a></p>
+                    <p>New to Yapp? 
+                        <a href="" 
+                            class="externalLoginFormLinks"> Sign Up</a>
+                    </p>
                 </span>
                 <span>
-                    <p>By logging in, you agree to Yapp's <a href="">Terms of Service</a> and 
-                    <a href=""> Privacy Policy</a></p>
+                    <p id="termsAndConditions">By logging in, you agree to Yapp's 
+                        <a href="" class="externalLoginFormLinks"> Terms of Service</a> and 
+                        <a href="" 
+                        class="externalLoginFormLinks"> Privacy Policy</a>.
+                    </p>
                 </span>
             </header>
+
+            <div>
+                <a href="https://www.linkedin.com/in/lynsie-aragon-87156a157/"
+                    target="_blank">
+                    <button
+                        id ="linkedInButton"
+                        className="loginFormButtons">
+                            Follow Me on LinkedIn
+                    </button>
+                </a>
+                <a href="https://github.com/Lynsiearagon"
+                    target="_blank">
+                    <button
+                        id="githubButton"
+                        className="loginFormButtons">
+                            Follow Me on GitHib
+                    </button>
+                </a>
+
+            </div>
 
             <form onSubmit={handleSubmit} id="loginForm">
 
@@ -57,6 +83,8 @@ const LoginFormPage = () => {
                     <input 
                     type="text"
                     placeholder='Email'
+                    id="loginInputEmail"
+                    className="loginInput"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -65,20 +93,28 @@ const LoginFormPage = () => {
                 <label htmlFor="Password">
                     <input 
                     type="password"
-                    placeholder='Password'
+                    placeholder="Password"
+                    id="loginInputPassword"
+                    className="loginInput"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     />
                 </label>
-                <button id="submitFormButton" type="submit">Log In</button>
+                <button 
+                    id="submitFormButton" 
+                    className="loginFormButtons" 
+                    type="submit">Log In
+                </button>
             </form>
 
-            <p id="signUpLinkBottom">New to Yapp? <span><a href="#">Sign Up</a></span></p>
+            <p id="signUpLinkBottom">New to Yapp? <span>
+                <a href="#" class="externalLoginFormLinks">Sign Up</a></span></p>
             </div>
 
             <div id="imageWrapper">
-                <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="Cartoon art of restaurant entry-way" />            
+                <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" 
+                    alt="Cartoon art of restaurant entry-way" />            
             </div>
         
         </div>
