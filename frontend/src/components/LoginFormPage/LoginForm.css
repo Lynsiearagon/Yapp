@@ -20,7 +20,7 @@ a.externalLoginFormLinks {
 #formAndImageWrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 100px;
 }
 
@@ -116,7 +116,6 @@ header > span {
     font-size: 12px;
     color: #999;
 }
-
 
 #submitFormButton {
     background: #d32323;
