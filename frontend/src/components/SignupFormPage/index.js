@@ -54,17 +54,14 @@ const SignupFormPage = () => {
 
             <div id="loginPageWrapper">
             <header id="loginHeaderDiv">
-                <h2 id="loginHeader">Log in to Yapp</h2>
+                <h2 id="loginHeader">Sign Up for Yapp</h2>
                 <span id="signUpDivTop">
-                    <p>New to Yapp? 
-                        <a href="/signup" 
-                            className="externalLoginFormLinks"> Sign Up</a>
-                    </p>
+                    <p>Connect with great local businesses</p>
                 </span>
                 <span>
                     <p id="termsAndConditions">By logging in, you agree to Yapp's 
-                        <a href="" className="externalLoginFormLinks"> Terms of Service</a> and 
-                        <a href="" 
+                        <a href="#" className="externalLoginFormLinks"> Terms of Service</a> and 
+                        <a href="#" 
                         className="externalLoginFormLinks"> Privacy Policy</a>.
                     </p>
                 </span>
@@ -88,18 +85,33 @@ const SignupFormPage = () => {
                     </button>
                 </a>
 
+                <p>Don't worry, we never post without you permission</p>
             </div>
 
             <form onSubmit={handleSubmit} id="loginForm">
 
-                <div id="nameDiv"></div>
-                    <label id="firstName">
-
+                <div id="nameDiv">
+                    <label htmlFor="First Name">
+                        <input 
+                        type="text" 
+                        placeholder="First Name"
+                        id="firstName"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        required
+                        />
                     </label>
-                    <label>
-                        
+                    <label htmlFor="Last Name">
+                        <input 
+                        type="text" 
+                        placeholder="Last Name"
+                        id="lastName"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        required
+                        />
                     </label>
-
+                </div>
                 <label htmlFor="Email">
                     <input 
                     type="text"
@@ -111,6 +123,9 @@ const SignupFormPage = () => {
                     required
                     />
                 </label>
+
+
+                
                 <label htmlFor="Password">
                     <input 
                     type="password"
@@ -125,15 +140,12 @@ const SignupFormPage = () => {
                 <button 
                     id="submitFormButton" 
                     className="loginFormButtons" 
-                    type="submit">Log In
+                    type="submit">Sign Up
                 </button>
-
-                <p id="altLoginMessage">No account?</p>
-
             </form>
 
-            <p id="signUpLinkBottom">New to Yapp? <span>
-                <a href="/signup" className="externalLoginFormLinks">Sign Up</a></span></p>
+            <p id="signUpLinkBottom">Already on Yapp? <span>
+                <a href="/login" className="externalLoginFormLinks">Log in</a></span></p>
             </div>
 
             <div id="imageWrapper">

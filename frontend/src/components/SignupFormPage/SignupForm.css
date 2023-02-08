@@ -1,0 +1,149 @@
+#errorsLi {
+    background: #fcd6d3;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 12px;
+    padding: 18px 18px 18px 24px;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 1.5em;
+    list-style: none;
+}
+
+.externalLoginFormLinks {
+    text-decoration: none;
+    color: #0073bb;
+}
+
+#formAndImageWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#githubButton {
+    background-color: black;
+    margin-bottom: 30px;
+}
+
+#loginHeaderDiv > span {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#imageWrapper {
+    margin: 50px;
+}
+
+input:focus {
+    outline: none !important;
+    border-color: #009dff;
+    box-shadow: 0 0 2px #009dff;
+}
+
+#linkedInButton {
+    background: #0073b1;
+    border-color: #0073bb;
+    color: white;
+}
+
+.loginInput {
+    display: block;
+    box-sizing: border-box;
+    padding: 5px 9px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 1.29em;
+    width: 300px;
+}
+
+#loginInputEmail {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#loginInputPassword {
+    margin-bottom: 20px;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border-top: #cbcbcb solid 1px;
+}
+
+.loginFormButtons {
+    padding: 10px 13px;
+    font-size: 16px;
+    line-height: 1.3125em;
+    width: 300px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+    border-style: solid;
+}
+
+#loginHeader {
+    color: #d32323;
+    font-weight: bolder;
+    font-size: 21px;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+}
+
+#loginHeaderDiv {
+    margin-bottom: 30px;
+}
+
+#loginPageWrapper {
+    width: 300px;
+    margin: 80px;
+    align-items: center;
+}
+
+#resassuranceStatement {
+    font-size: 12px;
+}
+
+#signUpDivTop {
+    font-weight: bolder;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#signUpLinkBottom {
+    width: 300px;
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+}
+
+#altLoginMessage {
+    width: 300px;
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+    margin: 5px;
+}
+
+#submitFormButton {
+    background: #d32323;
+    border: #d32323;
+}
+
+#termsAndConditions {
+    line-height: 1.5em;
+}
