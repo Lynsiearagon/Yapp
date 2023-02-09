@@ -1,14 +1,47 @@
+#logInHPButton {
+    font-size: 16px;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 4px;
+    /* color: white; */
+    font-weight: bolder;
+    border-style: solid 2px;
+    /* border-color: white; */
+    background: transparent;
+    margin-right: 10px;
+}
+
 .logo {
     width: 100px;
     height: 30px;
-    padding: 20px;
+    margin-left: 50px;
     display: flex;
     font-size: 24px;
     font-weight: bolder;
 }
 
 #navBar {
-    height: 150px;
+    height: 100px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid;
+    border-color: #e7e6e6;
+}
+
+#signUpHPButton {
+    margin-right: 50px;
+    font-size: 16px;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bolder;
+    border-style: solid 2px;
+    background: transparent;
+    background: #d32323;
+    border-color: #d32323;
+    border-style: solid;
+    color: white;
 }

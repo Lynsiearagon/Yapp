@@ -11,8 +11,8 @@ const SessionNavigation = () => {
     if (!sessionUser && location.pathname === '/') {
         sessionLinks = (
             <>
-                <NavLink to="/login"><button>Log In</button></NavLink>
-                <NavLink to="/signup"><button>Sign Up</button></NavLink>
+                <NavLink to="/login"><button id="logInHPButton">Log In</button></NavLink>
+                <NavLink to="/signup"><button id="signUpHPButton">Sign Up</button></NavLink>
             </>
         )
     }
