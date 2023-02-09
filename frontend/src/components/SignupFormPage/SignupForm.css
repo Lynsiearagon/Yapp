@@ -12,7 +12,7 @@
     list-style: none;
 }
 
-.externalLoginFormLinks {
+.externalsignupFormLinks {
     text-decoration: none;
     color: #0073bb;
 }
@@ -26,10 +26,10 @@
 
 #githubButton {
     background-color: black;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
-#loginHeaderDiv > span {
+#signupHeaderDiv > span {
     display: flex;
     justify-content: center;
     width: 300px;
@@ -53,7 +53,7 @@ input:focus {
     color: white;
 }
 
-.loginInput {
+.signupInput {
     display: block;
     box-sizing: border-box;
     padding: 5px 9px;
@@ -64,16 +64,16 @@ input:focus {
     width: 300px;
 }
 
-#loginInputEmail {
-    margin-top: 30px;
+#signupInputEmail {
+    margin: 10px;
+    margin-top: 7px;
+}
+
+#signupInputPassword {
     margin-bottom: 10px;
 }
 
-#loginInputPassword {
-    margin-bottom: 20px;
-}
-
-#loginForm {
+#signupForm {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,7 +81,7 @@ input:focus {
     border-top: #cbcbcb solid 1px;
 }
 
-.loginFormButtons {
+.signupFormButtons {
     padding: 10px 13px;
     font-size: 16px;
     line-height: 1.3125em;
@@ -94,7 +94,7 @@ input:focus {
     border-style: solid;
 }
 
-#loginHeader {
+#signupHeader {
     color: #d32323;
     font-weight: bolder;
     font-size: 21px;
@@ -103,18 +103,35 @@ input:focus {
     width: 300px;
 }
 
-#loginHeaderDiv {
+#signupHeaderDiv {
     margin-bottom: 30px;
 }
 
-#loginPageWrapper {
+#signupPageWrapper {
     width: 300px;
     margin: 80px;
     align-items: center;
 }
 
-#resassuranceStatement {
+#nameDiv {
+    display: flex;
+    margin-top: 35px;
+}
+
+#firstName {
+    width: 148px;
+    margin-right: 2px;
+}
+
+#lastName {
+    width: 148px;
+    margin-left: 2px;
+}
+
+#reassuranceStatement {
     font-size: 12px;
+    text-align: center;
+    margin-bottom: 35px;
 }
 
 #signUpDivTop {
@@ -131,12 +148,16 @@ input:focus {
     color: #999;
 }
 
-#altLoginMessage {
+#altsignupMessage {
     width: 300px;
     text-align: right;
     font-size: 12px;
     color: #999;
     margin: 5px;
+}
+
+#signupInputZipcode {
+    margin-top: 5px
 }
 
 #submitFormButton {

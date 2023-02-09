@@ -66,7 +66,7 @@ const LoginFormPage = () => {
 
             <div>
                 <a href="https://www.linkedin.com/in/lynsie-aragon-87156a157/"
-                    target="_blank">
+                    target="_blank" rel="noreferrer">
                     <button
                         id ="linkedInButton"
                         className="loginFormButtons">
@@ -74,7 +74,7 @@ const LoginFormPage = () => {
                     </button>
                 </a>
                 <a href="https://github.com/Lynsiearagon"
-                    target="_blank">
+                    target="_blank" rel="noreferrer">
                     <button
                         id="githubButton"
                         className="loginFormButtons">

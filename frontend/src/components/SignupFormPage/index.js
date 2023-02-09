@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { Redirect } from 'react-router-dom';
 import './SignupForm.css'
-
+import { range, days, months } from './_signupUtils.js'
 
 const SignupFormPage = () => {
     const dispatch = useDispatch();
@@ -15,6 +15,8 @@ const SignupFormPage = () => {
     const [zipcode, setZipcode] = useState('');
     const [birthday, setBirthday] = useState('');
     const [errors, setErrors] = useState([]);
+    const years = range(1901, 2023, 1);
+    
 
     if (sessionUser) return <Redirect to="/" />;
     
@@ -52,43 +54,43 @@ const SignupFormPage = () => {
 
             <div id="formAndImageWrapper" >
 
-            <div id="loginPageWrapper">
-            <header id="loginHeaderDiv">
-                <h2 id="loginHeader">Sign Up for Yapp</h2>
+            <div id="signupPageWrapper">
+            <header id="signupHeaderDiv">
+                <h2 id="signupHeader">Sign Up for Yapp</h2>
                 <span id="signUpDivTop">
                     <p>Connect with great local businesses</p>
                 </span>
                 <span>
                     <p id="termsAndConditions">By logging in, you agree to Yapp's 
-                        <a href="#" className="externalLoginFormLinks"> Terms of Service</a> and 
+                        <a href="#" className="externalsignupFormLinks"> Terms of Service</a> and 
                         <a href="#" 
-                        className="externalLoginFormLinks"> Privacy Policy</a>.
+                        className="externalsignupFormLinks"> Privacy Policy</a>.
                     </p>
                 </span>
             </header>
 
             <div>
                 <a href="https://www.linkedin.com/in/lynsie-aragon-87156a157/"
-                    target="_blank">
+                    target="_blank" rel="noreferrer">
                     <button
                         id ="linkedInButton"
-                        className="loginFormButtons">
+                        className="signupFormButtons">
                             Follow Me on LinkedIn
                     </button>
                 </a>
                 <a href="https://github.com/Lynsiearagon"
-                    target="_blank">
+                    target="_blank" rel="noreferrer">
                     <button
                         id="githubButton"
-                        className="loginFormButtons">
+                        className="signupFormButtons">
                             Follow Me on GitHib
                     </button>
                 </a>
 
-                <p>Don't worry, we never post without you permission</p>
+                <p id="reassuranceStatement">Don't worry, we never post without you permission</p>
             </div>
 
-            <form onSubmit={handleSubmit} id="loginForm">
+            <form onSubmit={handleSubmit} id="signupForm">
 
                 <div id="nameDiv">
                     <label htmlFor="First Name">
@@ -96,6 +98,7 @@ const SignupFormPage = () => {
                         type="text" 
                         placeholder="First Name"
                         id="firstName"
+                        className="signupInput"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         required
@@ -106,6 +109,7 @@ const SignupFormPage = () => {
                         type="text" 
                         placeholder="Last Name"
                         id="lastName"
+                        className="signupInput"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                         required
@@ -116,36 +120,67 @@ const SignupFormPage = () => {
                     <input 
                     type="text"
                     placeholder='Email'
-                    id="loginInputEmail"
-                    className="loginInput"
+                    id="signupInputEmail"
+                    className="signupInput"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     />
                 </label>
-
-
-                
                 <label htmlFor="Password">
                     <input 
                     type="password"
                     placeholder="Password"
-                    id="loginInputPassword"
-                    className="loginInput"
+                    id="signupInputPassword"
+                    className="signupInput"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     />
                 </label>
+                <label htmlFor="Zipcode">
+                    <input 
+                    type="text"
+                    placeholder='ZIP Code'
+                    id="signupInputZipcode"
+                    className="signupInput"
+                    value={zipcode}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    />
+                </label>
+                <label htmlFor="Birthday">Birthday <span>Optional</span>
+                    <select name="" id="monthSelector">
+                        {
+                            months.map((month) => {
+                                return <option value={month}>{month}</option>
+                            })
+                        }
+                    </select>
+                    <select name="" id="daySelector">
+                        {
+                            days.map((day) => {
+                                return <option value={day}>{day}</option>
+                            })
+                        }
+                    </select>
+                    <select name="" id="yearSelector">
+                        {
+                            years.map((year) => {
+                                return <option value={year}>{year}</option>
+                            })
+                        }
+                    </select>
+                </label>
                 <button 
                     id="submitFormButton" 
-                    className="loginFormButtons" 
+                    className="signupFormButtons" 
                     type="submit">Sign Up
                 </button>
             </form>
 
             <p id="signUpLinkBottom">Already on Yapp? <span>
-                <a href="/login" className="externalLoginFormLinks">Log in</a></span></p>
+                <a href="/login" className="externalsignupFormLinks">Log in</a></span></p>
             </div>
 
             <div id="imageWrapper">
