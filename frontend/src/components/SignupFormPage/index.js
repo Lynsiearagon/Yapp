@@ -23,6 +23,7 @@ const SignupFormPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]); 
+
         return dispatch(sessionActions.signUpUser({
             firstName,
             lastName,
@@ -42,14 +43,14 @@ const SignupFormPage = () => {
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
             });
+            return setErrors([])
     }
-    // return setErrors()
 
     return (
 
         <>
             <ul>
-            {errors.map(error => <li id="errorsLi" key={error}>{error}</li>)}
+                {errors.map(error => <li id="errorsLi" key={error.id}>{error}</li>)}
             </ul>
 
             <div id="formAndImageWrapper" >
@@ -61,7 +62,7 @@ const SignupFormPage = () => {
                     <p>Connect with great local businesses</p>
                 </span>
                 <span>
-                    <p id="termsAndConditions">By logging in, you agree to Yapp's 
+                    <p id="termsAndConditions">By continuing, you agree to Yapp's 
                         <a href="#" className="externalsignupFormLinks"> Terms of Service</a> and 
                         <a href="#" 
                         className="externalsignupFormLinks"> Privacy Policy</a>.
@@ -83,17 +84,17 @@ const SignupFormPage = () => {
                     <button
                         id="githubButton"
                         className="signupFormButtons">
-                            Follow Me on GitHib
+                            Follow Me on GitHub
                     </button>
                 </a>
 
-                <p id="reassuranceStatement">Don't worry, we never post without you permission</p>
+                <p id="reassuranceStatement">Don't worry, we never post without your permission</p>
             </div>
 
             <form onSubmit={handleSubmit} id="signupForm">
 
                 <div id="nameDiv">
-                    <label htmlFor="First Name">
+                    <label htmlFor="firstName">
                         <input 
                         type="text" 
                         placeholder="First Name"
@@ -145,29 +146,42 @@ const SignupFormPage = () => {
                     id="signupInputZipcode"
                     className="signupInput"
                     value={zipcode}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => setZipcode(e.target.value)}
                     required
                     />
                 </label>
-                <label htmlFor="Birthday">Birthday <span>Optional</span>
-                    <select name="" id="monthSelector">
+                <label 
+                    htmlFor="Birthday" 
+                    id="birthdayLabel">Birthday 
+                    <span id="optional"> Optional</span>
+                <br />
+                    <select 
+                        name="month" 
+                        id="monthSelector" 
+                        className="birthdaySelector">
                         {
                             months.map((month) => {
-                                return <option value={month}>{month}</option>
+                                return <option value={month} key={month.id}>{month}</option>
                             })
                         }
                     </select>
-                    <select name="" id="daySelector">
+                    <select 
+                        name="day" 
+                        id="daySelector" 
+                        className="birthdaySelector">
                         {
                             days.map((day) => {
-                                return <option value={day}>{day}</option>
+                                return <option value={day} key={day.id}>{day}</option>
                             })
                         }
                     </select>
-                    <select name="" id="yearSelector">
+                    <select 
+                        name="year" 
+                        id="yearSelector" 
+                        className="birthdaySelector">
                         {
                             years.map((year) => {
-                                return <option value={year}>{year}</option>
+                                return <option value={year} key={year.id}>{year}</option>
                             })
                         }
                     </select>

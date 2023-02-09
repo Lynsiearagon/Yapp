@@ -42,7 +42,7 @@ const LoginFormPage = () => {
     return (
         <>
             <ul >
-                {errors.map(error => <li id="errorsLi" key={error}>{error}</li>)}
+                {errors.map(error => <li id="errorsLi" key={error.id}>{error}</li>)}
             </ul>
         <div id="formAndImageWrapper" >
 
@@ -78,7 +78,7 @@ const LoginFormPage = () => {
                     <button
                         id="githubButton"
                         className="loginFormButtons">
-                            Follow Me on GitHib
+                            Follow Me on GitHub
                     </button>
                 </a>
 
