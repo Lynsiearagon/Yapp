@@ -59,6 +59,10 @@
     margin: 50px;
 }
 
+#signupImage {
+    margin-top: 100px;
+}
+
 input:focus {
     outline: none !important;
     border-color: #009dff;
@@ -160,7 +164,6 @@ input:focus {
 
 #signUpDivTop {
     font-weight: bolder;
-    font-size: 14px;
     margin-top: 10px;
     margin-bottom: 15px;
 }
@@ -170,14 +173,6 @@ input:focus {
     text-align: right;
     font-size: 12px;
     color: #999;
-}
-
-#altsignupMessage {
-    width: 300px;
-    text-align: right;
-    font-size: 12px;
-    color: #999;
-    margin: 5px;
 }
 
 #signupInputZipcode {

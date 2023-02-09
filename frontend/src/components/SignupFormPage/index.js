@@ -64,6 +64,7 @@ const SignupFormPage = () => {
                 <span>
                     <p id="termsAndConditions">By continuing, you agree to Yapp's 
                         <a href="#" className="externalsignupFormLinks"> Terms of Service</a> and 
+                        aknowledge Yapp's
                         <a href="#" 
                         className="externalsignupFormLinks"> Privacy Policy</a>.
                     </p>
@@ -199,7 +200,8 @@ const SignupFormPage = () => {
 
             <div id="imageWrapper">
                 <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" 
-                    alt="Cartoon art of restaurant entry-way" />            
+                    alt="Cartoon art of restaurant entry-way" 
+                    id="signupImage"/>            
             </div>
         
         </div>
