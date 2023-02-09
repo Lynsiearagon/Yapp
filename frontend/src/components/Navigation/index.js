@@ -14,6 +14,8 @@ const Navigation = () => {
                 <img src={require("../../images/whiteYappLogo.png")} alt="Logo" className="logo"/> : 
                 <img src={require("../../images/blackRedYappLogo.png")} alt="Logo" className="logo"/> }
             </Link>
+            {/* <div>[Placeholder for search bar]</div> */}
+            {/* <div>[Placeholder for my links]</div> */}
             <SessionNavigation />
         </nav>
     )

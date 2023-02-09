@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux"
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import React from "react";
 
 const SessionNavigation = () => {
     const sessionUser = useSelector(state => state.session.user)
+    const location = useLocation();
 
     let sessionLinks; 
 
-    if (!sessionUser) {
+    if (!sessionUser && location.pathname === '/') {
         sessionLinks = (
             <>
                 <NavLink to="/login"><button>Log In</button></NavLink>
