@@ -1,31 +1,18 @@
-import { useSelector } from "react-redux"
-import { NavLink } from "react-router-dom"
-import React from "react";
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import React from 'react';
+import './Navigation.css';
 
 const Navigation = () => {
-    const sessionUser = useSelector(state => state.session.user)
-
-    let sessionLinks; 
-
-    if (!sessionUser) {
-        sessionLinks = (
-            <>
-                <NavLink to="/login"><button>Log In</button></NavLink>
-                <NavLink to="/signup"><button>Sign Up</button></NavLink>
-            </>
-        )
-    }
+    const location = useLocation();
 
     return (
-        <>
-            <ol>
-                <button><NavLink to="/">Yapp</NavLink></button>
-                {sessionLinks}
-            </ol>
-        </>
+        <Link>
+            {location.pathname === '/' ? 
+            <img src={require("../../images/whiteYappLogo.png")} alt="Logo" className="logo"/> : 
+            <img src={require("../../images/blackRedYappLogo.png")} alt="Logo" className="logo"/> }
+        </Link>
     )
+};
 
-}
-
-
-export default Navigation
+export default Navigation;

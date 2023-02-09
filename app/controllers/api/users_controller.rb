@@ -6,11 +6,8 @@ class Api::UsersController < ApplicationController
   # before_action :require_logged_out, only: [:create]
 
   def create
-    debugger
     @user = User.new(user_params)
-    
-    debugger
-
+  
     if @user.save
       login!(@user)
       render :show
@@ -38,7 +35,6 @@ class Api::UsersController < ApplicationController
   private 
 
   def user_params
-    debugger
     params.require(:user).permit(
       :first_name, 
       :last_name,
