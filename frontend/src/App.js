@@ -3,12 +3,14 @@ import {Route, Switch} from 'react-router-dom';
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
+import SplashPage from "./components/SplashPage";
 
 
 function App() {
   return (
     <>
       <Navigation />
+        <SplashPage />
         <Switch>
           <Route path='/login'>
             <LoginFormPage />

@@ -27,5 +27,4 @@ const SessionNavigation = () => {
 
 }
 
-
 export default SessionNavigation

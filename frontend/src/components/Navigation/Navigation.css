@@ -28,6 +28,8 @@
     justify-content: space-between;
     border-bottom: 1px solid;
     border-color: #e7e6e6;
+    z-index: 1;
+    position: relative;
 }
 
 #signUpHPButton {
