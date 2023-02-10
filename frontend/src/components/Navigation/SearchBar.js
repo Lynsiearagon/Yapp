@@ -13,7 +13,7 @@ const SearchBar = () => {
             <>
                 <input type="text" id="searchBar"/>
                 <button type="submit" id="searchButton"> 
-                    <img src={require("../../images/magnifyingGlass.png")} alt="search" />
+                    <img src={require("../../images/magnifyingGlass.png")} alt="search" id="magGlass"/>
                 </button>
             </>
         )
