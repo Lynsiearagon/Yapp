@@ -9,7 +9,7 @@ const SplashPageImage = () => {
     return (
         <div>
             {location.pathname === '/' ? 
-            <img src={require("./../../images/tapasPhoto.jpg")} alt="tapas on table" id="tapasImg"/> :
+            <img src={require("./../../images/bbq.jpg")} alt="tapas on table" id="tapasImg"/> :
             null }
         </div>
     )
