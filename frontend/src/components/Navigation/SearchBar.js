@@ -11,7 +11,7 @@ const SearchBar = () => {
     if ((location.pathname !== '/login') && (location.pathname !== '/signup')) {
         showSearchBar = (
             <>
-                <input type="text" id="searchBar"/>
+                <input type="text" id="searchBar" placeholder="tacos, cheap dinner, Max's"/>
                 <button type="submit" id="searchButton"> 
                     <img src={require("../../images/magnifyingGlass.png")} alt="search" id="magGlass"/>
                 </button>

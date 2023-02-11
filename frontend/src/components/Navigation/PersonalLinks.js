@@ -10,7 +10,7 @@ const PersonalLinks = () => {
 
     if ((location.pathname !== '/login') && (location.pathname !== '/signup')) {
         links = (
-            <div>
+            <div id="personalLinksDiv">
                 <span>
                     <a href="https://github.com/Lynsiearagon" 
                         target="_blank" 
