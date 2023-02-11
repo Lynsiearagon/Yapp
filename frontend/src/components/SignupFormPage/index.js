@@ -53,7 +53,7 @@ const SignupFormPage = () => {
                 {errors.map(error => <li id="errorsLi" key={error.id}>{error}</li>)}
             </ul>
 
-            <div id="formAndImageWrapper" >
+            <div id="formAndImageWrapperSignUp" >
 
             <div id="signupPageWrapper">
             <header id="signupHeaderDiv">

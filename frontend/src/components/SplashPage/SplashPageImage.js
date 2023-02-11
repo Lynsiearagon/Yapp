@@ -9,7 +9,12 @@ const SplashPageImage = () => {
     return (
         <div>
             {location.pathname === '/' ? 
-            <img src={require("./../../images/bbq.jpg")} alt="tapas on table" id="tapasImg"/> :
+            
+            <div id="imageRotation" className="fadein">
+                <img src={require("./../../images/tacos2.jpg")} alt="place of tacos" id="tacos2"/>
+                <img src={require("./../../images/breakfast.jpg")} alt="table of breakfast" id="breakfast"/> 
+                <img src={require("./../../images/paella.jpg")} alt="paella and wine" id="paella"/>
+            </div> :
             null }
         </div>
     )

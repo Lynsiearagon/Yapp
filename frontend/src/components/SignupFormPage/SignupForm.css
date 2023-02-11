@@ -35,11 +35,11 @@
     color: #0073bb;
 }
 
-#formAndImageWrapper {
+#formAndImageWrapperSignUp {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 #githubButton {
