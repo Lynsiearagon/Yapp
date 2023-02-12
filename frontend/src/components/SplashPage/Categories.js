@@ -8,20 +8,22 @@ const Categories = () => {
 
     if (location.pathname === '/') 
     return (
-        <div id="categoryWrapper">
-            <h1 className="splashTitles">Categories</h1>
+            <div id="categorySectionWrapper">
+                <h1 className="splashTitles">Categories</h1>
 
-    {/* Once the restos are set up, map through and populate info */}
+        {/* Once the restos are set up, map through and populate info */}
 
-            <div >
-                <ul className="catItems">
-                    <li><button>Cat 1</button></li>
-                    <li><button>Cat 2</button></li>
-                    <li><button>Cat 3</button></li>
-                    <li><button>Cat 4</button></li>
-                </ul>
+                <div id="categoryButtonGrid">
+                    <div className="catButtonDiv"><button className="catButton">cat 1</button></div>
+                    <div className="catButtonDiv"><button className="catButton">cat 2</button></div>
+                    <div className="catButtonDiv"><button className="catButton">cat 3</button></div>
+                    <div className="catButtonDiv"><button className="catButton">cat 4</button></div>
+                    <div className="catButtonDiv"><button className="catButton">cat 5</button></div>
+                    <div className="catButtonDiv"><button className="catButton">cat 6</button></div>
+                    <div className="catButtonDiv"><button className="catButton">cat 7</button></div>
+                    <div className="catButtonDiv"><button className="catButton">cat 8</button></div>
+                </div>
             </div>
-        </div>
     )
 }
 
