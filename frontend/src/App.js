@@ -4,6 +4,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
+import LogoutButton from "./components/Navigation/Logout";
 
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route path='/signup'>
             <SignupFormPage />
+          </Route>
+          <Route path='/seeyousoon'>
+            
           </Route>
         </Switch>
     </>

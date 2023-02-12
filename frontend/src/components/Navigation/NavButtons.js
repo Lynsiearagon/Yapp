@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import { NavLink, useLocation } from "react-router-dom"
 import React from "react";
+import LogoutButton from "./Logout";
 
 const SessionNavigation = () => {
     const sessionUser = useSelector(state => state.session.user)
@@ -15,7 +16,11 @@ const SessionNavigation = () => {
                 <NavLink to="/signup"><button id="signUpHPButton">Sign Up</button></NavLink>
             </>
         )
-    }
+    } else if (sessionUser) {
+        sessionLinks = (
+            <LogoutButton />
+        )
+    };
 
     return (
         <div id="startSessionLinks">

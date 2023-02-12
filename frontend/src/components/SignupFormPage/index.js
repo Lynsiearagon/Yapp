@@ -14,6 +14,9 @@ const SignupFormPage = () => {
     const [password, setPassword] = useState('');
     const [zipcode, setZipcode] = useState('');
     const [birthday, setBirthday] = useState('');
+    const [month, setMonth] = useState('')
+    const [day, setDay] = useState('')
+    const [year, setYear] = useState('')
     const [errors, setErrors] = useState([]);
     const years = range(1901, 2023, 1);
     
@@ -23,6 +26,8 @@ const SignupFormPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]); 
+
+        birthday = setBirthday(`${month} ${day} ${year}`);
 
         return dispatch(sessionActions.signUpUser({
             firstName,
@@ -159,7 +164,8 @@ const SignupFormPage = () => {
                     <select 
                         name="month" 
                         id="monthSelector" 
-                        className="birthdaySelector">
+                        className="birthdaySelector"
+                        onChange={(e) => setMonth(e.target.value)}>
                         {
                             months.map((month) => {
                                 return <option value={month} key={month.id}>{month}</option>
@@ -169,7 +175,8 @@ const SignupFormPage = () => {
                     <select 
                         name="day" 
                         id="daySelector" 
-                        className="birthdaySelector">
+                        className="birthdaySelector"
+                        onChange={(e) => setDay(e.target.value)}>
                         {
                             days.map((day) => {
                                 return <option value={day} key={day.id}>{day}</option>
@@ -179,7 +186,8 @@ const SignupFormPage = () => {
                     <select 
                         name="year" 
                         id="yearSelector" 
-                        className="birthdaySelector">
+                        className="birthdaySelector"
+                        onChange={(e) => setYear(e.target.value)}>
                         {
                             years.map((year) => {
                                 return <option value={year} key={year.id}>{year}</option>

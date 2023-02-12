@@ -69,7 +69,7 @@ export const logoutUser = () => async (dispatch) => {
   });
   storeCurrentUser(null);
   dispatch(removeCurrentUser());
-  return res
+  return res;
 };
 
 const initialState = { 
