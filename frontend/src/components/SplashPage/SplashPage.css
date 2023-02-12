@@ -1,3 +1,8 @@
+/* #splashPageMain {
+    display: flex;
+    flex-direction: column;
+} */
+
 .fadein img {
     position:absolute;
     -webkit-animation-name: fade;
@@ -64,3 +69,48 @@
     -webkit-animation-delay: -5s;
 }
 
+#recentActivityWrapper {
+    /* background-color: chartreuse; */
+    position: relative;
+    margin-top: 590px;
+}
+
+.splashTitles {
+    font-size: 26px;
+    font-weight: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 50px; 
+}
+
+
+.RAIUserInfo {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 0.7%;
+    width: 70%;
+    height: auto;
+}
+
+.RAGrid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+#catTitle {
+
+}
+
+#catWrapper {
+    position: relative;
+    
+}
+
+.catItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

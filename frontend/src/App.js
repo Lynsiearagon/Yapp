@@ -4,7 +4,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
-import LogoutButton from "./components/Navigation/Logout";
+import SeeYouSoonPage from "./components/SeeYouSoonPage"
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route path='/seeyousoon'>
-            
+            <SeeYouSoonPage />
           </Route>
         </Switch>
     </>

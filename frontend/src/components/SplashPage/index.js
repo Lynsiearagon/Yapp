@@ -1,6 +1,7 @@
 import React from 'react';
 import RecentActivity from './RecentActivityList.js';
 import SplashPageImage from './SplashPageImage.js'
+import Categories from './Categories.js'
 
 
 const SplashPage = () => {
@@ -9,6 +10,7 @@ const SplashPage = () => {
         <main id="splashPageMain">
             <SplashPageImage />
             <RecentActivity />
+            <Categories />
         </main>
     )
 }
