@@ -51,4 +51,5 @@ group :development do
   gem "binding_of_caller"
   gem 'validates_zipcode'
   gem 'date_validator'
+  gem 'pg_json'
 end
