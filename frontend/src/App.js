@@ -5,13 +5,14 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import SeeYouSoonPage from "./components/SeeYouSoonPage"
+import Footer from "./components/Footer";
 
 
 function App() {
   return (
     <>
       <Navigation />
-        <SplashPage />
+      <SplashPage />
         <Switch>
           <Route path='/login'>
             <LoginFormPage />
@@ -23,6 +24,7 @@ function App() {
             <SeeYouSoonPage />
           </Route>
         </Switch>
+      <Footer />
     </>
   );
 }

@@ -7,6 +7,13 @@ const PersonalLinks = () => {
     const location = useLocation();
 
     let links; 
+    let color;
+
+    if (location.pathname === '/') {
+        color = "white"
+    } else {
+        color = "black"
+    };
 
     if ((location.pathname !== '/login') && (location.pathname !== '/signup')) {
         links = (
@@ -15,12 +22,12 @@ const PersonalLinks = () => {
                     <a href="https://github.com/Lynsiearagon" 
                         target="_blank" 
                         rel="noreferrer">
-                        <button className="personalLinks">GitHub</button>
+                        <button className="personalLinks" style={{color: color}}>GitHub</button>
                     </a>
                     <a href="https://www.linkedin.com/in/lynsie-aragon-87156a157/" 
                         target="_blank" 
                         rel="noreferrer">
-                        <button className="personalLinks">LinkedIn</button>
+                        <button className="personalLinks" style={{color: color}}>LinkedIn</button>
                     </a>
                 </span>
             </div>

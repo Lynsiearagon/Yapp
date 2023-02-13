@@ -103,7 +103,7 @@
     display: grid;
     gap: 25px;
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
+    justify-content: center;
 }
 
 #categorySectionWrapper {
@@ -125,7 +125,7 @@
 }
 
 .catButtonDiv {
-
+    
     width: 100%;
     height: 185px;
 }

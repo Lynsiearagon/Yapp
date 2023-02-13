@@ -8,12 +8,24 @@ const SessionNavigation = () => {
     const location = useLocation();
 
     let sessionLinks; 
+    let color; 
+
+    if (location.pathname === '/') {
+        color = "white"
+    } else {
+        color = "black"
+    };
+
 
     if ((!sessionUser && location.pathname !== '/login') && (!sessionUser && location.pathname !== '/signup')) {
         sessionLinks = (
             <>
-                <NavLink to="/login"><button id="logInHPButton">Log In</button></NavLink>
-                <NavLink to="/signup"><button id="signUpHPButton">Sign Up</button></NavLink>
+                <NavLink to="/login">
+                    <button id="logInHPButton" style={{color: color, borderColor: color}}>Log In</button>
+                </NavLink>
+                <NavLink to="/signup">
+                    <button id="signUpHPButton">Sign Up</button>
+                </NavLink>
             </>
         )
     } else if (sessionUser) {

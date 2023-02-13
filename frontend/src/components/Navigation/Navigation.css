@@ -4,12 +4,10 @@
     height: 40px;
     cursor: pointer;
     border-radius: 4px;
-    color: white;
     font-weight: bolder;
     background: transparent;
     margin-right: 10px;
     border-style: solid;
-    border-color: white;
     border-width: 2px;
 }
 
@@ -21,7 +19,6 @@
     width: 100px;
     height: 30px;
     margin-left: 40px;
-    /* margin-right: 40px; */
 }
 
 .logoDiv {
@@ -41,23 +38,20 @@
     border-color: #e7e6e6;
     z-index: 1;
     position: relative;
-
 }
 
 #signUpHPButton {
     margin-right: 50px;
     font-size: 16px;
+    font-weight: bolder;
     width: 90px;
     height: 40px;
     cursor: pointer;
     border-radius: 4px;
-    font-weight: bolder;
-    border-style: solid 2px;
-    background: transparent;
     background: #d32323;
     border-color: #d32323;
     border-style: solid;
-    color: white;
+    color: #ffffff;
 }
 
 #signUpHPButton:hover {
@@ -69,7 +63,6 @@
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-style: none;
-    /* box-shadow: 0px 0px 15px 0px rgb(211, 211, 211); */
     min-width: 200px;
     padding: 15px;
     font-size: 16px;
@@ -87,7 +80,6 @@
     border-style: none;
     border: transparent;
     background: transparent;
-    color: white;
     font-size: 16px;
     font-weight: bolder;
     padding: 10px 15px;

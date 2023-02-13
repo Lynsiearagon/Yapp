@@ -1,0 +1,57 @@
+#availability {
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+#contactInfo {
+    width: 375px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: rgb(171, 168, 168);
+    border-style: solid;
+    font-size: 14px;
+}
+
+#contactMeDiv {
+    width: 447px;
+    align-self: center;
+}
+
+#contactMessage {
+    font-size: 14px;
+    color: rgb(189, 38, 38);
+    margin-bottom: 15px;
+}
+
+#formAndImageWrapperSYS {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+#seeYouSoonHeaderDiv {
+    margin-bottom: 20px;
+    width: 447px;
+}
+
+#seeYouSoonHeader {
+    color: rgb(30, 27, 27);
+    font-weight: bolder;
+    font-size: 32px;
+    width: 300px;
+}
+
+#seeYouSoonImg {
+    width: 417px;
+    height: 309px;
+}
+
+#SYSimgDiv {
+    width: 417px;
+    height: 309px;
+}
