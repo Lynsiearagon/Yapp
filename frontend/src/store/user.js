@@ -52,7 +52,7 @@ const userReducer = (state = {}, action) => {
             newState[action.user.id] = action.user;
             return newState;
         case REMOVE_USER: 
-            delete newState[action.userId]
+            delete newState[action.userId];
             return newState;
         default: 
             return state
