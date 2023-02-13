@@ -1,17 +1,17 @@
 class User < ApplicationRecord
 
   validates :first_name, 
-    presence: true,
-    format: { without: URI::MailTo::EMAIL_REGEXP, message: "Sorry, you entered an invalid first name"}
+    presence: true
+    # format: { without: URI::MailTo::EMAIL_REGEXP, message: "Sorry, you entered an invalid first name"}
   validates :last_name, 
-    presence: true,
-    format: { without: URI::MailTo::EMAIL_REGEXP, message: "Sorry, you entered an invalid last name"} 
+    presence: true
+    # format: { without: URI::MailTo::EMAIL_REGEXP, message: "Sorry, you entered an invalid last name"} 
   validates :email, 
     uniqueness: true, 
     length: { in: 3..255 }, 
     format: { with: URI::MailTo::EMAIL_REGEXP} 
   validates :zipcode, zipcode: { country_code: :us }
-  validates :birthday, date: { before_or_equal_to: Date.today, message: "Cannot select future date" }
+  validates :birthday, date: { before_or_equal_to: Date.today, message: "Cannot select future date" }, allow_nil: true
   validates :password, length: { minimum: 6 }, allow_nil: true 
   validates :session_token, presence: true, uniqueness: true 
   before_validation :ensure_session_token

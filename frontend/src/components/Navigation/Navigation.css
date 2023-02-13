@@ -1,0 +1,125 @@
+#logInHPButton {
+    font-size: 16px;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bolder;
+    background: transparent;
+    margin-right: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#logInHPButton:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.logo {
+    width: 100px;
+    height: 30px;
+    margin-left: 40px;
+}
+
+.logoDiv {
+    width: 13.3%;
+    padding-right: 40px;
+    display: flex;
+}
+
+#navBar {
+    height: 100px;
+    min-width: 1057px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    border-color: #e7e6e6;
+    z-index: 1;
+    position: relative;
+}
+
+#signUpHPButton {
+    margin-right: 50px;
+    font-size: 16px;
+    font-weight: bolder;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #d32323;
+    border-color: #d32323;
+    border-style: solid;
+    color: #ffffff;
+}
+
+#signUpHPButton:hover {
+    background-color: #e00707;
+}
+
+#searchBar {
+    width: 90%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-style: none;
+    min-width: 200px;
+    padding: 15px;
+    font-size: 16px;
+    color: grey;
+}
+
+#searchBarDiv {
+    width: 50%;
+    min-width: 40%;
+    display: flex;
+    flex-direction: row;
+}
+
+.personalLinks {
+    border-style: none;
+    border: transparent;
+    background: transparent;
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.personalLinks:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+#personalLinksDiv {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#searchButton {
+    background: #d32323;
+    border-color: #d32323;
+    border-style: solid;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 6%;
+    cursor: pointer;
+    padding: 5px;    
+}
+
+#searchButton:hover {
+    background-color: #e00707;
+}
+
+#startSessionLinks {
+    display: flex;
+    flex-direction: row;
+}
+
+#magGlass {
+   height: 60%;
+   width: auto;
+}

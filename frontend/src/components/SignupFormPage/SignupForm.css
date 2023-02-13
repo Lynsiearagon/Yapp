@@ -1,0 +1,189 @@
+#birthdayLabel {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.birthdaySelector {
+    width: 100px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 1.29em;
+    box-sizing: border-box;
+    padding: 5px 9px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#errorsLi {
+    background: #fcd6d3;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 12px;
+    padding: 18px 18px 18px 24px;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 1.5em;
+    list-style: none;
+}
+
+.externalsignupFormLinks {
+    text-decoration: none;
+    color: #0073bb;
+}
+
+#formAndImageWrapperSignUp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* margin-top: 100px; */
+}
+
+#githubButton {
+    background-color: black;
+    margin-bottom: 15px;
+}
+
+#signupHeaderDiv > span {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#imageWrapper {
+    margin: 50px;
+}
+
+#signupImage {
+    margin-top: 100px;
+}
+
+input:focus {
+    outline: none !important;
+    border-color: #009dff;
+    box-shadow: 0 0 2px #009dff;
+}
+
+#linkedInButton {
+    background: #0073b1;
+    border-color: #0073bb;
+    color: white;
+}
+
+#optional {
+    font-weight: lighter;
+    font-size: 12px;
+    color: #999;
+}
+
+.signupInput {
+    display: block;
+    box-sizing: border-box;
+    padding: 5px 9px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 1.29em;
+    width: 300px;
+}
+
+#signupInputEmail {
+    margin: 10px;
+    margin-top: 7px;
+}
+
+#signupInputPassword {
+    margin-bottom: 10px;
+}
+
+#signupForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border-top: #cbcbcb solid 1px;
+}
+
+.signupFormButtons {
+    padding: 10px 13px;
+    font-size: 16px;
+    line-height: 1.3125em;
+    width: 300px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+    border-style: solid;
+}
+
+#signupHeader {
+    color: #d32323;
+    font-weight: bolder;
+    font-size: 21px;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+}
+
+#signupHeaderDiv {
+    margin-bottom: 30px;
+}
+
+#signupPageWrapper {
+    width: 300px;
+    margin: 80px;
+    align-items: center;
+}
+
+#nameDiv {
+    display: flex;
+    margin-top: 35px;
+}
+
+#firstName {
+    width: 148px;
+    margin-right: 2px;
+}
+
+#lastName {
+    width: 148px;
+    margin-left: 2px;
+}
+
+#reassuranceStatement {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#signUpDivTop {
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#signUpLinkBottom {
+    width: 300px;
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+}
+
+#signupInputZipcode {
+    margin-top: 5px
+}
+
+#submitFormButton {
+    background: #d32323;
+    border: #d32323;
+}
+
+#termsAndConditions {
+    line-height: 1.5em;
+}

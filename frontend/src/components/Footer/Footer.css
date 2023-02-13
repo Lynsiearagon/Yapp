@@ -1,0 +1,42 @@
+.ulFooterListTitle {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.language {
+    padding: 7px;
+    color: grey;
+    display: flex;
+    justify-content: center;
+}
+
+
+footer {
+    background-color: rgb(243, 241, 241);
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    align-content: baseline
+}
+
+.footerCol {
+    display: flex;
+    justify-content: center;
+    padding: 0px 100px 100px 100px;
+}
+
+#copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+.languageLists {
+    margin-left: 60px;
+    margin-right: 60px;
+}
