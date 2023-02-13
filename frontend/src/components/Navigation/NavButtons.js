@@ -30,7 +30,7 @@ const SessionNavigation = () => {
         )
     } else if (sessionUser) {
         sessionLinks = (
-            <NavLink to="/seeyousoon"><LogoutButton /></NavLink> 
+            <NavLink to="/seeyousoon"> <LogoutButton /> </NavLink> 
         )
     };
 

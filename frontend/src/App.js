@@ -12,7 +12,6 @@ function App() {
   return (
     <>
       <Navigation />
-      <SplashPage />
         <Switch>
           <Route path='/login'>
             <LoginFormPage />
@@ -22,6 +21,9 @@ function App() {
           </Route>
           <Route path='/seeyousoon'>
             <SeeYouSoonPage />
+          </Route>
+          <Route path='/'>
+            <SplashPage />
           </Route>
         </Switch>
       <Footer />
