@@ -4,7 +4,7 @@ const RECEIVE_RESTAURANT = 'restaurants/receiveRestaurant';
 const RECEIVE_RESTAURANTS = 'restaurants/receiveRestaurants';
 const REMOVE_RESTAURANTS = 'restaurants/removeRestaurants';
 
-export const receiveRestaurants = () => ({
+export const receiveRestaurants = (restaurants) => ({
     type: RECEIVE_RESTAURANTS, 
     restaurants
 });

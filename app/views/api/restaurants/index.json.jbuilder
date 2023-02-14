@@ -1,4 +1,4 @@
-restaurants.each do |restaurant| 
+@restaurants.each do |restaurant| 
     json.set! restaurant.id do 
         json.extract! restaurant, 
             :id, 
@@ -9,7 +9,7 @@ restaurants.each do |restaurant|
             :opening_hours,
             :closing_hours, 
             :photo_url, 
-            :amenities
+            :amenities,
             :updated_at, 
             :created_at
     end
