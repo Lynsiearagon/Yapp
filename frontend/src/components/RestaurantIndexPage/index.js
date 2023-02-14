@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import './RestaurantIndexPage.css'
-import * as restaurantActions from '../../store/restaurants'
-import { useSelector } from 'react-redux'
 
+
+import './RestaurantIndexPage.css'
+import RestaurantIndexItem from './RestaurantIndexItem'
 
 
 const RestaurantIndexPage = () => {
-    const dispatch = useDispatch();
-    const restaurants = useSelector(restaurantActions.getRestaurants);
-
-    useEffect(() => {
-        dispatch(restaurantActions.fetchRestaurants())
-    }, []);
 
     return (
 
@@ -23,11 +15,7 @@ const RestaurantIndexPage = () => {
             </div>
 
             <div id="indexListingsDiv" className="restoIdxColumn">
-                {
-                    restaurants.map((resto) => {
-                        return (<div>{resto.restaurantName}</div>)
-                    })
-                }
+                <RestaurantIndexItem />
             </div>
 
             <div id="mapDiv" className="restoIdxColumn">
