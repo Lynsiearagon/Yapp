@@ -14,9 +14,9 @@ const SignupFormPage = () => {
     const [password, setPassword] = useState('');
     const [zipcode, setZipcode] = useState('');
     const [birthday, setBirthday] = useState('');
-    const [month, setMonth] = useState('')
-    const [day, setDay] = useState('')
-    const [year, setYear] = useState('')
+    const [month, setMonth] = useState('');
+    const [day, setDay] = useState('');
+    const [year, setYear] = useState('');
     const [errors, setErrors] = useState([]);
     const years = range(1901, 2023, 1);
     
@@ -48,8 +48,16 @@ const SignupFormPage = () => {
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
             });
-            return setErrors([])
-    }
+            return setErrors([]);
+    };
+
+        const demoUserLogin = (e) => {
+        e.preventDefault();
+        dispatch(sessionActions.login({
+            email: 'demo@user.io', 
+            password: 'password'}))
+    };
+    
 
     return (
 
@@ -94,7 +102,7 @@ const SignupFormPage = () => {
                     </button>
                 </a>
 
-                <p id="reassuranceStatement">Don't worry, we never post without your permission</p>
+                <p id="reassuranceStatement">Want to sign in quickly? Try signing in as Demo User!</p>
             </div>
 
             <form onSubmit={handleSubmit} id="signupForm">
@@ -200,10 +208,19 @@ const SignupFormPage = () => {
                     className="signupFormButtons" 
                     type="submit">Sign Up
                 </button>
+
+                <p id="signUpLinkBottom">Already on Yapp? <span>
+                <a href="/login" className="externalsignupFormLinks">Log in</a></span> or </p>
+
+                <button 
+                    id="demoUserSubmitFormButton" 
+                    className="signupFormButtons" 
+                    onClick={demoUserLogin}
+                    type="submit">Sign In as Demo User
+                </button>
             </form>
 
-            <p id="signUpLinkBottom">Already on Yapp? <span>
-                <a href="/login" className="externalsignupFormLinks">Log in</a></span></p>
+            
             </div>
 
             <div id="imageWrapper">

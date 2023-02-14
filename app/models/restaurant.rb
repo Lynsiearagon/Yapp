@@ -1,5 +1,6 @@
 class Restaurant < ApplicationRecord
 
+
     validates :restaurant_name, presence: true 
     validates :latitude, presence: true 
     validates :longitude, presence: true 

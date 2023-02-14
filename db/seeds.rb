@@ -64,6 +64,15 @@ ApplicationRecord.transaction do
       menu_link: '',
       latitude: 40.732440744472804,
       longitude: -74.00085076556799,
+      hours: '{
+        "Monday": "5:00 PM - 11:00 PM",
+        "Tuesday": "5:00 PM - 11:00 PM",
+        "Wednesday": "5:00 PM - 11:00 PM",
+        "Thursday": "5:00 PM - 11:00 PM",
+        "Friday": "5:00 PM - 11:00 PM",
+        "Saturday": "5:00 PM - 11:00 PM",
+        "Sunday": "5:00 PM - 11:00 PM",
+      }'
     )
 
     Restaurant.create!(
@@ -86,6 +95,15 @@ ApplicationRecord.transaction do
       menu_link: 'https://qrcodes.pro/0Fgx7a',
       latitude: 40.73799902299168,
       longitude: -73.98927563702115,
+      hours: '{
+        "Monday": "5:00 PM - 10:00 PM",
+        "Tuesday": "5:00 PM - 10:00 PM",
+        "Wednesday": "5:00 PM - 10:00 PM",
+        "Thursday": "5:00 PM - 10:00 PM",
+        "Friday": "5:00 PM - 10:00 PM",
+        "Saturday": "11:00 AM - 3:00 PM, 5:00 PM - 10:00 PM",
+        "Sunday": "11:00 AM - 3:00 PM, 5:00 PM - 10:00 PM",
+      }'
     )
 
     Restaurant.create!(
@@ -107,7 +125,16 @@ ApplicationRecord.transaction do
       country: 'United States',
       menu_link: '',
       latitude: 40.68183280924385,
-      longitude: -73.96851428138494
+      longitude: -73.96851428138494,
+      hours: '{
+        "Monday": "Closed",
+        "Tuesday": "Closed",
+        "Wednesday": "8:00 AM - 10:00 PM",
+        "Thursday": "8:00 AM - 10:00 PM",
+        "Friday": "8:00 AM - 10:00 PM",
+        "Saturday": "8:00 AM - 10:00 PM",
+        "Sunday": "8:00 AM - 10:00 PM",
+      }'
     )
 
     puts "Done!"
