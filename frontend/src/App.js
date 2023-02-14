@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import SeeYouSoonPage from "./components/SeeYouSoonPage"
 import Footer from "./components/Footer";
+import RestaurantIndexPage from "./components/RestaurantIndexPage"
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path='/seeyousoon'>
             <SeeYouSoonPage />
+          </Route>
+          <Route path='/restaurants'>
+            <RestaurantIndexPage />
           </Route>
           <Route path='/'>
             <SplashPage />

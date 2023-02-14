@@ -21,6 +21,22 @@ export const removeRestaurants = (restaurantId) => ({
     restaurantId
 });
 
+export const getRestaurants = (state) => {
+    if (state.restaurants) {
+        return Object.values(state.restaurants)
+    } else {
+        return []
+    }
+}
+
+export const getRestaurant = (restaurantId) => state => {
+    if (state.restaurants) {
+        return state.restaurants[restaurantId]
+    } else {
+        return null
+    }
+}
+
 
 export const fetchRestaurants = () => async (dispatch) => {
     const res = await csrfFetch('/api/restaurants');
