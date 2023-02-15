@@ -8,8 +8,9 @@ const Filters = () => {
 
     return (
         <>
-        <h3>Filters</h3>
-        <PriceFilters />
+        <h3 id="filterHeader">Filters</h3>
+        <div><PriceFilters /></div>
+        
         
         </>
     )

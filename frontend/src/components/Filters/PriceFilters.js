@@ -6,10 +6,10 @@ const PriceFilters = () => {
 
     return (
         <div id="priceButtonsList">
-            <button>$</button>
+            <button id="oneDollarSign">$</button>
             <button>$$</button>
             <button>$$$</button>
-            <button>$$$$</button>
+            <button id="fourDollarSigns">$$$$</button>
         </div>
     )
 

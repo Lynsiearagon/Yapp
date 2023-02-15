@@ -37,7 +37,7 @@
     border-bottom: 1px solid;
     border-color: #e7e6e6;
     z-index: 1;
-    position: relative;
+    /* position: relative; */
 }
 
 #signUpHPButton {
@@ -122,10 +122,4 @@
 #magGlass {
    height: 60%;
    width: auto;
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
 }

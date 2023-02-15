@@ -9,16 +9,16 @@ import { useLocation } from 'react-router-dom';
 
 const Navigation = () => {
     const location = useLocation();
-    let sticky;
+    let position;
 
     if (location.pathname === '/restaurants') {
-        sticky = 'sticky'
+        position = 'sticky'
     } else {
-        sticky = null
+        position = 'relative'
     }
 
     return (
-        <nav id="navBar" className={sticky}>
+        <nav id="navBar" style={{position: position}}>
             <Logo />
             <SearchBar />
             <PersonalLinks />
