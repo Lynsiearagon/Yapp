@@ -68,10 +68,15 @@
     border-radius: 4px;
 }
 
-#restoName {
+.restoName {
     font-size: 24px;
     font-weight: bold;
     color: rgb(53, 53, 53);
+    text-decoration: none;
+}
+
+.restoName:hover {
+    text-decoration: underline;
 }
 
 #filtersSideBar {
@@ -119,5 +124,5 @@
 
 #commentIcon {
     margin-right: 5px;
-    width: 5%;
+    width: 4%;
 }
