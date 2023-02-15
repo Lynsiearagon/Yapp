@@ -37,6 +37,12 @@
     font-size: 14px;
 }
 
+#restoListings > li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 #imageAndRestoInfo {
     display: flex;
     flex-direction: row;
@@ -73,4 +79,45 @@
     flex-direction: column;
     padding-top: 40px;
     padding-left: 25px;
+}
+
+.clockIcon {
+    margin-right: 5px;
+    color: green;
+}
+
+.starIcon {
+    background-color: red;
+    color: white;
+    margin: 1px;
+    width: 3%;
+    height: auto;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+#amenitiesListing {
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+#cuisineFilterButton {
+    background-color: rgb(224, 223, 223);
+    border: none;
+    border-radius: 3px;
+    margin-right: 5px;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#cuisineFilterButton > a {
+    color: rgb(101, 101, 101);
+    text-decoration: none;
+}
+
+#commentIcon {
+    margin-right: 5px;
+    width: 5%;
 }
