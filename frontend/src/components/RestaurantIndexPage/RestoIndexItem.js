@@ -15,15 +15,16 @@ const RestaurantIndexItem = () => {
     return (   
 
         restaurants.map((resto, i) => {
+
             return (
                 <div id='imageAndRestoInfo'>   
-                    <img src="" alt="image placeholder" id="restoImage"/>                      
+                    <img src="https://www.willflyforfood.net/wp-content/uploads/2021/09/moroccan-food-shakshouka.jpg" alt="image placeholder" id="restoImage"/>                      
                     <ul id="restoListings" key={resto.id}>
                         <h2 id="restoName">{i+1}. {resto.restaurantName}</h2>
-                        <li>star placeholder</li>
-                        <li>{resto.cuisine} {resto.price} {resto.neighborhood}</li>
-                        <li>hours placeholder</li>
-                        <li>Review snippet placeholder</li>
+                        <li>[star placeholder]</li>
+                        <li>{resto.cuisine} • {resto.price} • {resto.neighborhood}</li>
+                        <li>[hours placeholder]</li>
+                        <li>[Review snippet placeholder]</li>
                         <li>{resto.amenities}</li>
                     </ul>
                 </div>  

@@ -7,9 +7,9 @@
 }
 
 .restoIdxColumn {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
+    /* border-color: black;
+    border-style: solid; */
+    /* border-width: 1px; */
     min-height: 200px;
     height: auto;
     display: flex;
@@ -31,9 +31,9 @@
 }
 
 #restoListings {
-    border-color: red;
-    border-style: solid;
-    border-width: 1px;
+    /* border-color: red; */
+    /* border-style: solid; */
+    /* border-width: 1px; */
     width: 65%;
     height: 240px;
     display: flex;
@@ -64,9 +64,6 @@
     width: 30%;  
     min-width: 200px;
     height: auto;
-    border-color: pink;
-    border-width: 2px;
-    border-style: solid;
     margin-right: 20px;
     border-radius: 4px;
 }
@@ -75,4 +72,10 @@
     font-size: 24px;
     font-weight: bold;
     color: rgb(53, 53, 53);
+}
+
+#filtersSideBar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
 }

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@react-google-maps/api": "^2.18.1",
     "google-maps-react": "^2.0.6",
     "normalize.css": "^8.0.1"
   }
