@@ -10,8 +10,6 @@ const Filters = () => {
         <>
         <h3 id="filterHeader">Filters</h3>
         <div><PriceFilters /></div>
-        
-        
         </>
     )
 
