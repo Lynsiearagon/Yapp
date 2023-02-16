@@ -33,12 +33,11 @@ const RestaurantShowPage = () => {
         <div id="restoShowPageWrapper">
             <header id="RestoHeaderDiv">
                 <h1 id="restoNameHeader">{restaurant.restaurantName}</h1>
-                <div id="stars">
-                    <BsStarFill className="starIcon"/>
-                    <BsStarFill className="starIcon"/>
-                    <BsStarFill className="starIcon"/>
-                    <BsStarFill className="starIcon"/>
-                    756
+                <div id="starsOnRestoShowPageDiv">
+                    <BsStarFill className="starsOnRestoShowPage"/>
+                    <BsStarFill className="starsOnRestoShowPage"/>
+                    <BsStarFill className="starsOnRestoShowPage"/>
+                    <BsStarFill className="starsOnRestoShowPage"/>
                 </div>
                 <div id="priceAndCuisineWrapper">
                     <div id="priceRange">
@@ -48,7 +47,7 @@ const RestaurantShowPage = () => {
                         •
                     </div>
                     <div id="showPageCuisineButtons">
-                        <RestaurantIndexItemButton name={restaurant.cuisine} /> 
+                        <RestaurantIndexItemButton name={restaurant.cuisine} id="showPageCuisineActualButton" /> 
                     </div>
                 </div>
                 <div id="todaysHours">

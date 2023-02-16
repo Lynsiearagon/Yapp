@@ -9,7 +9,7 @@ const RestaurantIndexItemButton = ({name}) => {
 
             names.map((n) => {
                 return (
-                    <button id="cuisineFilterButton"><Link to={`/restaurants?cuisine=${n}`}>{n}</Link></button>
+                    <button><Link to={`/restaurants?cuisine=${n}`}>{n}</Link></button>
                 )
             })
         

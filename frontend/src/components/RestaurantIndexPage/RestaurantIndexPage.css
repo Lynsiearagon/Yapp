@@ -6,29 +6,35 @@
     flex-direction: row;
 }
 
+#RestoItemDivLink {
+    text-decoration: none;
+    color: rgb(116, 115, 115);
+}
+
 .restoIdxColumn {
     height: auto;
     display: flex;
 }
 
 #filtersSideBar {
-    width: 15%;
+    width: 12%;
     min-width: 220px;
 }
 
 #indexListingsDiv {
-    width: 50%;
+    width: 55%;
     display: flex;
     flex-direction: column;
     min-width: 750px;
+    margin-left: 1%;
 }
 
 #mapDiv {
-    width: 35%;
+    width: 33%;
 }
 
 #restoListings {
-    width: 65%;
+    width: 63%;
     height: 240px;
     display: flex;
     flex-direction: column;
@@ -116,14 +122,18 @@
     padding: 4px;
     font-size: 12px;
     font-weight: bold;
-}
-
-#cuisineFilterButton > a {
     color: rgb(101, 101, 101);
     text-decoration: none;
 }
+
+/* #cuisineFilterButton > a {
+    color: rgb(101, 101, 101);
+    text-decoration: none;
+} */
 
 #commentIcon {
     margin-right: 5px;
     width: 4%;
 }
+
+

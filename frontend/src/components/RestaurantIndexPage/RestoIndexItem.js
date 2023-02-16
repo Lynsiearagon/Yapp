@@ -25,15 +25,15 @@ const RestaurantIndexItem = () => {
         restaurants.map((resto, i) => {
 
             return (
+                
+            <Link to={`/restaurants/${resto.id}`} id="RestoItemDivLink">
                 <div id='imageAndRestoInfo'>   
                     <img src="https://www.willflyforfood.net/wp-content/uploads/2021/09/moroccan-food-shakshouka.jpg" alt="image placeholder" id="restoImage"/>                      
                     <ul 
                         id="restoListings" 
                         key={resto.id}>
                             <h2 className="restoName">
-                                <Link to={`/restaurants/${resto.id}`} className="restoName">
-                                    {i+1}. {resto.restaurantName}
-                                </Link>
+                                {i+1}. {resto.restaurantName}
                             </h2>
                             <li> 
                                 <BsStarFill className="starIcon"/>
@@ -43,7 +43,7 @@ const RestaurantIndexItem = () => {
                                 1139
                             </li>
                             <li>
-                                <RestaurantIndexItemButton name={resto.cuisine}  id="cuisineFilterButton" /> • {resto.price} • {resto.neighborhood}
+                                <RestaurantIndexItemButton name={resto.cuisine} id="cuisineFilterButton" /> • {resto.price} • {resto.neighborhood}
                             </li>
                             <li>
                                 <BsClock className="clockIcon" /> <RestoHoursSingleLine times={resto.hours} />
@@ -56,6 +56,7 @@ const RestaurantIndexItem = () => {
                             </li>
                     </ul>
                 </div>  
+            </Link>
             )
         })
     );
