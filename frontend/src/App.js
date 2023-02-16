@@ -7,7 +7,7 @@ import SplashPage from "./components/SplashPage";
 import SeeYouSoonPage from "./components/SeeYouSoonPage"
 import Footer from "./components/Footer";
 import RestaurantIndexPage from "./components/RestaurantIndexPage"
-
+import RestaurantShowPage from "./components/RestaurantShowPage"
 
 function App() {
   return (
@@ -22,6 +22,9 @@ function App() {
           </Route>
           <Route path='/seeyousoon'>
             <SeeYouSoonPage />
+          </Route>
+          <Route path='/restaurants/:restaurantId'>
+            <RestaurantShowPage />
           </Route>
           <Route path='/restaurants'>
             <RestaurantIndexPage />

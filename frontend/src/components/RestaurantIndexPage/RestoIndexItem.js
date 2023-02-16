@@ -10,14 +10,12 @@ import { BsClock } from 'react-icons/bs';
 import RestaurantAmenitiesListings from './RestoAmenitiesListings';
 import { FaRegCommentAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
 
 
 const RestaurantIndexItem = () => {
     const dispatch = useDispatch();
     const restaurants = useSelector(restaurantActions.getRestaurants);
-    const restaurantId = useParams();
-
+    
     useEffect(() => {
         dispatch(restaurantActions.fetchRestaurants())
     }, []);
@@ -33,7 +31,7 @@ const RestaurantIndexItem = () => {
                         id="restoListings" 
                         key={resto.id}>
                             <h2 className="restoName">
-                                <Link to={`/restaurants/${restaurantId}`} className="restoName">
+                                <Link to={`/restaurants/${resto.id}`} className="restoName">
                                     {i+1}. {resto.restaurantName}
                                 </Link>
                             </h2>

@@ -33,7 +33,7 @@ const Map = ({restaurants, mapOptions = {}, mapEventHandlers = {}, markerEventHa
 const MapWrapper = (props) => {
 
     return (
-        <Wrapper apikey={process.env.REACT_APP_MAPS_API_KEY}>
+        <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
             <Map {...props} />
         </Wrapper>
     );
