@@ -18,7 +18,7 @@ const Map = ({restaurants, mapOptions = {}, mapEventHandlers = {}, markerEventHa
                     lat: 40.736437632541154,
                     lng: -73.99383014777163
                 },
-                zoom: 10,
+                zoom: 13,
                 ...mapOptions
             }))
         }
