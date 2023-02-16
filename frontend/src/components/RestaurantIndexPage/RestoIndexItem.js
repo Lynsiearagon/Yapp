@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import RestaurantIndexItemButton from './RestoIndexItemButton';
 import { BsStarFill } from 'react-icons/bs';
-import RestoHours from './RestoHours';
+import { RestoHoursFullList, RestoHoursSingleLine } from './RestoHours';
 import { BsClock } from 'react-icons/bs';
 import RestaurantAmenitiesListings from './RestoAmenitiesListings';
 import { FaRegCommentAlt } from "react-icons/fa";
@@ -46,7 +46,7 @@ const RestaurantIndexItem = () => {
                                 <RestaurantIndexItemButton name={resto.cuisine}  id="cuisineFilterButton" /> • {resto.price} • {resto.neighborhood}
                             </li>
                             <li>
-                                <BsClock className="clockIcon" /> <RestoHours times={resto.hours} />
+                                <BsClock className="clockIcon" /> <RestoHoursSingleLine times={resto.hours} />
                             </li>
                             <li>
                                 <FaRegCommentAlt id="commentIcon" /> <p>My husband and I happened to stumble across this place Saturday night and it was AMAZING!!!</p>

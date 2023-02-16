@@ -1,60 +1,93 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import { getRestaurant } from "../../store/restaurants";
+import { fetchRestaurant, getRestaurant } from "../../store/restaurants";
 import './RestaurantShowPage.css'
-import RestoHours from "../RestaurantIndexPage/RestoHours";
+import { RestoHoursFullList, RestoHoursSingleLine } from "../RestaurantIndexPage/RestoHours";
 import MapWrapper from "../Map/Map";
 import { BsStarFill } from 'react-icons/bs';
 import RestaurantIndexItemButton from "../RestaurantIndexPage/RestoIndexItemButton";
+import Address from "./address";
+
+
 
 const RestaurantShowPage = () => {
+    const dispatch = useDispatch();
     const { restaurantId } = useParams();
-    const restaurant = useSelector(getRestaurant(restaurantId))
+    const restaurant = useSelector(getRestaurant(restaurantId));
 
     console.log(restaurant)
+
+    useEffect(() => {
+        dispatch(fetchRestaurant(restaurantId))
+    }, [restaurantId, dispatch]);
+
+    if (!restaurant) {
+        return (
+            <div>loading..</div>
+        )
+    }
 
     return (
         
         <div id="restoShowPageWrapper">
             <header id="RestoHeaderDiv">
                 <h1 id="restoNameHeader">{restaurant.restaurantName}</h1>
-                <div>
+                <div id="stars">
                     <BsStarFill className="starIcon"/>
                     <BsStarFill className="starIcon"/>
                     <BsStarFill className="starIcon"/>
                     <BsStarFill className="starIcon"/>
                     756
                 </div>
-                <div>
-                    {restaurant.price} 
-                    <RestaurantIndexItemButton name={restaurant.cuisine} /> 
+                <div id="priceAndCuisineWrapper">
+                    <div id="priceRange">
+                        {restaurant.price}
+                    </div>
+                    <div id="divider">
+                        •
+                    </div>
+                    <div id="showPageCuisineButtons">
+                        <RestaurantIndexItemButton name={restaurant.cuisine} /> 
+                    </div>
+                </div>
+                <div id="todaysHours">
+                    <RestoHoursSingleLine times={restaurant.hours} />
                 </div>
 
             </header>
+
             <div id="imgBanner">
                 <img src="https://burst.shopifycdn.com/photos/flatlay-iron-skillet-with-meat-and-other-food.jpg?width=1200&format=pjpg&exif=1&iptc=1" alt="table of food" id="restoImgBanner"/>
             </div>
             
-            <div id="locationAndHoursWrapper">
-                <h2 id="hoursAndLocationHeader">Hours & Location</h2>
-                <div id="mapAndAddressWrapper">
-                    <div id="smallMapLocation">
-                        <MapWrapper />
+                <div id="locationAndHoursWrapper">
+                    <div id="hoursAndLocationHeaderDiv">
+                        <h2 id="hoursAndLocationHeader">Hours & Location</h2>
                     </div>
-                    <div id="address">
-                        {restaurant.streetAddress}
-                        {restaurant.city}{restaurant.state}{restaurant.zipcode}
-                        {restaurant.neighborhood}
+
+                    <div id="mapImageAndHoursWrapper">
+                        <div id="mapAndAddressWrapper">
+                            <div id="smallMapLocation">
+                                <MapWrapper />
+                            </div>
+                            <div>
+                                <Address 
+                                    street={restaurant.streetAddress}
+                                    city={restaurant.city}
+                                    zipcode={restaurant.zipcode}
+                                    state={restaurant.state}
+                                    neighborhood={restaurant.neighborhood}
+                                />
+                            </div>
+                        </div>
+                        <div id="hours">
+                            <RestoHoursFullList times={restaurant.hours} />
+                        </div>
                     </div>
                 </div>
-                <div id="hours">
-                    <RestoHours times={restaurant.hours} />
-                </div>
+
             </div>
-
-
-        </div>
     )
 
 }

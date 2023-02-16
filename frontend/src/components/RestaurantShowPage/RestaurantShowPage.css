@@ -10,6 +10,7 @@
     left: 0;
     background-origin: border-box;
     background-repeat: no-repeat;
+    filter: brightness(45%);
 }
 
 #smallMapLocation {
@@ -28,23 +29,100 @@
     padding-top: 250px;
     z-index: 1;
     position: relative;
+    font-size: 14px;
+    min-width: 400px;
 }
 
 #locationAndHoursWrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 100px;
+    margin-left: 200px;
     border-top: lightgrey solid 1px;
     border-bottom: lightgrey solid 1px;
-    width: 60%;
-    height: 300px;
-    align-items: center;
-    /* padding-top: 50px; */
-    /* padding-bottom: 50px; */
+    width: 65%;
+    height: auto;
 }
 
 #hours {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    font-weight: 600;
+    width: 400px;
+    line-height: 30px;
+    min-width: 400px;
+    color: rgb(37, 37, 37);
+}
+
+
+#locationAndHoursDiv {
+    background-color: blueviolet;
+}
+
+
+#hoursAndLocationHeaderDiv {
+    display: flex;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+#hoursAndLocationHeader {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+#mapImageAndHoursWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    min-width: 400px;
+}
+
+#address {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+#mapAndAddressWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#priceAndCuisineWrapper {
+    font-size: 16px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+#priceRange {
+    font-weight: bold;
+    color: white;
+}
+
+#divider {
+    font-weight: bolder;
+    color: white;
+}
+
+
+#todaysHours {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+
+#stars {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
 }

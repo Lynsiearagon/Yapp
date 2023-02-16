@@ -13,6 +13,7 @@ json.restaurant do
         :about_restaurant, 
         :street_address, 
         :city, 
+        :state, 
         :zipcode, 
         :country,
         :menu_link,
