@@ -41,7 +41,7 @@
     margin-left: 200px;
     border-top: lightgrey solid 1px;
     border-bottom: lightgrey solid 1px;
-    width: 65%;
+    width: 50%;
     height: auto;
 }
 
@@ -146,10 +146,10 @@
     margin-left: 200px;
     margin-bottom: 20px;
     border-bottom: lightgrey solid 1px;
-    width: 60%;
+    width: 50%;
     height: auto;
     padding-bottom: 20px;
-    width: 650px;
+    /* width: 650px; */
 }
 
 #amenitiesAndMoreHeader {
@@ -159,17 +159,17 @@
     margin-left: 200px;
 }
 
-/* #amenitiesAndMoreWrapper {
-
-} */
+#amenitiesAndMoreWrapper {
+    width: 100%;
+}
 
 #aboutTheRestoDiv {
-    padding-bottom: 25px;
-    margin-left: 200px;
-    margin-bottom: 20px;
-    border-bottom: lightgrey solid 1px;
-    width: 60%;
-    height: auto;
+padding-bottom: 25px;
+margin-left: 200px;
+margin-bottom: 20px;
+border-bottom: lightgrey solid 1px;
+width: 50%;
+height: auto;
 }
 
 #aboutTheRestoHeader {
@@ -177,4 +177,21 @@
     font-size: 20px;
     padding-bottom: 20px;
     margin-left: 200px;
+}
+
+#reviewsHeader {
+    font-weight: 800;
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin-left: 200px;
+}
+
+#ReviewsSection {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+#reviewDiv {
+    margin-bottom: 25px;
 }

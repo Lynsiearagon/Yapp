@@ -16,6 +16,9 @@ const RecentActivity = () => {
             <div >
                 <ul className="RAGrid">
                     <RecentActivityItem />
+                    <RecentActivityItem />
+                    <RecentActivityItem />
+                    <RecentActivityItem />
                 </ul>
             </div>
         </div>

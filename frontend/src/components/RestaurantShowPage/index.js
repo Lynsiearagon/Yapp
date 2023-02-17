@@ -10,6 +10,7 @@ import RestaurantIndexItemButton from "../RestaurantIndexPage/RestoIndexItemButt
 import Address from "./address";
 import RestaurantAmenitiesListings from "../RestaurantIndexPage/RestoAmenitiesListings";
 import AboutTheRestaurant from "./AboutResto";
+import Review from "./Reviews";
 
 
 const RestaurantShowPage = () => {
@@ -58,7 +59,7 @@ const RestaurantShowPage = () => {
             </header>
 
             <div id="imgBanner">
-                <img src="https://burst.shopifycdn.com/photos/flatlay-iron-skillet-with-meat-and-other-food.jpg?width=1200&format=pjpg&exif=1&iptc=1" alt="table of food" id="restoImgBanner"/>
+                <img src="https://cdn.vox-cdn.com/thumbor/jzvbDm1UGW3rRA6S4me3uN4u9cM=/0x304:5758x3543/1200x675/cdn.vox-cdn.com/uploads/chorus_image/image/66216284/Quality_Bistro_1.0.jpg" alt="table of food" id="restoImgBanner"/>
             </div>
             
                 <div id="locationAndHoursWrapper">
@@ -101,6 +102,16 @@ const RestaurantShowPage = () => {
                         restoName={restaurant.restaurantName} 
                         about={restaurant.aboutRestaurant} />
                 </div>
+                </div>
+                <div>
+                    <h2 id="reviewsHeader">Recommended Reviews</h2>
+                    <div id="ReviewsSection">
+                        <Review />
+                        <Review />
+                        <Review />
+                        <Review />
+                        <Review />
+                    </div>
                 </div>
 
             </div>
