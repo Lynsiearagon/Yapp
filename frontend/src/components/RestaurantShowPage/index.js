@@ -8,7 +8,8 @@ import MapWrapper from "../Map/Map";
 import { BsStarFill } from 'react-icons/bs';
 import RestaurantIndexItemButton from "../RestaurantIndexPage/RestoIndexItemButton";
 import Address from "./address";
-
+import RestaurantAmenitiesListings from "../RestaurantIndexPage/RestoAmenitiesListings";
+import AboutTheRestaurant from "./AboutResto";
 
 
 const RestaurantShowPage = () => {
@@ -84,6 +85,22 @@ const RestaurantShowPage = () => {
                             <RestoHoursFullList times={restaurant.hours} />
                         </div>
                     </div>
+                </div>
+
+                <div id="amenitiesAndMoreWrapper">
+                    <h2 id="amenitiesAndMoreHeader">Amenities and More</h2>
+                    <div id="amenitiesDiv">
+                        <RestaurantAmenitiesListings name={restaurant.amenities} />
+                    </div>
+                </div>
+
+                <div>
+                <h2 id="aboutTheRestoHeader">About The Restaurant</h2>
+                <div id="aboutTheRestoDiv">
+                    <AboutTheRestaurant 
+                        restoName={restaurant.restaurantName} 
+                        about={restaurant.aboutRestaurant} />
+                </div>
                 </div>
 
             </div>

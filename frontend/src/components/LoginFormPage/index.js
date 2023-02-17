@@ -32,12 +32,19 @@ const LoginFormPage = () => {
             });
     }
 
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    };
+
     const demoUserLogin = (e) => {
         e.preventDefault();
         dispatch(sessionActions.login({
             email: 'demo@user.io', 
-            password: 'password'}))
-    }
+            password: 'password'
+        }))
+        scrollToTop();
+    };
+
     
     return (
         <>

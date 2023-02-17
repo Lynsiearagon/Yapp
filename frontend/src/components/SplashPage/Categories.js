@@ -15,6 +15,10 @@ import { CiCircleMore } from "react-icons/ci";
 const Categories = () => {
     const location = useLocation();
 
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    }
+
     if (location.pathname === '/') 
     return (
             <div id="categorySectionWrapper">
@@ -65,7 +69,7 @@ const Categories = () => {
                     </div>
                     <div className="catButtonDiv">
                         <button className="catButton">
-                            <Link to="/restaurants"> <CiCircleMore /> </Link>
+                            <Link to="/restaurants" onClick={scrollToTop}> <CiCircleMore /> </Link>
                             <p>More</p>
                         </button>
                     </div>
@@ -74,4 +78,4 @@ const Categories = () => {
     )
 }
 
-export default Categories
+export default Categories;

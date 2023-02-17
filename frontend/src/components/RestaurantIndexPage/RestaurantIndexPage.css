@@ -110,7 +110,8 @@
 
 #amenitiesListing {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-direction: row;
     margin-right: 15px;
 }
 
@@ -126,10 +127,10 @@
     text-decoration: none;
 }
 
-/* #cuisineFilterButton > a {
+#cuisineFilterButton > a {
     color: rgb(101, 101, 101);
     text-decoration: none;
-} */
+}
 
 #commentIcon {
     margin-right: 5px;

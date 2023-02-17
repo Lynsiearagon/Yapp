@@ -136,3 +136,45 @@
     border-radius: 5px;
     margin-right: 5px;
 }
+
+#amenitiesDiv {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding-top: 20px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+    border-bottom: lightgrey solid 1px;
+    width: 60%;
+    height: auto;
+    padding-bottom: 20px;
+    width: 650px;
+}
+
+#amenitiesAndMoreHeader {
+    font-weight: 800;
+    font-size: 20px;
+    padding-top: 20px;
+    margin-left: 200px;
+}
+
+/* #amenitiesAndMoreWrapper {
+
+} */
+
+#aboutTheRestoDiv {
+    padding-bottom: 25px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+    border-bottom: lightgrey solid 1px;
+    width: 60%;
+    height: auto;
+}
+
+#aboutTheRestoHeader {
+    font-weight: 800;
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin-left: 200px;
+}

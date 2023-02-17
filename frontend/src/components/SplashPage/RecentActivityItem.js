@@ -13,6 +13,10 @@ const RecentActivityItem = () => {
         dispatch(restaurantActions.fetchRestaurants());
     });
 
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    };
+
     return (
 
         restaurants.map((resto) => {
@@ -38,7 +42,7 @@ const RecentActivityItem = () => {
 
                     <div id="restoNameAndReview">
                         <li >
-                            <Link to={`/restaurants/${resto.id}`}  id="restoName"> 
+                            <Link to={`/restaurants/${resto.id}`}  id="restoName" onClick={scrollToTop}> 
                                 {resto.restaurantName} 
                             </Link>
                         </li>
