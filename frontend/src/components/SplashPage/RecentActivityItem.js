@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as restaurantActions from '../../store/restaurants';
 import { FaUserCircle } from "react-icons/fa";
@@ -11,7 +11,7 @@ const RecentActivityItem = () => {
     
     useEffect(() => {
         dispatch(restaurantActions.fetchRestaurants());
-    }, []);
+    });
 
     return (
 

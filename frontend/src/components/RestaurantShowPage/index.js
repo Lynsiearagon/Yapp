@@ -47,7 +47,7 @@ const RestaurantShowPage = () => {
                         •
                     </div>
                     <div id="showPageCuisineButtons">
-                        <RestaurantIndexItemButton name={restaurant.cuisine} id="showPageCuisineActualButton" /> 
+                        <RestaurantIndexItemButton name={restaurant.cuisine} id="showPageCuisineActualButton" />
                     </div>
                 </div>
                 <div id="todaysHours">

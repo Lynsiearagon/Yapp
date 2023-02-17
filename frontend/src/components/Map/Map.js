@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Wrapper } from '@googlemaps/react-wrapper';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import './Map.css'
 
 
 const Map = ({restaurants, mapOptions = {}, mapEventHandlers = {}, markerEventHandlers = {}}) => {
     const [map, setMap] = useState(null);
     const mapRef = useRef(null);
-    const markers = useRef();
-    const history = useHistory();
+    // const markers = useRef();
+    // const history = useHistory();
 
 
     useEffect(() => {
@@ -19,10 +19,11 @@ const Map = ({restaurants, mapOptions = {}, mapEventHandlers = {}, markerEventHa
                     lng: -73.99383014777163
                 },
                 zoom: 13,
-                ...mapOptions
+                ...mapOptions,
             }))
         }
     }, [mapRef, map, mapOptions]);
+
 
     return (
         <div ref={mapRef} className="map" > Map </div>

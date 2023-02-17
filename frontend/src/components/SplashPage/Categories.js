@@ -1,6 +1,15 @@
 import React from "react";
 import './SplashPage.css' 
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { FaPizzaSlice } from "react-icons/fa";
+import { FaHamburger } from "react-icons/fa";
+import { FaCocktail } from "react-icons/fa";
+import { FaCoffee } from "react-icons/fa";
+import { FaFish } from "react-icons/fa";
+import { FaBacon } from "react-icons/fa";
+import { GiSteak } from "react-icons/gi";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { CiCircleMore } from "react-icons/ci";
 
 
 const Categories = () => {
@@ -11,17 +20,55 @@ const Categories = () => {
             <div id="categorySectionWrapper">
                 <h1 className="splashTitles">Categories</h1>
 
-        {/* Once the restos are set up, map through and populate info */}
-
                 <div id="categoryButtonGrid">
-                    <div className="catButtonDiv"><button className="catButton">cat 1</button></div>
-                    <div className="catButtonDiv"><button className="catButton">cat 2</button></div>
-                    <div className="catButtonDiv"><button className="catButton">cat 3</button></div>
-                    <div className="catButtonDiv"><button className="catButton">cat 4</button></div>
-                    <div className="catButtonDiv"><button className="catButton">cat 5</button></div>
-                    <div className="catButtonDiv"><button className="catButton">cat 6</button></div>
-                    <div className="catButtonDiv"><button className="catButton">cat 7</button></div>
-                    <div className="catButtonDiv"><button className="catButton">cat 8</button></div>
+                    <div className="catButtonDiv">
+                        <button className="catButton"> 
+                            <FaPizzaSlice /> 
+                            <p>Pizza</p>
+                        </button>
+                    </div>
+                    <div className="catButtonDiv">
+                        <button className="catButton">
+                            <FaCocktail />
+                            <p>Bar</p>
+                        </button>
+                    </div>
+                    <div className="catButtonDiv">
+                        <button className="catButton">
+                            <FaFish />
+                            <p>Sea Food</p>
+                        </button>
+                    </div>
+                    <div className="catButtonDiv">
+                        <button className="catButton">
+                            <FaCoffee />
+                            <p>Coffee</p>
+                        </button>
+                    </div>
+                    <div className="catButtonDiv">
+                        <button className="catButton">
+                            <GiSteak />
+                            <p>Steak</p>
+                        </button>
+                    </div>
+                    <div className="catButtonDiv">
+                        <button className="catButton">
+                            <FaHamburger />
+                            <p>Hamburger</p>
+                        </button>
+                    </div>
+                    <div className="catButtonDiv">
+                        <button className="catButton">
+                            <FaBacon />
+                            <p>Brunch</p>
+                        </button>
+                    </div>
+                    <div className="catButtonDiv">
+                        <button className="catButton">
+                            <Link to="/restaurants"> <CiCircleMore /> </Link>
+                            <p>More</p>
+                        </button>
+                    </div>
                 </div>
             </div>
     )

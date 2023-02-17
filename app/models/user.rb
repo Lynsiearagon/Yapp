@@ -1,11 +1,7 @@
 class User < ApplicationRecord
 
-  validates :first_name, 
-    presence: true
-    # format: { without: URI::MailTo::EMAIL_REGEXP, message: "Sorry, you entered an invalid first name"}
-  validates :last_name, 
-    presence: true
-    # format: { without: URI::MailTo::EMAIL_REGEXP, message: "Sorry, you entered an invalid last name"} 
+  validates :first_name, presence: true 
+  validates :last_name, presence: true
   validates :email, 
     uniqueness: true, 
     length: { in: 3..255 }, 
@@ -38,6 +34,17 @@ class User < ApplicationRecord
     self.save! 
     self.session_token
   end 
+
+  # def name_checker
+
+  #   if (:first_name.length < 0) || (:last_name.length < 0)
+  #     render 'Invalid name cannot be blank'
+  #   elsif 
+  #     :first_name.include?('@') || :last_name.include?('@')
+  #     render 'Invalid name format'
+  #   end
+
+  # end 
   
   
   private 
