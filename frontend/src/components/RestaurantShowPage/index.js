@@ -18,8 +18,6 @@ const RestaurantShowPage = () => {
     const { restaurantId } = useParams();
     const restaurant = useSelector(getRestaurant(restaurantId));
 
-    console.log(restaurant)
-
     useEffect(() => {
         dispatch(fetchRestaurant(restaurantId))
     }, [restaurantId, dispatch]);
