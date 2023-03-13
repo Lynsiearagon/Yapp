@@ -49,6 +49,7 @@ group :development do
   gem "pry-rails"
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'validates_zipcode'
-  gem 'date_validator'
+  gem "validates_zipcode"
+  gem "date_validator"
+  gem "pg_json"
 end

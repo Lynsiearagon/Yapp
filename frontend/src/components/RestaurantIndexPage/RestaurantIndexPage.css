@@ -1,0 +1,140 @@
+#restoIndexPageWrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#RestoItemDivLink {
+    text-decoration: none;
+    color: rgb(116, 115, 115);
+}
+
+.restoIdxColumn {
+    height: auto;
+    display: flex;
+}
+
+#filtersSideBar {
+    width: 12%;
+    min-width: 220px;
+}
+
+#indexListingsDiv {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    min-width: 750px;
+    margin-left: 1%;
+}
+
+#mapDiv {
+    width: 33%;
+}
+
+#restoListings {
+    width: 63%;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#restoListings > li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#imageAndRestoInfo {
+    display: flex;
+    flex-direction: row;
+    padding: 24px;
+    border-bottom: rgb(228, 226, 226);
+    border-right: white;
+    border-left: white;
+    border-top: white;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#imageAndRestoInfo:hover {
+    box-shadow: 0px 0px 15px 0px rgb(216, 216, 216);
+    border-radius: 4px;
+}
+
+#restoImage {
+    width: 30%;  
+    min-width: 200px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+.restoName {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+}
+
+.restoName:hover {
+    text-decoration: underline;
+}
+
+#filtersSideBar {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 25px;
+}
+
+.clockIcon {
+    margin-right: 5px;
+    color: green;
+}
+
+.starIcon {
+    background-color: red;
+    color: white;
+    margin: 1px;
+    width: 3%;
+    height: auto;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+#amenitiesListing {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: row;
+    margin-right: 15px;
+}
+
+#cuisineFilterButton {
+    background-color: rgb(224, 223, 223);
+    border: none;
+    border-radius: 3px;
+    margin-right: 5px;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(101, 101, 101);
+    text-decoration: none;
+}
+
+#cuisineFilterButton > a {
+    color: rgb(101, 101, 101);
+    text-decoration: none;
+}
+
+#commentIcon {
+    margin-right: 5px;
+    width: 4%;
+}
+
+

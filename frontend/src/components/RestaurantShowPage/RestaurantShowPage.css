@@ -1,0 +1,197 @@
+
+#restoImgBanner {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    object-position: 0 90%;
+    position: absolute;
+    z-index: 0;
+    top: 100px;
+    left: 0;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    filter: brightness(45%);
+}
+
+#smallMapLocation {
+    width: 300px;
+    height: 150px;
+}
+
+#restoNameHeader {
+    font-size: 54px;
+    color: white;
+    font-weight: 800;
+}
+
+#RestoHeaderDiv {
+    padding-left: 200px;
+    padding-top: 250px;
+    z-index: 1;
+    position: relative;
+    font-size: 14px;
+    min-width: 400px;
+}
+
+#locationAndHoursWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: 200px;
+    border-top: lightgrey solid 1px;
+    border-bottom: lightgrey solid 1px;
+    width: 50%;
+    height: auto;
+}
+
+#hours {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-weight: 600;
+    width: 400px;
+    line-height: 30px;
+    min-width: 400px;
+    color: rgb(37, 37, 37);
+}
+
+
+#locationAndHoursDiv {
+    background-color: blueviolet;
+}
+
+
+#hoursAndLocationHeaderDiv {
+    display: flex;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+#hoursAndLocationHeader {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+#mapImageAndHoursWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    min-width: 400px;
+}
+
+#address {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+#mapAndAddressWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#priceAndCuisineWrapper {
+    font-size: 16px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+#priceRange {
+    font-weight: bold;
+    color: white;
+}
+
+#divider {
+    font-weight: bolder;
+    color: white;
+}
+
+
+#todaysHours {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+#starsOnRestoShowPageDiv {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.starsOnRestoShowPage {
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+#amenitiesDiv {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding-top: 20px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+    border-bottom: lightgrey solid 1px;
+    width: 50%;
+    height: auto;
+    padding-bottom: 20px;
+    /* width: 650px; */
+}
+
+#amenitiesAndMoreHeader {
+    font-weight: 800;
+    font-size: 20px;
+    padding-top: 20px;
+    margin-left: 200px;
+}
+
+#amenitiesAndMoreWrapper {
+    width: 100%;
+}
+
+#aboutTheRestoDiv {
+padding-bottom: 25px;
+margin-left: 200px;
+margin-bottom: 20px;
+border-bottom: lightgrey solid 1px;
+width: 50%;
+height: auto;
+}
+
+#aboutTheRestoHeader {
+    font-weight: 800;
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin-left: 200px;
+}
+
+#reviewsHeader {
+    font-weight: 800;
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin-left: 200px;
+}
+
+#ReviewsSection {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+#reviewDiv {
+    margin-bottom: 25px;
+}

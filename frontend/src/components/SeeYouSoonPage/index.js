@@ -12,7 +12,7 @@ const SeeYouSoonPage = () => {
                     Thanks for visiting.
                 </h2>
                 <p id="availability">
-                    Like what you saw? Please feel free to contact me. 
+                    Like what you see? Please feel free to contact me. 
                     <br /> I'm available Monday - Friday from 9 am to 7 pm.
                 </p>
             </header>

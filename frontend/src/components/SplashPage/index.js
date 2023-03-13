@@ -1,13 +1,15 @@
 import React from 'react';
 import RecentActivity from './RecentActivityList.js';
-import SplashPageImage from './SplashPageImage.js'
-import Categories from './Categories.js'
+import SplashPageImage from './SplashPageImage.js';
+import Categories from './Categories.js';
+import ToRestoIndexButton from './ButtontoRestoIndex.js';
 
 
 const SplashPage = () => {
 
     return (
         <main id="splashPageMain">
+            <ToRestoIndexButton />
             <SplashPageImage />
             <RecentActivity />
             <Categories />
@@ -15,4 +17,4 @@ const SplashPage = () => {
     )
 }
 
-export default SplashPage
+export default SplashPage;

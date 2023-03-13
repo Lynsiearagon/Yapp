@@ -6,13 +6,13 @@ import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import SeeYouSoonPage from "./components/SeeYouSoonPage"
 import Footer from "./components/Footer";
-
+import RestaurantIndexPage from "./components/RestaurantIndexPage"
+import RestaurantShowPage from "./components/RestaurantShowPage"
 
 function App() {
   return (
     <>
       <Navigation />
-      <SplashPage />
         <Switch>
           <Route path='/login'>
             <LoginFormPage />
@@ -22,6 +22,15 @@ function App() {
           </Route>
           <Route path='/seeyousoon'>
             <SeeYouSoonPage />
+          </Route>
+          <Route path='/restaurants/:restaurantId'>
+            <RestaurantShowPage />
+          </Route>
+          <Route path='/restaurants'>
+            <RestaurantIndexPage />
+          </Route>
+          <Route path='/'>
+            <SplashPage />
           </Route>
         </Switch>
       <Footer />

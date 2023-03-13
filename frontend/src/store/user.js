@@ -1,7 +1,7 @@
 import csrfFetch from './csrf.js'
 
-const RECEIVE_USER = `users/RECEIVE_USER`; 
-const REMOVE_USER = `users/REMOVE_USER`
+const RECEIVE_USER = 'users/RECEIVE_USER'; 
+const REMOVE_USER = 'users/REMOVE_USER'
 
 export const receiveUser = (user) => ({
     type: RECEIVE_USER,
@@ -52,7 +52,7 @@ const userReducer = (state = {}, action) => {
             newState[action.user.id] = action.user;
             return newState;
         case REMOVE_USER: 
-            delete newState[action.userId]
+            delete newState[action.userId];
             return newState;
         default: 
             return state

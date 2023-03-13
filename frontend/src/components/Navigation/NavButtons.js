@@ -1,7 +1,7 @@
+import React from "react";
 import { useSelector } from "react-redux"
 import { NavLink, useLocation } from "react-router-dom"
-import React from "react";
-import LogoutButton from "./Logout";
+import ProfileDropdown from './ProfileDropdown';
 
 const SessionNavigation = () => {
     const sessionUser = useSelector(state => state.session.user)
@@ -30,7 +30,7 @@ const SessionNavigation = () => {
         )
     } else if (sessionUser) {
         sessionLinks = (
-            <NavLink to="/seeyousoon"><LogoutButton /></NavLink> 
+            <NavLink to="/seeyousoon"> <ProfileDropdown /> </NavLink> 
         )
     };
 

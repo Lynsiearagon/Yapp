@@ -1,6 +1,6 @@
-import React from 'react'
-import RecentActivityItem from './RecentActivityItem'
-import { useLocation } from 'react-router-dom'
+import React from 'react';
+import RecentActivityItem from './RecentActivityItem';
+import { useLocation } from 'react-router-dom';
 
 
 const RecentActivity = () => {
@@ -19,15 +19,10 @@ const RecentActivity = () => {
                     <RecentActivityItem />
                     <RecentActivityItem />
                     <RecentActivityItem />
-                    <RecentActivityItem />
-                    <RecentActivityItem />
-                    <RecentActivityItem />
-                    <RecentActivityItem />
-                    <RecentActivityItem />
                 </ul>
             </div>
         </div>
     )
 }
 
-export default RecentActivity
+export default RecentActivity;
