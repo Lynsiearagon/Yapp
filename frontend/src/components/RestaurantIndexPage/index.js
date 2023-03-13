@@ -20,10 +20,7 @@ const RestaurantIndexPage = () => {
             </div>
 
             <div id="mapDiv" className="restoIdxColumn">
-                <MapWrapper 
-                // restaurants={restaurants}
-                // mapEventHandlers={mapEventHandlers}
-                 />
+                <MapWrapper />
             </div>
 
         </div>

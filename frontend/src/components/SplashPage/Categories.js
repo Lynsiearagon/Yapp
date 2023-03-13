@@ -67,12 +67,14 @@ const Categories = () => {
                             <p>Brunch</p>
                         </button>
                     </div>
-                    <div className="catButtonDiv">
-                        <button className="catButton">
-                            <Link to="/restaurants" onClick={scrollToTop}> <CiCircleMore /> </Link>
-                            <p>More</p>
-                        </button>
-                    </div>
+                    <Link to="/restaurants" onClick={scrollToTop} className="catButtonDiv"> 
+                        <div className="catButtonDiv">
+                            <button className="catButton">
+                                <CiCircleMore /> 
+                                <p>More</p>
+                            </button>
+                        </div>
+                    </Link>
                 </div>
             </div>
     )
