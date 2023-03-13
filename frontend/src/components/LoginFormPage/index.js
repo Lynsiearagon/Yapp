@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { Redirect } from 'react-router-dom';
+import linkedin from '../../images/icons8-linkedin-32.png';
+import github from '../../images/icons8-github-24.png';
+import wellfound from '../../images/wellfound-symbol-black.png'
 import './LoginForm.css'
 
 
@@ -77,7 +80,17 @@ const LoginFormPage = () => {
                     <button
                         id ="linkedInButton"
                         className="loginFormButtons">
-                            Follow Me on LinkedIn
+                            <img src={linkedin} alt="LinkedIn logo" id="linkedinLogo"/>
+                            <p>Follow Me on LinkedIn</p>
+                    </button>
+                </a>
+                <a href="https://angel.co/u/lynsie-aragon"
+                    target="_blank" rel="noreferrer">
+                    <button
+                        id ="wellFoundButton"
+                        className="loginFormButtons">
+                            <img src={wellfound} alt="Wellfound logo" id="wellfoundLogo"/>
+                            <p>Follow Me on Wellfound</p>
                     </button>
                 </a>
                 <a href="https://github.com/Lynsiearagon"
@@ -85,7 +98,8 @@ const LoginFormPage = () => {
                     <button
                         id="githubButton"
                         className="loginFormButtons">
-                            Follow Me on GitHub
+                            <img src={github} alt="Github Logo" id="githubLogo" />
+                            <p>Follow Me on GitHub</p>
                     </button>
                 </a>
 

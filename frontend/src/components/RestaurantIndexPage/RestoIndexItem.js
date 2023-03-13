@@ -20,13 +20,17 @@ const RestaurantIndexItem = () => {
         dispatch(restaurantActions.fetchRestaurants())
     }, []);
 
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    };
+
     return (   
 
         restaurants.map((resto, i) => {
 
             return (
                 
-            <Link to={`/restaurants/${resto.id}`} id="RestoItemDivLink">
+            <Link to={`/restaurants/${resto.id}`} id="RestoItemDivLink" onClick={scrollToTop}>
                 <div id='imageAndRestoInfo'>   
                     <img src="https://b.zmtcdn.com/data/pictures/1/19820841/6e14f718013d279f0f4525d4731cd985.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A" id="restoImage"/>                      
                     <ul 

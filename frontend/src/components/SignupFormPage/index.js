@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { Redirect } from 'react-router-dom';
-import './SignupForm.css'
+import linkedin from '../../images/icons8-linkedin-32.png';
+import github from '../../images/icons8-github-24.png';
+import wellfound from '../../images/wellfound-symbol-black.png'
 import { range, days, months } from './_signupUtils.js'
+import './SignupForm.css'
 
 const SignupFormPage = () => {
     const dispatch = useDispatch();
@@ -97,7 +100,17 @@ const SignupFormPage = () => {
                     <button
                         id ="linkedInButton"
                         className="signupFormButtons">
-                            Follow Me on LinkedIn
+                            <img src={linkedin} alt="LinkedIn logo" id="linkedinLogo"/>
+                            <p>Follow Me on LinkedIn</p>
+                    </button>
+                </a>
+                <a href="https://angel.co/u/lynsie-aragon"
+                    target="_blank" rel="noreferrer">
+                    <button
+                        id ="wellFoundButton"
+                        className="signupFormButtons">
+                            <img src={wellfound} alt="Wellfound logo" id="wellfoundLogo"/>
+                            <p>Follow Me on Wellfound</p>
                     </button>
                 </a>
                 <a href="https://github.com/Lynsiearagon"
@@ -105,7 +118,8 @@ const SignupFormPage = () => {
                     <button
                         id="githubButton"
                         className="signupFormButtons">
-                            Follow Me on GitHub
+                            <img src={github} alt="Github Logo" id="githubLogo"/>
+                            <p>Follow Me on GitHub</p>
                     </button>
                 </a>
 
