@@ -1,7 +1,30 @@
 {
+  "name": "yapp",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lynsiearagon/Yapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lynsiearagon/Yapp/issues"
+  },
+  "homepage": "https://github.com/Lynsiearagon/Yapp#readme",
   "dependencies": {
     "@react-google-maps/api": "^2.18.1",
     "google-maps-react": "^2.0.6",
     "normalize.css": "^8.0.1"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
