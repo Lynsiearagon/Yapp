@@ -9,7 +9,7 @@ const RestaurantAmenitiesListings = ({name}) => {
 
             names.map((n) => {
                 return (
-                    <div id="amenitiesListing">{n}</div>
+                    <div id="amenitiesListing" key={n}>{n}</div>
                 )
             })
         

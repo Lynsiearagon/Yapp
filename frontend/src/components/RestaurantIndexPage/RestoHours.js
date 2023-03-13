@@ -17,7 +17,7 @@ export const RestoHoursSingleLine = ({times}) => {
 
         businessHours.split(",").map((bh) => {
             if (bh.includes(day)) {
-                return <div>{bh}</div>
+                return <div key={bh}>{bh}</div>
             }
         })
     );
@@ -34,7 +34,7 @@ export const RestoHoursFullList = ({times}) => {
     return (
 
         businessHours.split(",").map((bh) => {
-            return <div>{bh}</div>
+            return <div key={bh}>{bh}</div>
         })
     );
 

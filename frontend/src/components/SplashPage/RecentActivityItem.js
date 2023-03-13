@@ -22,7 +22,7 @@ const RecentActivityItem = () => {
         restaurants.map((resto) => {
 
             return (
-                <ul className="RAIUserInfo">
+                <ul className="RAIUserInfo" key={resto.id}>
                     <div id="iconUNWroteAReviewWrapper">
                         <li>
                             <FaUserCircle id="userPhotoIcon" />
@@ -37,17 +37,19 @@ const RecentActivityItem = () => {
                         </div>
                     </div>
                     <li>
-                        <img src="https://lh3.googleusercontent.com/p/AF1QipNRQSMI33tURrINsgTZD-3_ijCeJK5pYf2arEr4=s680-w680-h510" alt="" id="recentActivityImg" />
+                        <img src="#" alt="" id="recentActivityImg" />
                     </li>
 
                     <div id="restoNameAndReview">
-                        <li >
-                            <Link to={`/restaurants/${resto.id}`}  id="restoName" onClick={scrollToTop}> 
-                                {resto.restaurantName} 
+                        <li>
+                            <Link to={`/restaurants/${resto.id}`}  
+                                id="restoName" 
+                                key={resto.id} 
+                                onClick={scrollToTop}> {resto.restaurantName} 
                             </Link>
                         </li>
                         <li >
-                            <p className="recentActivitySmallText">Loved the food! Can't wait to go back. The cocktails were also amazing - I had 5!</p>
+                            <p className="recentActivitySmallText">This is a placeholder for the most recent review of the resto</p>
                         </li>
                     </div>
                 </ul>

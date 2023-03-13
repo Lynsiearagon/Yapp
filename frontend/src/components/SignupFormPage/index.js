@@ -100,6 +100,14 @@ const SignupFormPage = () => {
                             Follow Me on LinkedIn
                     </button>
                 </a>
+                <a href="https://angel.co/u/lynsie-aragon"
+                    target="_blank" rel="noreferrer">
+                    <button
+                        id ="wellFoundButton"
+                        className="signupFormButtons">
+                            Follow Me on Wellfound
+                    </button>
+                </a>
                 <a href="https://github.com/Lynsiearagon"
                     target="_blank" rel="noreferrer">
                     <button

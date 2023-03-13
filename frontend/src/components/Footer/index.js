@@ -28,6 +28,7 @@ const Footer = () => {
                         <h2 className="ulFooterListTitle">Styling</h2>
                         <li className='language'>CSS</li>
                         <li className='language'>HTML</li>
+                        <li className='language'>icons 8</li>
                         <li className='language'>Font Awesome</li>
                     </ul>
                 </div>

@@ -191,3 +191,9 @@ input:focus {
 #termsAndConditions {
     line-height: 1.5em;
 }
+
+#wellFoundButton {
+    color: grey;
+    background-color: white;
+    border-color: lightgray;
+}
