@@ -47,7 +47,13 @@
 
 #githubButton {
     background-color: black;
+    padding-top: 9px;
+    padding-bottom: 9px;
     margin-bottom: 15px;
+}
+
+#githubLogo {
+    margin-right: 10px;
 }
 
 #signupHeaderDiv > span {
@@ -76,6 +82,12 @@ input:focus {
     background: #0073b1;
     border-color: #0073bb;
     color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#linkedinLogo {
+    margin-right: 5px;
 }
 
 #optional {
@@ -113,6 +125,10 @@ input:focus {
 }
 
 .signupFormButtons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
     padding: 10px 13px;
     font-size: 16px;
     line-height: 1.3125em;
@@ -196,4 +212,10 @@ input:focus {
     color: grey;
     background-color: white;
     border-color: lightgray;
+    border-width: 1px;
+}
+
+#wellfoundLogo {
+    width: 38px;
+    height: 24px;
 }
