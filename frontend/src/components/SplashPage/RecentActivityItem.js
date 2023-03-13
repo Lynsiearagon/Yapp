@@ -11,7 +11,7 @@ const RecentActivityItem = () => {
     
     useEffect(() => {
         dispatch(restaurantActions.fetchRestaurants());
-    });
+    }, []);
 
     const scrollToTop = () => {
         window.scrollTo(0, 0)
