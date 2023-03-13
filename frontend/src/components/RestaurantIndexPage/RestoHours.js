@@ -13,6 +13,7 @@ export const RestoHoursSingleLine = ({times}) => {
     const d = new Date();
     let day = weekday[d.getDay()];
 
+
     return (
 
         businessHours.split(",").map((bh) => {
@@ -33,8 +34,8 @@ export const RestoHoursFullList = ({times}) => {
 
     return (
 
-        businessHours.split(",").map((bh) => {
-            return <div key={bh}>{bh}</div>
+        businessHours.split(",").map((bh, i) => {
+            return <div key={i}>{bh}</div>
         })
     );
 
