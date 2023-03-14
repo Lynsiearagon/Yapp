@@ -195,3 +195,23 @@ height: auto;
 #reviewDiv {
     margin-bottom: 25px;
 }
+
+#stickyRigthColOfRestoShowPage {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 50%;
+}
+
+#leftCalOfRestoShowPage {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#columnsWrapper {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+}
