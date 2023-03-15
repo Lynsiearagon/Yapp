@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams, Link } from "react-router-dom";
 import { fetchRestaurant, getRestaurant } from "../../store/restaurants";
 import './RestaurantShowPage.css'
 import { RestoHoursFullList, RestoHoursSingleLine } from "../RestaurantIndexPage/RestoHours";
@@ -66,6 +66,11 @@ const RestaurantShowPage = () => {
             <div id="columnsWrapper">
 
             <div id="leftCalOfRestoShowPage">
+
+                <Link to="/write-a-review">
+                    <button id="writeAReviewButton">Write a review</button>
+                </Link>
+
                 <div id="locationAndHoursWrapper">
                     <div id="hoursAndLocationHeaderDiv">
                         <h2 id="hoursAndLocationHeader">Hours & Location</h2>
