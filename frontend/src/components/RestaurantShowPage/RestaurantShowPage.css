@@ -242,4 +242,12 @@ height: auto;
     padding: 8px 24px;
     font-size: 18px;
     font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reviewIcon {
+    /* padding-bottom: 3px; */
+    padding-right: 5px;
 }

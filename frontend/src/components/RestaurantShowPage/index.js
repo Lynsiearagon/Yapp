@@ -12,6 +12,7 @@ import RestaurantAmenitiesListings from "../RestaurantIndexPage/RestoAmenitiesLi
 import AboutTheRestaurant from "./AboutResto";
 import Review from "./Reviews";
 import Resume from "../../images/LynsieAragonResume.pdf";
+import starIcon from "../../images/icons8-star-24.png"
 
 
 const RestaurantShowPage = () => {
@@ -68,7 +69,10 @@ const RestaurantShowPage = () => {
             <div id="leftCalOfRestoShowPage">
 
                 <Link to="/write-a-review">
-                    <button id="writeAReviewButton">Write a review</button>
+                    <button id="writeAReviewButton"> 
+                        <img src={starIcon} alt="Star" id="reviewIcon" />
+                        Write a review
+                    </button>
                 </Link>
 
                 <div id="locationAndHoursWrapper">
