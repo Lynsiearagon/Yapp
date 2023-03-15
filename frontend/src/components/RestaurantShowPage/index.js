@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams, Link } from "react-router-dom";
 import { fetchRestaurant, getRestaurant } from "../../store/restaurants";
 import './RestaurantShowPage.css'
 import { RestoHoursFullList, RestoHoursSingleLine } from "../RestaurantIndexPage/RestoHours";
@@ -11,6 +11,8 @@ import Address from "./address";
 import RestaurantAmenitiesListings from "../RestaurantIndexPage/RestoAmenitiesListings";
 import AboutTheRestaurant from "./AboutResto";
 import Review from "./Reviews";
+import Resume from "../../images/LynsieAragonResume.pdf";
+import starIcon from "../../images/icons8-star-24.png"
 
 
 const RestaurantShowPage = () => {
@@ -59,7 +61,18 @@ const RestaurantShowPage = () => {
             <div id="imgBanner">
                 <img src="https://cdn.vox-cdn.com/thumbor/jzvbDm1UGW3rRA6S4me3uN4u9cM=/0x304:5758x3543/1200x675/cdn.vox-cdn.com/uploads/chorus_image/image/66216284/Quality_Bistro_1.0.jpg" alt="table of food" id="restoImgBanner"/>
             </div>
-            
+
+            <div id="columnsWrapper">
+
+            <div id="leftCalOfRestoShowPage">
+
+                <Link to="/write-a-review">
+                    <button id="writeAReviewButton"> 
+                        <img src={starIcon} alt="Star" id="reviewIcon" />
+                        Write a review
+                    </button>
+                </Link>
+
                 <div id="locationAndHoursWrapper">
                     <div id="hoursAndLocationHeaderDiv">
                         <h2 id="hoursAndLocationHeader">Hours & Location</h2>
@@ -94,12 +107,12 @@ const RestaurantShowPage = () => {
                 </div>
 
                 <div>
-                <h2 id="aboutTheRestoHeader">About The Restaurant</h2>
-                <div id="aboutTheRestoDiv">
-                    <AboutTheRestaurant 
-                        restoName={restaurant.restaurantName} 
-                        about={restaurant.aboutRestaurant} />
-                </div>
+                    <h2 id="aboutTheRestoHeader">About The Restaurant</h2>
+                    <div id="aboutTheRestoDiv">
+                        <AboutTheRestaurant 
+                            restoName={restaurant.restaurantName} 
+                            about={restaurant.aboutRestaurant} />
+                    </div>
                 </div>
                 <div>
                     <h2 id="reviewsHeader">Recommended Reviews</h2>
@@ -111,8 +124,40 @@ const RestaurantShowPage = () => {
                         <Review />
                     </div>
                 </div>
-
             </div>
+            <div id="stickyRigthColOfRestoShowPage">
+                <div id="restoContactInfo">
+                    <div>
+                        <a href={restaurant.websiteLink} 
+                            target="_blank" rel="noreferrer">
+                            {restaurant.websiteLink}
+                        </a>
+                    </div>
+                    <div>
+                        {restaurant.phoneNumber}
+                    </div>
+                </div>
+
+                <div id="myContactInfoAndResume">
+                    <h2>Contact Me</h2>
+                    <div id="restoShowPersonalLinks">
+                        <a href="https://lynsiearagon.github.io/Lynsie-portfolio/"
+                            target="_blank" rel="noreferrer">Portfolio
+                        </a>
+                        <a href="https://www.linkedin.com/in/lynsie-aragon-87156a157/"
+                            target="_blank" rel="noreferrer">LinkedIn
+                        </a>
+                    </div>
+                    <span>
+                        <p>Availible</p><p>Mon - Fri</p><p>9 am - 7 pm</p>
+                    </span>
+                    <div>
+                        <a href={Resume} download>Download Resume</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
     )
 
 }
