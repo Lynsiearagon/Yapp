@@ -1,17 +1,22 @@
 #aboutTheRestoDiv {
-padding-bottom: 25px;
-/* margin-left: 200px; */
+padding-bottom: 20px;
 margin-bottom: 20px;
-border-bottom: lightgrey solid 1px;
-width: 50%;
+border-top: lightgrey solid 1px;
+width: 95%;
 height: auto;
 }
 
 #aboutTheRestoHeader {
     font-weight: 800;
     font-size: 20px;
-    padding-bottom: 20px;
-    /* margin-left: 200px; */
+    padding-top: 20px;
+}
+
+#aboutTheRestoBlurb {
+    margin-top: 20px;
+    line-height: 24px;
+    overflow: hidden;
+    color: rgb(60, 60, 60);
 }
 
 #address {
@@ -26,30 +31,26 @@ height: auto;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     padding-top: 20px;
-    /* margin-left: 200px; */
     margin-bottom: 20px;
-    border-bottom: lightgrey solid 1px;
     width: 50%;
     height: auto;
     padding-bottom: 20px;
-    /* width: 650px; */
 }
 
 #amenitiesAndMoreHeader {
     font-weight: 800;
     font-size: 20px;
     padding-top: 20px;
-    /* margin-left: 200px; */
 }
 
 #amenitiesAndMoreWrapper {
-    width: 100%;
+    width: 95%;
+    border-top: lightgrey solid 1px;
 }
 
 #columnsWrapper {
     display: flex;
     flex-direction: row;
-    /* justify-content: space-around; */
 }
 
 #divider {
@@ -62,16 +63,15 @@ height: auto;
     flex-direction: column;
     justify-content: space-evenly;
     font-weight: 600;
-    width: 400px;
     line-height: 30px;
-    min-width: 400px;
+    min-width: 350px;
     color: rgb(37, 37, 37);
 }
 
 #hoursAndLocationHeaderDiv {
     display: flex;
     font-weight: bolder;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #hoursAndLocationHeader {
@@ -84,6 +84,7 @@ height: auto;
     flex-direction: column;
     width: 60%;
     margin-left: 12%;
+    min-width: 600px;
 }
 
 
@@ -95,12 +96,12 @@ height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* margin-top: 100px; */
-    /* margin-left: 200px; */
-    border-top: lightgrey solid 1px;
-    border-bottom: lightgrey solid 1px;
-    width: 50%;
+    width: 95%;
     height: auto;
+    border-top: solid;
+    border-top-color: lightgrey;
+    border-width: 1px;
+    margin-top: 25px;
 }
 
 #mapAndAddressWrapper {
@@ -119,9 +120,7 @@ height: auto;
 }
 
 #myContactInfoAndResume {
-    border-style: solid;
-    border-color: rgb(218, 217, 217);
-    border-width: 1px;
+    border: rgb(218, 217, 217) solid 1px;
 }
 
 
@@ -139,13 +138,48 @@ height: auto;
     color: white;
 }
 
+
+
+#quickAccessButtons {
+    border: black solid 1px;
+    display: flex;
+    justify-content: left;
+}
+
+
 #restoContactInfo {
-    border-style: solid;
-    border-color: rgb(218, 217, 217);
-    border-width: 1px;
+    border: rgb(218, 217, 217) solid 1px;
+    border-radius: 4px;
     margin-bottom: 25px;
     padding: 20px;
+    min-width: 250px;
 }
+
+#restoWebsiteLink {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: lightgrey;
+    padding-bottom: 20px;
+    display: flex;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(2,122,151,1);
+}
+
+#restoWebsiteLink:visited {
+    color: rgba(2,122,151,1);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+#restoPhoneNumber {
+    padding-top: 20px;
+    display: flex;
+    font-size: 16px;
+    line-height: 24px;
+}
+
 
 #restoImgBanner {
     width: 100%;
@@ -183,13 +217,11 @@ height: auto;
     font-weight: 800;
     font-size: 20px;
     padding-bottom: 20px;
-    /* margin-left: 200px; */
 }
 
 #ReviewsSection {
     display: flex;
     flex-direction: column;
-    /* margin-left: 200px; */
 }
 
 #reviewDiv {
@@ -198,7 +230,7 @@ height: auto;
 
 
 #reviewIcon {
-    /* padding-bottom: 3px; */
+    padding-bottom: 3px;
     padding-right: 5px;
 }
 
@@ -225,12 +257,17 @@ height: auto;
     margin-right: 5px;
 }
 
+#stickyContactMeHeaderDiv {
+    font-weight: 800;
+    font-size: 20px;
+}
+
 #stickyRigthColOfRestoShowPage {
     display: flex;
     flex-direction: column;
     /* margin-top: 100px; */
     /* margin-left: 100px; */
-    width: 40%;
+    width: 35%;
     margin-right: 12%;
 }
 
@@ -246,10 +283,16 @@ height: auto;
     border-style: solid;
     color: white;
     border-radius: 4px;
-    padding: 8px 24px;
     font-size: 18px;
-    font-weight: bolder;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 190px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#writeAReviewButtonLink {
+    width: 190px;
 }
