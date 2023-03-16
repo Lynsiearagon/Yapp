@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams, Link } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { fetchRestaurant, getRestaurant } from "../../store/restaurants";
 import './RestaurantShowPage.css'
 import { RestoHoursFullList, RestoHoursSingleLine } from "../RestaurantIndexPage/RestoHours";
@@ -66,12 +66,14 @@ const RestaurantShowPage = () => {
 
             <div id="leftCalOfRestoShowPage">
 
-                <Link to="/write-a-review">
-                    <button id="writeAReviewButton"> 
-                        <img src={starIcon} alt="Star" id="reviewIcon" />
-                        Write a review
-                    </button>
-                </Link>
+                <div id="quickAccessButtons">
+                    <NavLink to="/write-a-review" id="writeAReviewButtonLink" >
+                        <div id="writeAReviewButton"> 
+                            <img src={starIcon} alt="Star" id="reviewIcon" />
+                            Write a review
+                        </div>
+                    </NavLink>
+                </div>
 
                 <div id="locationAndHoursWrapper">
                     <div id="hoursAndLocationHeaderDiv">
@@ -106,11 +108,10 @@ const RestaurantShowPage = () => {
                     </div>
                 </div>
 
-                <div>
+                <div id="aboutTheRestoDiv">
                     <h2 id="aboutTheRestoHeader">About The Restaurant</h2>
-                    <div id="aboutTheRestoDiv">
+                    <div id="aboutTheRestoBlurb">
                         <AboutTheRestaurant 
-                            restoName={restaurant.restaurantName} 
                             about={restaurant.aboutRestaurant} />
                     </div>
                 </div>
@@ -127,19 +128,19 @@ const RestaurantShowPage = () => {
             </div>
             <div id="stickyRigthColOfRestoShowPage">
                 <div id="restoContactInfo">
-                    <div>
+                    <div id="restoWebsiteLink">
                         <a href={restaurant.websiteLink} 
                             target="_blank" rel="noreferrer">
                             {restaurant.websiteLink}
                         </a>
                     </div>
-                    <div>
+                    <div id="restoPhoneNumber">
                         {restaurant.phoneNumber}
                     </div>
                 </div>
 
                 <div id="myContactInfoAndResume">
-                    <h2>Contact Me</h2>
+                    <h2 id="stickyContactMeHeaderDiv">Contact Me</h2>
                     <div id="restoShowPersonalLinks">
                         <a href="https://lynsiearagon.github.io/Lynsie-portfolio/"
                             target="_blank" rel="noreferrer">Portfolio
