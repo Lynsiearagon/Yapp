@@ -48,9 +48,26 @@ height: auto;
     border-top: lightgrey solid 1px;
 }
 
+#availablilityRestoShow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+
+#availablilityRestoShow > div {
+    /* width: 100px; */
+    /* height: auto; */
+    /* border-right: lightgrey solid 1px; */
+    /* margin-right: 20px; */
+}
+
 #columnsWrapper {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
+    margin-left:auto;
+    margin-right: auto;
+    max-width: 1200px;
 }
 
 #divider {
@@ -79,11 +96,10 @@ height: auto;
     font-size: 20px;
 }
 
-#leftCalOfRestoShowPage {
+#leftColOfRestoShowPage {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    margin-left: 12%;
+    width: 68%;
     min-width: 600px;
 }
 
@@ -120,7 +136,9 @@ height: auto;
 }
 
 #myContactInfoAndResume {
+    padding: 20px;
     border: rgb(218, 217, 217) solid 1px;
+    border-radius: 4px;
 }
 
 
@@ -156,13 +174,13 @@ height: auto;
     min-width: 250px;
 }
 
-#restoWebsiteLink {
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-color: lightgrey;
+#restoWebsiteLinkDiv {
+    border-bottom: lightgrey solid 1px;
     padding-bottom: 20px;
     display: flex;
-    font-size: 16px;
+    justify-content: space-between;
+    align-items: center;
+    font: 16px;
     font-weight: bolder;
     line-height: 24px;
     color: rgba(2,122,151,1);
@@ -178,6 +196,8 @@ height: auto;
 #restoPhoneNumber {
     padding-top: 20px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 16px;
     line-height: 24px;
 }
@@ -205,14 +225,39 @@ height: auto;
 }
 
 #RestoHeaderDiv {
-    margin-left: 12%;
     padding-top: 250px;
-    /* margin-top: 25%; */
     margin-bottom: 75px;
+    margin-left:auto;
+    margin-right: auto;
+    max-width: 1200px;
     z-index: 1;
     position: relative;
     font-size: 14px;
     min-width: 400px;
+}
+
+#restoShowPersonalLinks{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#showPagePortfolioLink {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    margin-right: 10px;
+    border-bottom: red solid 4px;
+}
+
+#showPageLinkedInLink {
+    padding: 10px;
+    color: grey;
+    font-size: 16px;
+}
+
+#showPageLinkedInLink:hover {
+    color: black;
 }
 
 #reviewsHeader {
@@ -262,15 +307,13 @@ height: auto;
 #stickyContactMeHeaderDiv {
     font-weight: 800;
     font-size: 20px;
+    margin-bottom: 25px;
 }
 
-#stickyRigthColOfRestoShowPage {
+#stickyRightColOfRestoShowPage {
     display: flex;
     flex-direction: column;
-    /* margin-top: 100px; */
-    /* margin-left: 100px; */
     width: 35%;
-    margin-right: 12%;
 }
 
 #todaysHours {
@@ -280,7 +323,7 @@ height: auto;
 }
 
 #writeAReviewButton {
-    background-color: red;
+    background-color: rgb(231, 3, 3);
     border-color: red;
     border-style: solid;
     color: white;
@@ -293,6 +336,10 @@ height: auto;
     width: 190px;
     height: 40px;
     cursor: pointer;
+}
+
+#writeAReviewButton:hover {
+    background-color: red;
 }
 
 #writeAReviewButtonLink {
