@@ -140,17 +140,18 @@ height: auto;
 
 
 
-#quickAccessButtons {
+/* #quickAccessButtonsDiv {
     border: black solid 1px;
     display: flex;
     justify-content: left;
-}
+} */
 
 
 #restoContactInfo {
     border: rgb(218, 217, 217) solid 1px;
     border-radius: 4px;
     margin-bottom: 25px;
+    margin-top: 20px;
     padding: 20px;
     min-width: 250px;
 }
@@ -162,13 +163,14 @@ height: auto;
     padding-bottom: 20px;
     display: flex;
     font-size: 16px;
+    font-weight: bolder;
     line-height: 24px;
     color: rgba(2,122,151,1);
 }
 
 #restoWebsiteLink:visited {
     color: rgba(2,122,151,1);
-    font-size: 16px;
+    font-size: 16px bolder;
     text-decoration: none;
 }
 

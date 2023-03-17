@@ -66,7 +66,7 @@ const RestaurantShowPage = () => {
 
             <div id="leftCalOfRestoShowPage">
 
-                <div id="quickAccessButtons">
+                <div id="quickAccessButtonsDiv">
                     <NavLink to="/write-a-review" id="writeAReviewButtonLink" >
                         <div id="writeAReviewButton"> 
                             <img src={starIcon} alt="Star" id="reviewIcon" />
@@ -128,9 +128,9 @@ const RestaurantShowPage = () => {
             </div>
             <div id="stickyRigthColOfRestoShowPage">
                 <div id="restoContactInfo">
-                    <div id="restoWebsiteLink">
+                    <div >
                         <a href={restaurant.websiteLink} 
-                            target="_blank" rel="noreferrer">
+                            target="_blank" rel="noreferrer" id="restoWebsiteLink">
                             {restaurant.websiteLink}
                         </a>
                     </div>
