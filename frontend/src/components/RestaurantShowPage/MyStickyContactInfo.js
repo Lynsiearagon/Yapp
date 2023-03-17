@@ -19,10 +19,13 @@ const MyStickyContactInfo = () => {
             <div id="availablilityRestoShow">
                 <div>Available</div>
                 <div>Mon. - Fri.</div>
-                <div>9am - 6pm</div>
+                <div style={{ borderColor: "white" }}>9:30am - 6pm</div>
             </div>
-            <div>
-                <a href={Resume} download>Download Resume</a>
+            <div id="emailInputFieldDiv">
+                <input type="text" value="Lynsie.aragon@gmail.com" id="emailInputField"/>
+            </div>
+            <div id="resumeDownloadRestoShow">
+                <a href={Resume} id="resumeLink" download>Download Resume</a>
             </div>
         </div>
     )

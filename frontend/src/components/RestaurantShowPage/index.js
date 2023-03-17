@@ -127,7 +127,7 @@ const RestaurantShowPage = () => {
                         </div>
                     </div>
                 </div>
-                <div id="stickyRightColOfRestoShowPage">
+                <div id="stickyRightColOfRestoShowPage" className="sticky">
                     <StickyRestoContactInfo 
                         website={restaurant.websiteLink} 
                         phone={restaurant.phoneNumber} />

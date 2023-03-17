@@ -51,19 +51,18 @@ height: auto;
 #availablilityRestoShow {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 #availablilityRestoShow > div {
-    /* width: 100px; */
-    /* height: auto; */
-    /* border-right: lightgrey solid 1px; */
-    /* margin-right: 20px; */
+    width: 100px;
+    border-right: lightgrey solid 1px;
 }
 
 #columnsWrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     margin-left:auto;
     margin-right: auto;
@@ -73,6 +72,23 @@ height: auto;
 #divider {
     font-weight: bolder;
     color: white;
+}
+
+#emailInputFieldDiv {
+    height: auto;
+    width: 100%;
+    display:flex; 
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+#emailInputField {
+    width: 100%;
+    padding: 15px;
+    color: grey;
+    border: lightgrey solid 1px;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
 #hours {
@@ -99,7 +115,7 @@ height: auto;
 #leftColOfRestoShowPage {
     display: flex;
     flex-direction: column;
-    width: 68%;
+    width: 69%;
     min-width: 600px;
 }
 
@@ -139,6 +155,9 @@ height: auto;
     padding: 20px;
     border: rgb(218, 217, 217) solid 1px;
     border-radius: 4px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px;
 }
 
 
@@ -172,6 +191,9 @@ height: auto;
     margin-top: 20px;
     padding: 20px;
     min-width: 250px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
 }
 
 #restoWebsiteLinkDiv {
@@ -180,15 +202,17 @@ height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.restoWebsiteLink{
     font: 16px;
     font-weight: bolder;
     line-height: 24px;
     color: rgba(2,122,151,1);
 }
 
-#restoWebsiteLink:visited {
+.restoWebsiteLink:visited {
     color: rgba(2,122,151,1);
-    font-size: 16px bolder;
     text-decoration: none;
 }
 
@@ -239,6 +263,32 @@ height: auto;
 #restoShowPersonalLinks{
     display: flex;
     margin-bottom: 10px;
+}
+
+#resumeDownloadRestoShow {
+    background-color: rgb(231, 3, 3);
+    border: rgb(231, 3, 3) solid 1px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+#resumeDownloadRestoShow:hover {
+    background-color: red;
+    text-decoration: underline white;
+}
+
+#resumeLink {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #showPagePortfolioLink {
@@ -310,10 +360,10 @@ height: auto;
     margin-bottom: 25px;
 }
 
-#stickyRightColOfRestoShowPage {
+#stickyRightColOfRestoShowPage{
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 30%;
 }
 
 #todaysHours {

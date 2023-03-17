@@ -10,7 +10,7 @@ const StickyRestoContactInfo = ({website, phone}) => {
         <div id="restoContactInfo">
             <div  id="restoWebsiteLinkDiv">
                 <a href={website} 
-                    target="_blank" rel="noreferrer" id="restoWebsiteLink">
+                    target="_blank" rel="noreferrer" className="restoWebsiteLink">
                     {website}
                 </a>
                 <BiLinkExternal />
