@@ -67,8 +67,8 @@ const RestaurantShowPage = () => {
 
                 <div id="leftColOfRestoShowPage">
 
-                    <div id="quickAccessButtonsDiv">
-                        <NavLink to="/write-a-review" id="writeAReviewButtonLink" >
+                    <div id="writeAReviewButtonLink">
+                        <NavLink to="/write-a-review"  >
                             <div id="writeAReviewButton"> 
                                 <img src={starIcon} alt="Star" id="reviewIcon" />
                                 Write a review
