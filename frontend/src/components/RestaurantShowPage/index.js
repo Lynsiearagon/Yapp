@@ -6,7 +6,7 @@ import { RestoHoursFullList, RestoHoursSingleLine } from "../RestaurantIndexPage
 import { BsStarFill } from 'react-icons/bs';
 import MapWrapper from "../Map/Map";
 import RestaurantIndexItemButton from "../RestaurantIndexPage/RestoIndexItemButton";
-import Address from "./address";
+import Address from "./Address";
 import RestaurantAmenitiesListings from "../RestaurantIndexPage/RestoAmenitiesListings";
 import AboutTheRestaurant from "./AboutResto";
 import StickyRestoContactInfo from "./StickyRestoContactInfo";
@@ -94,7 +94,7 @@ const RestaurantShowPage = () => {
                                         state={restaurant.state}
                                         neighborhood={restaurant.neighborhood}
                                     />
-                                <div id="getDirectionsDiv">Get directions</div>
+                                <div id="getDirectionsDiv" title="Functionality coming soon" disable >Get directions</div>
                                 </div>
                             </div>
                             <div id="hours">
