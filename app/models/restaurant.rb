@@ -1,6 +1,5 @@
 class Restaurant < ApplicationRecord
 
-
     validates :restaurant_name, presence: true 
     validates :latitude, presence: true 
     validates :longitude, presence: true 
@@ -18,6 +17,10 @@ class Restaurant < ApplicationRecord
     validates :website_link, presence: true 
     validates :amenities, presence: true 
 
-
+    has_many :reviews, 
+        primary_key: :id, 
+        foreign_key: :restaurant_id, 
+        class_name: :Review,
+        dependent: :destroy
 
 end

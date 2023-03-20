@@ -16,7 +16,6 @@ const SignupFormPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [zipcode, setZipcode] = useState('');
-    const [birthday, setBirthday] = useState('');
     const [month, setMonth] = useState('');
     const [day, setDay] = useState('');
     const [year, setYear] = useState('');
@@ -30,15 +29,15 @@ const SignupFormPage = () => {
         e.preventDefault();
         setErrors([]); 
 
-        birthday = setBirthday(`${month} ${day} ${year}`);
-
         return dispatch(sessionActions.signUpUser({
             firstName,
             lastName,
             email,
             password,
             zipcode,
-            birthday
+            month, 
+            day, 
+            year
         }))
             .catch(async (res) => {
                 let data; 
@@ -51,7 +50,7 @@ const SignupFormPage = () => {
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
             });
-            return setErrors([]);
+        return setErrors(['Invalid information provided. Try again.']);
     };
 
         const scrollToTop = () => {
@@ -73,7 +72,7 @@ const SignupFormPage = () => {
 
         <>
             <ul>
-                {errors.map(error => <li id="errorsLi" key={error.id}>{error}</li>)}
+                {errors.map(error => <li id="errorsLi" key={error}>{error}</li>)}
             </ul>
 
             <div id="formAndImageWrapperSignUp" >
@@ -197,7 +196,7 @@ const SignupFormPage = () => {
                         onChange={(e) => setMonth(e.target.value)}>
                         {
                             months.map((month) => {
-                                return <option value={month} key={month.id}>{month}</option>
+                                return <option value={month} key={month}>{month}</option>
                             })
                         }
                     </select>
@@ -208,7 +207,7 @@ const SignupFormPage = () => {
                         onChange={(e) => setDay(e.target.value)}>
                         {
                             days.map((day) => {
-                                return <option value={day} key={day.id}>{day}</option>
+                                return <option value={day} key={day}>{day}</option>
                             })
                         }
                     </select>
@@ -219,7 +218,7 @@ const SignupFormPage = () => {
                         onChange={(e) => setYear(e.target.value)}>
                         {
                             years.map((year) => {
-                                return <option value={year} key={year.id}>{year}</option>
+                                return <option value={year} key={year}>{year}</option>
                             })
                         }
                     </select>

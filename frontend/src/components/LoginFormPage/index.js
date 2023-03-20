@@ -52,7 +52,7 @@ const LoginFormPage = () => {
     return (
         <>
             <ul >
-                {errors.map(error => <li id="errorsLi" key={error.id}>{error}</li>)}
+                {errors.map(error => <li id="errorsLi" key={error}>{error}</li>)}
             </ul>
         <div id="formAndImageWrapper" >
 
