@@ -27,6 +27,16 @@ height: auto;
     font-size: 16px;
 }
 
+#addressLine1 {
+    color: rgba(2,122,151,1);
+    font-weight: bold;
+    overflow-wrap: normal;
+}
+
+#addressLine2 {
+    font-weight: bold;
+}
+
 #amenitiesDiv {
     display: grid;
     gap: 15px;
@@ -62,6 +72,7 @@ height: auto;
     border-right: lightgrey solid 1px;
 }
 
+
 #columnsWrapper {
     display: flex;
     justify-content: center;
@@ -91,6 +102,13 @@ height: auto;
     border: lightgrey solid 1px;
     border-radius: 4px;
     font-size: 14px;
+}
+
+#getDirectionsDiv {
+    border: grey solid 1px;
+    border-radius: 4px;
+    padding: 10px;
+
 }
 
 #hours {
@@ -373,6 +391,18 @@ height: auto;
     font-size: 16px;
     color: white;
     font-weight: bold;
+}
+
+#dayAndTodayTagWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#underMapAddressWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #writeAReviewButton {

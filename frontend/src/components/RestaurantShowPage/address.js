@@ -12,9 +12,15 @@ const Address = (props) => {
 
     return (
         <ul id="address">
-            <li>{street}</li>
-            <li>{city}, {state} {zipcode}</li>
-            <li>{neighborhood}</li>
+            <li id="addressLine1">
+                {street}
+            </li>
+            <li id="addressLine2">
+                {city}, {state} {zipcode}
+            </li>
+            <li id="addressLine3">
+                {neighborhood}
+            </li>
         </ul>
     )
 }

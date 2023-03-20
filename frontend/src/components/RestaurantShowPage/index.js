@@ -86,7 +86,7 @@ const RestaurantShowPage = () => {
                                 <div id="smallMapLocation">
                                     <MapWrapper />
                                 </div>
-                                <div>
+                                <div id="underMapAddressWrapper">
                                     <Address 
                                         street={restaurant.streetAddress}
                                         city={restaurant.city}
@@ -94,6 +94,7 @@ const RestaurantShowPage = () => {
                                         state={restaurant.state}
                                         neighborhood={restaurant.neighborhood}
                                     />
+                                <div id="getDirectionsDiv">Get directions</div>
                                 </div>
                             </div>
                             <div id="hours">
