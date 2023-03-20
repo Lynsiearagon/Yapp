@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_13_205647) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_20_182336) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,12 +37,30 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_205647) do
     t.string "about_restaurant"
     t.string "menu_link"
     t.json "hours", null: false
+    t.integer "total_num_reviews"
+    t.integer "total_five_star_reviews"
+    t.integer "total_four_star_reviews"
+    t.integer "total_three_star_reviews"
+    t.integer "total_two_star_reviews"
+    t.integer "total_one_star_reviews"
+    t.float "overall_rating"
     t.index ["closing_hours"], name: "index_restaurants_on_closing_hours"
     t.index ["cuisine"], name: "index_restaurants_on_cuisine"
     t.index ["neighborhood"], name: "index_restaurants_on_neighborhood"
     t.index ["opening_hours"], name: "index_restaurants_on_opening_hours"
     t.index ["price"], name: "index_restaurants_on_price"
     t.index ["restaurant_name"], name: "index_restaurants_on_restaurant_name"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "star_rating", null: false
+    t.bigint "reviewer_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,8 +74,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_205647) do
     t.datetime "updated_at", null: false
     t.string "zipcode", null: false
     t.date "birthday"
+    t.string "month"
+    t.string "day"
+    t.string "year"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  add_foreign_key "reviews", "restaurants"
+  add_foreign_key "reviews", "users", column: "reviewer_id"
 end
