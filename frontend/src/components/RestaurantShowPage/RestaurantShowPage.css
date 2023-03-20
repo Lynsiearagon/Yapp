@@ -68,11 +68,9 @@ height: auto;
 }
 
 #availablilityRestoShow > div {
-    width: 100px;
     display: flex;
     justify-content: space-between;
     border-right: lightgrey solid 1px;
-    text-align: center;
 }
 
 

@@ -17,9 +17,9 @@ const MyStickyContactInfo = () => {
                 </a>
             </div>
             <div id="availablilityRestoShow">
-                <div>Available</div>
-                <div>Mon. - Fri.</div>
-                <div style={{ borderColor: "white" }}>9:30am - 6pm</div>
+                <div style={{width: "80px"}}>Available</div>
+                <div style={{width: "90px"}}>Mon. - Fri.</div>
+                <div style={{ borderColor: "white" }}>9 am - 6 pm</div>
             </div>
             <div id="emailInputFieldDiv">
                 <input type="text" value="Lynsie.aragon@gmail.com" id="emailInputField"/>
