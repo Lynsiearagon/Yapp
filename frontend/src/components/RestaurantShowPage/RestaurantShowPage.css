@@ -69,7 +69,10 @@ height: auto;
 
 #availablilityRestoShow > div {
     width: 100px;
+    display: flex;
+    justify-content: space-between;
     border-right: lightgrey solid 1px;
+    text-align: center;
 }
 
 
@@ -108,7 +111,7 @@ height: auto;
     border: grey solid 1px;
     border-radius: 4px;
     padding: 10px;
-
+    cursor: not-allowed;
 }
 
 #hours {
