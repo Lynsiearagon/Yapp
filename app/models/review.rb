@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-    validates :body, length: { minimum: 300 }
+    validates :body, length: { minimum: 200 }
     validates :star_rating, inclusion: { in: 1..5 }
     validates :reviewer_id, presence: true, uniqueness: true 
     validates :restaurant_id, presence: true, uniqueness: true

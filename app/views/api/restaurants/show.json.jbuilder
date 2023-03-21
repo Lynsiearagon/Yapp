@@ -19,6 +19,13 @@ json.restaurant do
         :menu_link,
         :latitude,
         :longitude,
+        :overall_rating,
+        :total_num_reviews,
+        :total_five_star_reviews,
+        :total_four_star_reviews,
+        :total_three_star_reviews,
+        :total_two_star_reviews,
+        :total_one_star_reviews,
         :updated_at, 
         :created_at
 end

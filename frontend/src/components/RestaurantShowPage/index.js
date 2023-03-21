@@ -11,19 +11,22 @@ import RestaurantAmenitiesListings from "../RestaurantIndexPage/RestoAmenitiesLi
 import AboutTheRestaurant from "./AboutResto";
 import StickyRestoContactInfo from "./StickyRestoContactInfo";
 import Review from "./Reviews";
+import * as reviewActions from '../../store/reviews';
 import MyStickyContactInfo from "./MyStickyContactInfo";
-import starIcon from "../../images/icons8-star-24.png"
-import './RestaurantShowPage.css'
+import starIcon from "../../images/icons8-star-24.png";
+import './RestaurantShowPage.css';
 
 
 const RestaurantShowPage = () => {
     const dispatch = useDispatch();
     const { restaurantId } = useParams();
     const restaurant = useSelector(getRestaurant(restaurantId));
+    const reviews = useSelector(reviewActions.getRestaurantReviews(restaurantId))
 
     useEffect(() => {
         dispatch(fetchRestaurant(restaurantId))
     }, [restaurantId, dispatch]);
+
 
     if (!restaurant) {
         return (
@@ -94,7 +97,7 @@ const RestaurantShowPage = () => {
                                         state={restaurant.state}
                                         neighborhood={restaurant.neighborhood}
                                     />
-                                <div id="getDirectionsDiv" title="Functionality coming soon" disable >Get directions</div>
+                                <div id="getDirectionsDiv" title="Functionality coming soon">Get directions</div>
                                 </div>
                             </div>
                             <div id="hours">

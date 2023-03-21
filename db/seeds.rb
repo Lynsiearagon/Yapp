@@ -8,13 +8,15 @@
 ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
-    User.destroy_all
+    Review.destroy_all
     Restaurant.destroy_all
+    User.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('restaurants')
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -27,9 +29,9 @@ ApplicationRecord.transaction do
     )
 
     User.create!(
-      first_name: 'Maggie', 
+      first_name: 'Maggie the Pup', 
       last_name: 'Aragon', 
-      email: 'maggie@goodestgirl.com',
+      email: 'maggie@email.com',
       zipcode: '11375',
       password: 'woofwoof'
     )
@@ -37,7 +39,7 @@ ApplicationRecord.transaction do
     User.create!(
       first_name: 'Lynsie', 
       last_name: 'Aragon', 
-      email: 'lynsie@gmail.com',
+      email: 'lynsie@email.com',
       zipcode: '11375',
       password: 'engineer!'
     )
@@ -49,8 +51,6 @@ ApplicationRecord.transaction do
       cuisine: 'Japanese, Peruvian',
       price: '$$$$',
       neighborhood: 'Greenwich Village',
-      opening_hours: '5:00 PM',
-      closing_hours: '11:00 PM',
       photo_url: '',
       amenities: 'Outdoor seating, Delivery, Takeout',
       phone_number: '(646) 490-4422',
@@ -65,14 +65,21 @@ ApplicationRecord.transaction do
       latitude: 40.732440744472804,
       longitude: -74.00085076556799,
       hours: '{
-        "Mon":  "5:00 PM - 11:00 PM",
-        "Tue":  "5:00 PM - 11:00 PM",
-        "Wed":  "5:00 PM - 11:00 PM",
-        "Thu":  "5:00 PM - 11:00 PM",
-        "Fri":  "5:00 PM - 11:00 PM",
-        "Sat":  "5:00 PM - 11:00 PM",
-        "Sun":  "5:00 PM - 11:00 PM"
-      }'
+        "Mon:  5:00 PM - 11:00 PM",
+        "Tue:  5:00 PM - 11:00 PM",
+        "Wed:  5:00 PM - 11:00 PM",
+        "Thu:  5:00 PM - 11:00 PM",
+        "Fri:  5:00 PM - 11:00 PM",
+        "Sat:  5:00 PM - 11:00 PM",
+        "Sun:  5:00 PM - 11:00 PM"
+      }',
+      overall_rating: 0,
+      total_num_reviews: 0, 
+      total_five_star_reviews: 0,
+      total_four_star_reviews: 0,
+      total_three_star_reviews: 0,
+      total_two_star_reviews: 0,
+      total_one_star_reviews: 0
     )
 
     Restaurant.create!(
@@ -80,8 +87,6 @@ ApplicationRecord.transaction do
       cuisine: 'Tapas/Small Plates, Cocktail Bars, Spanish',
       price: '$$$',
       neighborhood: 'Flatiron',
-      opening_hours: '5:00 PM',
-      closing_hours: '11:00 PM',
       photo_url: '',
       amenities: 'Outdoor seating, Delivery, Takeout',
       phone_number: '(212) 475-5829',
@@ -96,14 +101,21 @@ ApplicationRecord.transaction do
       latitude: 40.73799902299168,
       longitude: -73.98927563702115,
       hours: '{
-        "Mon":  "5:00 PM - 10:00 PM",
-        "Tue":  "5:00 PM - 10:00 PM",
-        "Wed":  "5:00 PM - 10:00 PM",
-        "Thu":  "5:00 PM - 10:00 PM",
-        "Fri":  "5:00 PM - 10:00 PM",
-        "Sat":  "11:00 AM - 10:00 PM",
-        "Sun":  "11:00 AM - 10:00 PM"
-      }'
+        "Mon:  5:00 PM - 10:00 PM",
+        "Tue:  5:00 PM - 10:00 PM",
+        "Wed:  5:00 PM - 10:00 PM",
+        "Thu:  5:00 PM - 10:00 PM",
+        "Fri:  5:00 PM - 10:00 PM",
+        "Sat:  11:00 AM - 10:00 PM",
+        "Sun:  11:00 AM - 10:00 PM"
+      }',
+      overall_rating: 5,
+      total_num_reviews: 1, 
+      total_five_star_reviews: 1,
+      total_four_star_reviews: 0,
+      total_three_star_reviews: 0,
+      total_two_star_reviews: 0,
+      total_one_star_reviews: 0
     )
 
     Restaurant.create!(
@@ -111,8 +123,6 @@ ApplicationRecord.transaction do
       cuisine: 'American (New), Desserts, Cocktail Bars',
       price: '$$$',
       neighborhood: 'Prospect Heights',
-      opening_hours: '8:00 AM',
-      closing_hours: '10:00 PM',
       photo_url: '',
       amenities: 'Health Score A, Moderate Noise, Gender-neutral restrooms',
       phone_number: '(###) ###-####',
@@ -127,14 +137,43 @@ ApplicationRecord.transaction do
       latitude: 40.68183280924385,
       longitude: -73.96851428138494,
       hours: '{
-        "Mon":  "Closed",
-        "Tue":  "Closed",
-        "Wed":  "8:00 AM - 10:00 PM",
-        "Thu":  "8:00 AM - 10:00 PM",
-        "Fri":  "8:00 AM - 10:00 PM",
-        "Sat":  "8:00 AM - 10:00 PM",
-        "Sun":  "8:00 AM - 10:00 PM"
-      }'
+        "Mon:  8:00 AM - 10:00 PM",
+        "Tue:  8:00 AM - 10:00 PM",
+        "Wed:  8:00 AM - 10:00 PM",
+        "Thu:  8:00 AM - 10:00 PM",
+        "Fri:  8:00 AM - 10:00 PM",
+        "Sat:  8:00 AM - 10:00 PM",
+        "Sun:  8:00 AM - 10:00 PM"
+      }',
+      overall_rating: 4,
+      total_num_reviews: 1, 
+      total_five_star_reviews: 0,
+      total_four_star_reviews: 1,
+      total_three_star_reviews: 0,
+      total_two_star_reviews: 0,
+      total_one_star_reviews: 0
+    )
+
+    puts 'Creating Reviews...'
+
+    Review.create!(
+      reviewer_id: 2,
+      restaurant_id: 3, 
+      star_rating: 4, 
+      body: "Woof woof woof woof woof woof woof woof woof woof Woof woof 
+      woof woof woof woof woof woof woof woof Woof woof woof woof woof woof 
+      woof woof woof woof Woof woof woof woof woof woof woof woof woof woof 
+      Woof woof woof woof woof woof woof woof woof woof Woof woof woof woof 
+      woof woof woof woof woof woof Woof woof woof woof woof woof woof woof"
+    )
+
+    Review.create!(
+      reviewer_id: 3,
+      restaurant_id: 2, 
+      star_rating: 5, 
+      body: "One of my favorite places to eat in the city. The food, drinks, and 
+      environment are all great! I ordered the Octopus, Guacamole, Mushroom Empanadas 
+      with green chili mayo, and the Shrimp with sizzling garlic, chili oil. I can't wait to go back! "
     )
 
     puts "Done!"
