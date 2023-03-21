@@ -3,14 +3,17 @@ import { useSelector, useDispatch } from "react-redux";
 import * as restaurantActions from '../../store/restaurants';
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import * as reviewActions from '../../store/reviews';
 
 
 const RecentActivityItem = () => {
     const dispatch = useDispatch();
     const restaurants = useSelector(restaurantActions.getRestaurants)
+    const reviews = useSelector(reviewActions.getReviews)
     
     useEffect(() => {
-        dispatch(restaurantActions.fetchRestaurants());
+        // dispatch(restaurantActions.fetchRestaurants());
+        dispatch(reviewActions.fetchAllReviews())
     }, []);
 
     const scrollToTop = () => {
@@ -19,17 +22,17 @@ const RecentActivityItem = () => {
 
     return (
 
-        restaurants.map((resto) => {
+        reviews.map((review) => {
 
             return (
-                <ul className="RAIUserInfo" key={resto.id}>
+                <ul className="RAIUserInfo" key={review.id}>
                     <div id="iconUNWroteAReviewWrapper">
                         <li>
                             <FaUserCircle id="userPhotoIcon" />
                         </li>
                         <div id="userNameWroteAReviewWrapper">
                             <li>
-                                <h1 id="userName">Lynsie A.</h1>
+                                <h1 id="userName">{review.reviewerId}</h1>
                             </li>
                             <li>
                                 <p className="recentActivitySmallText">Wrote a Review</p>
@@ -42,14 +45,14 @@ const RecentActivityItem = () => {
 
                     <div id="restoNameAndReview">
                         <li>
-                            <Link to={`/restaurants/${resto.id}`}  
+                            <Link to={`/restaurants/${review.restaurantId}`}  
                                 id="restoName" 
-                                key={resto.id} 
-                                onClick={scrollToTop}> {resto.restaurantName} 
+                                key={review.id} 
+                                onClick={scrollToTop}> {review.restaurant} 
                             </Link>
                         </li>
                         <li >
-                            <p className="recentActivitySmallText">This is a placeholder for the most recent review of the resto</p>
+                            <p id="recentActivitySmallText">{review.body}</p>
                         </li>
                     </div>
                 </ul>
