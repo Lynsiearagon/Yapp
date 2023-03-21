@@ -7,11 +7,11 @@ class User < ApplicationRecord
     length: { in: 3..255 }, 
     format: { with: URI::MailTo::EMAIL_REGEXP} 
   # validates :zipcode, zipcode: { country_code: :us }
-  validates :month, 
-    inclusion: {in: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]}, 
-    allow_nil: true
-  validate :validate_day
-  validate :validate_year
+  # validates :month, 
+  #   inclusion: {in: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]}, 
+  #   allow_nil: true
+  # validate :validate_day
+  # validate :validate_year
   validates :password, length: { minimum: 6 }, allow_nil: true 
   validates :session_token, presence: true, uniqueness: true 
   before_validation :ensure_session_token
@@ -41,23 +41,23 @@ class User < ApplicationRecord
     self.session_token
   end 
 
-  def validate_day
-    day_integer = day.to_i 
+  # def validate_day
+  #   day_integer = day.to_i 
 
-    if month && !(1..31).include?(day_integer)
-      raise 'Select a day'
-    elsif month === "Feb" && day_integer > 29
-      raise 'Invalid date'
-    end 
-  end
+  #   if month && !(1..31).include?(day_integer)
+  #     raise 'Select a day'
+  #   elsif month === "Feb" && day_integer > 29
+  #     raise 'Invalid date'
+  #   end 
+  # end
 
-  def validate_year 
-    year_integer = year.to_i 
+  # def validate_year 
+  #   year_integer = year.to_i 
 
-    if (month && day) && !(1901..2023).include?(year_integer)
-      raise 'Select a year'
-    end 
-  end
+  #   if (month && day) && !(1901..2023).include?(year_integer)
+  #     raise 'Select a year'
+  #   end 
+  # end
   
   private 
   
