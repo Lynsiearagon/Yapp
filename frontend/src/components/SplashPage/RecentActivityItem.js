@@ -12,7 +12,7 @@ const RecentActivityItem = () => {
     const reviews = useSelector(reviewActions.getReviews)
     
     useEffect(() => {
-        // dispatch(restaurantActions.fetchRestaurants());
+        dispatch(restaurantActions.fetchRestaurants());
         dispatch(reviewActions.fetchAllReviews())
     }, []);
 
@@ -22,6 +22,7 @@ const RecentActivityItem = () => {
 
     return (
 
+        
         reviews.map((review) => {
 
             return (
@@ -32,7 +33,7 @@ const RecentActivityItem = () => {
                         </li>
                         <div id="userNameWroteAReviewWrapper">
                             <li>
-                                <h1 id="userName">{review.reviewerId}</h1>
+                                <h1 id="userName">{review.reviewerFirstName} {review.reviewerLastName[0]}.</h1>
                             </li>
                             <li>
                                 <p className="recentActivitySmallText">Wrote a Review</p>

@@ -29,7 +29,7 @@ ApplicationRecord.transaction do
     )
 
     User.create!(
-      first_name: 'Maggie the Pup', 
+      first_name: 'Maggie', 
       last_name: 'Aragon', 
       email: 'maggie@email.com',
       zipcode: '11375',
@@ -158,6 +158,8 @@ ApplicationRecord.transaction do
 
     Review.create!(
       reviewer_id: 2,
+      reviewer_first_name: "Maggie",
+      reviewer_last_name: "Aragon",
       restaurant_id: 3, 
       star_rating: 4, 
       body: "Woof woof woof woof woof woof woof woof woof woof Woof woof 
@@ -169,6 +171,8 @@ ApplicationRecord.transaction do
 
     Review.create!(
       reviewer_id: 3,
+      reviewer_first_name: "Lynsie",
+      reviewer_last_name: "Aragon",
       restaurant_id: 2, 
       star_rating: 5, 
       body: "One of my favorite places to eat in the city. The food, drinks, and 
