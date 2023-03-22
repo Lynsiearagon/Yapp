@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 
 const WriteAReviewButton = ({restaurantId}) => {
 
-
     return (
         <div id="writeAReviewButtonLink">
             <NavLink to={`/restaurants/${restaurantId}/write-a-review`} >
