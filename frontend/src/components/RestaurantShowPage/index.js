@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { fetchRestaurant, getRestaurant } from "../../store/restaurants";
 import { RestoHoursFullList, RestoHoursSingleLine } from "../RestaurantIndexPage/RestoHours";
 import { BsStarFill } from 'react-icons/bs';
@@ -13,7 +13,7 @@ import StickyRestoContactInfo from "./StickyRestoContactInfo";
 import Review from "./Reviews";
 import * as reviewActions from '../../store/reviews';
 import MyStickyContactInfo from "./MyStickyContactInfo";
-import starIcon from "../../images/icons8-star-24.png";
+import WriteAReviewButton from "../WriteAReviewButton/WriteAReviewButton";
 import './RestaurantShowPage.css';
 
 
@@ -70,14 +70,7 @@ const RestaurantShowPage = () => {
 
                 <div id="leftColOfRestoShowPage">
 
-                    <div id="writeAReviewButtonLink">
-                        <NavLink to="/write-a-review"  >
-                            <div id="writeAReviewButton"> 
-                                <img src={starIcon} alt="Star" id="reviewIcon" />
-                                Write a review
-                            </div>
-                        </NavLink>
-                    </div>
+                    <WriteAReviewButton restaurantId={restaurant.id} />
 
                     <div id="locationAndHoursWrapper">
                         <div id="hoursAndLocationHeaderDiv">

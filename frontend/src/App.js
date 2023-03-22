@@ -24,14 +24,14 @@ function App() {
           <Route path='/seeyousoon'>
             <SeeYouSoonPage />
           </Route>
+          <Route path='/restaurants/:restaurantId/write-a-review'>
+            <WriteAReview />
+          </Route>
           <Route path='/restaurants/:restaurantId'>
             <RestaurantShowPage />
           </Route>
           <Route path='/restaurants'>
             <RestaurantIndexPage />
-          </Route>
-          <Route path='/write-a-review'>
-            <WriteAReview />
           </Route>
           <Route path='/'>
             <SplashPage />
