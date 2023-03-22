@@ -4,6 +4,7 @@ import { fetchRestaurant } from '../../store/restaurants';
 import { getRestaurant } from '../../store/restaurants';
 import { useParams } from 'react-router-dom';
 import * as reviewActions from '../../store/reviews';
+import './WriteAReview.css'
 
 
 
