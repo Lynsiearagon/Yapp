@@ -99,7 +99,7 @@
     border-color: rgb(220, 219, 219);
     padding: 0.7%;
     width: 98%;
-    height: 300px;
+    height: 370px;
 }
 
 .RAGrid {
@@ -232,6 +232,8 @@
 
 #restoNameAndReview {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .recentActivitySmallText {
@@ -240,9 +242,17 @@
     color: rgb(82, 81, 81);
 }
 
-#recentActivitySmallText {
+#recentActivityReviewPreview {
+    overflow-y: scroll;
+    max-height: 60px;
+    line-height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     padding-top: 5px;
+    padding-bottom: 4px;
     font-size: 14px;
     color: rgb(82, 81, 81);
-    text-overflow: ellipsis;
+    margin-left: 0px;
+    border-bottom: lightgrey solid 1px;
 }

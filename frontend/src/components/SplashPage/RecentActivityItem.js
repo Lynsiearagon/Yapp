@@ -14,7 +14,7 @@ const RecentActivityItem = () => {
     useEffect(() => {
         dispatch(restaurantActions.fetchRestaurants());
         dispatch(reviewActions.fetchAllReviews())
-    }, []);
+    }, [dispatch]);
 
     const scrollToTop = () => {
         window.scrollTo(0, 0)
@@ -22,7 +22,7 @@ const RecentActivityItem = () => {
 
     return (
 
-        
+
         reviews.map((review) => {
 
             return (
@@ -49,11 +49,11 @@ const RecentActivityItem = () => {
                             <Link to={`/restaurants/${review.restaurantId}`}  
                                 id="restoName" 
                                 key={review.id} 
-                                onClick={scrollToTop}> {review.restaurant} 
+                                onClick={scrollToTop}> {review.restaurantId} 
                             </Link>
                         </li>
                         <li >
-                            <p id="recentActivitySmallText">{review.body}</p>
+                            <div id="recentActivityReviewPreview">{review.body}</div>
                         </li>
                     </div>
                 </ul>
