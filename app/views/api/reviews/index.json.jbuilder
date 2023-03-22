@@ -5,6 +5,8 @@
         :body, 
         :star_rating, 
         :reviewer_id, 
+        :reviewer_first_name,
+        :reviewer_last_name,
         :restaurant_id,
         :created_at,
         :updated_at

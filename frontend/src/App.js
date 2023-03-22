@@ -8,6 +8,7 @@ import SeeYouSoonPage from "./components/SeeYouSoonPage"
 import Footer from "./components/Footer";
 import RestaurantIndexPage from "./components/RestaurantIndexPage"
 import RestaurantShowPage from "./components/RestaurantShowPage"
+import WriteAReview from "./components/WriteAReview";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path='/restaurants'>
             <RestaurantIndexPage />
+          </Route>
+          <Route path='/write-a-review'>
+            <WriteAReview />
           </Route>
           <Route path='/'>
             <SplashPage />

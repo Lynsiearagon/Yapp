@@ -9,13 +9,12 @@ class Restaurant < ApplicationRecord
     validates :street_address, presence: true 
     validates :country, presence: true 
     validates :neighborhood, presence: true 
-    validates :opening_hours, presence: true 
-    validates :closing_hours, presence: true 
     validates :phone_number, presence: true 
     validates :cuisine, presence: true 
     validates :price, presence: true 
     validates :website_link, presence: true 
     validates :amenities, presence: true 
+    validates :hours, presence: true 
 
     has_many :reviews, 
         primary_key: :id, 

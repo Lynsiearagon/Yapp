@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_20_182336) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_21_231713) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "restaurants", force: :cascade do |t|
     t.string "restaurant_name", null: false
-    t.string "opening_hours", null: false
-    t.string "closing_hours", null: false
     t.string "phone_number", null: false
     t.string "cuisine", null: false
     t.string "price", null: false
@@ -44,10 +42,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_182336) do
     t.integer "total_two_star_reviews"
     t.integer "total_one_star_reviews"
     t.float "overall_rating"
-    t.index ["closing_hours"], name: "index_restaurants_on_closing_hours"
     t.index ["cuisine"], name: "index_restaurants_on_cuisine"
     t.index ["neighborhood"], name: "index_restaurants_on_neighborhood"
-    t.index ["opening_hours"], name: "index_restaurants_on_opening_hours"
     t.index ["price"], name: "index_restaurants_on_price"
     t.index ["restaurant_name"], name: "index_restaurants_on_restaurant_name"
   end
@@ -59,6 +55,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_182336) do
     t.bigint "restaurant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_url"
+    t.string "reviewer_first_name", null: false
+    t.string "reviewer_last_name"
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
     t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end

@@ -22,7 +22,7 @@ const MyStickyContactInfo = () => {
                 <div style={{ borderColor: "white" }}>9 am - 6 pm</div>
             </div>
             <div id="emailInputFieldDiv">
-                <input type="text" value="Lynsie.aragon@gmail.com" id="emailInputField"/>
+                <input type="text" placeholder="Lynsie.aragon@gmail.com" id="emailInputField"/>
             </div>
             <div id="resumeDownloadRestoShow">
                 <a href={Resume} id="resumeLink" download>Download Resume</a>

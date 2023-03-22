@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
 import App from './App';
 import configureStore from './store';
-// import { restoreCSRF } from './store/csrf';
 import csrfFetch from './store/csrf'
 import * as sessionActions from './store/session'
-// import { restoreSession } from './store/session';
 import * as restaurantActions from './store/restaurants';
+import * as reviewActions from './store/reviews';
+import './index.css';
 
 
 
@@ -20,6 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
   window.restaurantActions = restaurantActions;
+  window.reviewActions = reviewActions; 
 }
 
 

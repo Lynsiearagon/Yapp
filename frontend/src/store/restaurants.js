@@ -2,7 +2,7 @@ import csrfFetch from "./csrf";
 
 const RECEIVE_RESTAURANT = 'restaurants/receiveRestaurant';
 const RECEIVE_RESTAURANTS = 'restaurants/receiveRestaurants';
-const REMOVE_RESTAURANTS = 'restaurants/removeRestaurants';
+const REMOVE_RESTAURANT = 'restaurants/removeRestaurant';
 
 export const receiveRestaurants = (restaurants) => ({
     type: RECEIVE_RESTAURANTS, 
@@ -16,8 +16,8 @@ export const receiveRestaurant = (restaurant) => ({
 }); 
 
 
-export const removeRestaurants = (restaurantId) => ({
-    type: REMOVE_RESTAURANTS,
+export const removeRestaurant = (restaurantId) => ({
+    type: REMOVE_RESTAURANT,
     restaurantId
 });
 
@@ -58,7 +58,7 @@ export const fetchRestaurant = (restaurantId) => async (dispatch) => {
     };
 };
 
-export const removeRestaurant = (restaurantId) => async (dispatch) => {
+export const deleteRestaurant = (restaurantId) => async (dispatch) => {
     const res = await csrfFetch(`/api/restaurants/${restaurantId}`, {
         method: 'DELETE'
     });
@@ -78,7 +78,7 @@ const restaurantReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_RESTAURANTS:
             return { ...state, ...action.restaurants };
-        case REMOVE_RESTAURANTS:
+        case REMOVE_RESTAURANT:
             delete newState[action.restaurantId];
             return newState;
         default:
