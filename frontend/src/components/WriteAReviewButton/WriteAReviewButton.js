@@ -8,10 +8,11 @@ const WriteAReviewButton = ({restaurantId}) => {
     return (
         <div id="writeAReviewButtonLink">
             <NavLink to={`/restaurants/${restaurantId}/write-a-review`} >
-                <div id="writeAReviewButton"> 
-                    <img src={starIcon} alt="Star" id="reviewIcon" />
-                    Write a review
-                </div>
+                <button id="writeAReviewButton"
+                    onClick={() => {window.scrollTo({top:0, left: 0})}}> 
+                        <img src={starIcon} alt="Star" id="reviewIcon" />
+                        Write a review
+                </button>
             </NavLink>
         </div>
     )
