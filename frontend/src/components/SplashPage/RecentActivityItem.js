@@ -9,7 +9,7 @@ import * as reviewActions from '../../store/reviews';
 const RecentActivityItem = () => {
     const dispatch = useDispatch();
     const restaurants = useSelector(restaurantActions.getRestaurants)
-    const reviews = useSelector(reviewActions.getReviews)
+    const reviews = useSelector(reviewActions.getReviews())
     
     useEffect(() => {
         dispatch(restaurantActions.fetchRestaurants());
