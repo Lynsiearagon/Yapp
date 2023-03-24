@@ -1,18 +1,22 @@
 import { BsStarFill } from "react-icons/bs"
 
 
-const Reviews = () => {
+const Reviews = ({review}) => {
+
+    console.log("IN REVIEW COMPONENT")
+    console.log(review.id)
 
     return (
         <div id="reviewDiv">
             <div id="starRating">
-                <BsStarFill className="starsOnRestoShowPage"/>
-                <BsStarFill className="starsOnRestoShowPage"/>
-                <BsStarFill className="starsOnRestoShowPage"/>
-                <BsStarFill className="starsOnRestoShowPage"/>
+                {review.starRating}
             </div>
+            
             <div id="review">
-                <p>I am a placeholder review</p>
+                <ol>
+                    <li>{review.reviewerFirstName}</li>
+                    <li>{review.body}</li>
+                </ol>
             </div>
         </div>
     )

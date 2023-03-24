@@ -15,17 +15,22 @@ import * as reviewActions from '../../store/reviews';
 import MyStickyContactInfo from "./MyStickyContactInfo";
 import WriteAReviewButton from "../WriteAReviewButton/WriteAReviewButton";
 import './RestaurantShowPage.css';
+import { fetchAllReviews } from "../../store/reviews";
 
 
 const RestaurantShowPage = () => {
     const dispatch = useDispatch();
     const { restaurantId } = useParams();
     const restaurant = useSelector(getRestaurant(restaurantId));
-    const reviews = useSelector(reviewActions.getRestaurantReviews(restaurantId))
+    const reviews = useSelector(reviewActions.getReviews(restaurantId))
 
     useEffect(() => {
         dispatch(fetchRestaurant(restaurantId))
     }, [restaurantId, dispatch]);
+
+    useEffect(() => {
+        dispatch(fetchAllReviews())
+    }, [dispatch])
 
 
     if (!restaurant) {
@@ -33,6 +38,17 @@ const RestaurantShowPage = () => {
             <div>loading..</div>
         )
     }
+
+    console.log(restaurant)
+    console.log(restaurant.id)
+    
+    // reviews.map(review => {
+    //     if (review.restaurantId === restaurant.id) {
+    //         console.log(review)
+    //     }
+    // })
+
+
 
     return (
         
@@ -113,16 +129,21 @@ const RestaurantShowPage = () => {
                                 about={restaurant.aboutRestaurant} />
                         </div>
                     </div>
+
+
                     <div>
                         <h2 id="reviewsHeader">Recommended Reviews</h2>
                         <div id="ReviewsSection">
-                            <Review />
-                            <Review />
-                            <Review />
-                            <Review />
-                            <Review />
+
+                            { reviews ? 
+                                reviews.map((review) => <div key={review.id}><Review review={review} /></div>) : 
+                                <div>{`${restaurant.restaurantName} doesn't have reviews yet.`}</div> 
+                            }
+                        
                         </div>
                     </div>
+
+
                 </div>
                 <div id="stickyRightColOfRestoShowPage" className="sticky">
                     <StickyRestoContactInfo 
