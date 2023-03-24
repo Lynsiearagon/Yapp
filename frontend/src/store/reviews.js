@@ -62,16 +62,22 @@ export const fetchAllReviews = () => async (dispatch) => {
 };
 
 export const createReview = (review) => async (dispatch) => {
+    const { body, starRating, restaurantId, reviewerId, reviewerFirstName, reviewerLastName } = review;
     const res = await csrfFetch('/api/reviews/', {
         method: "POST",
-        body: JSON.stringify(review)
+        body: JSON.stringify({
+            body, 
+            starRating, 
+            restaurantId, 
+            reviewerId, 
+            reviewerFirstName, 
+            reviewerLastName
+        })
     }); 
 
     if (res.ok) {
         const data = await res.json();
         dispatch(receiveReview(data.review));
-        dispatch(receiveUser(data.user)); 
-        dispatch(receiveRestaurant(data.restaurant));
         return res; 
     }
 };
