@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRestaurant } from '../../store/restaurants';
 import { getRestaurant } from '../../store/restaurants';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import * as reviewActions from '../../store/reviews';
 import { BsFillStarFill } from 'react-icons/bs'
 import './WriteAReview.css'
@@ -12,6 +12,7 @@ import './WriteAReview.css'
 const WriteAReview = () => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
     const { restaurantId } = useParams();
     const restaurant = useSelector(getRestaurant(restaurantId));
     const [body, setBody] = useState('');
@@ -46,9 +47,7 @@ const WriteAReview = () => {
                 if (data?.errors) setErrors(data.errors); 
                 else if (data) setErrors([data]); 
                 else setErrors([res.statusText])
-            });
-
-            // <Redirect to={`/restaurants/${restaurantId}`} />
+            }); 
     }
 
     // const starRatingBackgroundColor = (indexNum) => {

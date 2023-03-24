@@ -4,7 +4,7 @@ class Review < ApplicationRecord
     validates :reviewer_id, presence: true, uniqueness: true 
     validates :restaurant_id, presence: true, uniqueness: true
     validates :reviewer_first_name, presence: true 
-    validates :reviewer_last_name,presence: true
+    validates :reviewer_last_name, presence: true
 
 
     belongs_to :reviewer, 
