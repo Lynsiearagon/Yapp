@@ -24,7 +24,6 @@ const WriteAReview = () => {
         dispatch(fetchRestaurant(restaurantId))
     }, [restaurantId, dispatch])
 
-    // console.log(sessionUser.firstName)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -85,17 +84,17 @@ const WriteAReview = () => {
                 <div id="ratingAndReviewBorder">
 
                     <div id="starRatingDiv">
-                        {[...Array(5)].map((starRating, index) => {
+                        {[...Array(5)].map((star, index) => {
                             index += 1; 
                             return (
                                 <button
                                     type="button"
                                     key={index}
-                                    className={index <= (hover || starRating) ? "on" : "off"}
+                                    className={index <= (hover || star) ? "on" : "off"}
                                     onMouseEnter={() => setHover(index)}
                                     onMouseLeave={() => setHover(starRating)}
+                                    onClick={() => setStarRating(index)}
                                     value={starRating}
-                                    onClick={(e) => setStarRating(e.target.value)}
                                     required
                                     >
                                     <span id="starImageSpanDiv"> <BsFillStarFill className="starImage"/> </span>

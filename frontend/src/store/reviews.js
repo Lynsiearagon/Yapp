@@ -1,6 +1,4 @@
 import csrfFetch from "./csrf"; 
-import { receiveRestaurant } from "./restaurants";
-import { receiveUser } from "./user";
 
 const RECEIVE_REVIEW = 'reviews/receiveReview';
 const RECEIVE_REVIEWS = 'reviews/receiveReviews'; 
@@ -17,9 +15,9 @@ export const receiveReviews = (reviews) => ({
     reviews
 }); 
 
-export const removeReview = (reviewId) => ({
+export const removeReview = (review) => ({
     type: REMOVE_REVIEW,
-    reviewId
+    review
 });
 
 
@@ -50,7 +48,6 @@ export const getRestaurantReviews = (restaurantId) => (state) => {
 };
 
 
-
 export const fetchAllReviews = () => async (dispatch) => {
     const res = await csrfFetch('/api/reviews'); 
 
@@ -62,22 +59,14 @@ export const fetchAllReviews = () => async (dispatch) => {
 };
 
 export const createReview = (review) => async (dispatch) => {
-    const { body, starRating, restaurantId, reviewerId, reviewerFirstName, reviewerLastName } = review;
     const res = await csrfFetch('/api/reviews/', {
         method: "POST",
-        body: JSON.stringify({
-            body, 
-            starRating, 
-            restaurantId, 
-            reviewerId, 
-            reviewerFirstName, 
-            reviewerLastName
-        })
+        body: JSON.stringify(review)
     }); 
 
     if (res.ok) {
         const data = await res.json();
-        dispatch(receiveReview(data.review));
+        dispatch(receiveReview(data));
         return res; 
     }
 };
@@ -102,7 +91,7 @@ export const deleteReview = (reviewId) => async (dispatch) => {
 
     if (res.ok) {
         const data = await res.json();
-        dispatch(removeReview(data.review)); 
+        dispatch(removeReview(data)); 
         return res; 
     }
 };
