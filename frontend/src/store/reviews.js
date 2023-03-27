@@ -33,10 +33,6 @@ export const getReview = (reviewId) => (state) => {
 export const getReviews = (restoId) => (state) => {
     if (state.reviews) {
         return Object.values(state.reviews)
-            // .filter(review => review.restaurantId === restoId)
-            // .map(review => ({
-            //     ...review
-            // }))
     } else {
         return [];
     }
@@ -51,6 +47,16 @@ export const fetchAllReviews = () => async (dispatch) => {
         return res;
     }
 };
+
+export const fetchAllRestaurantReviews = (restaurantId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/reviews/restaurants/${restaurantId}`);
+
+    if (res.ok) {
+        const data = await res.json();
+        dispatch(receiveReviews(data))
+        return res;
+    }
+}
 
 export const createReview = (review) => async (dispatch) => {
     const res = await csrfFetch('/api/reviews/', {
