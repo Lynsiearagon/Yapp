@@ -1,28 +1,30 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import * as restaurantActions from '../../store/restaurants';
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import * as restaurantActions from '../../store/restaurants';
 import * as reviewActions from '../../store/reviews';
 
 
 const RecentActivityItem = () => {
     const dispatch = useDispatch();
     const restaurants = useSelector(restaurantActions.getRestaurants)
-    const reviews = useSelector(reviewActions.getReviews())
+    const reviews = useSelector(reviewActions.getReviews)
     
     useEffect(() => {
         dispatch(restaurantActions.fetchRestaurants());
+    }, []);
+
+    useEffect(() => {
         dispatch(reviewActions.fetchAllReviews())
-    }, [dispatch]);
+    },[])
 
     const scrollToTop = () => {
         window.scrollTo(0, 0)
     };
 
     return (
-
-
+    
         reviews.map((review) => {
 
             return (
@@ -49,7 +51,7 @@ const RecentActivityItem = () => {
                             <Link to={`/restaurants/${review.restaurantId}`}  
                                 id="restoName" 
                                 key={review.id} 
-                                onClick={scrollToTop}> {review.restaurantId} 
+                                onClick={scrollToTop}> {review.restaurant} 
                             </Link>
                         </li>
                         <li >

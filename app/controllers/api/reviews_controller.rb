@@ -25,6 +25,11 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    def all_reviews
+        @reviews = Review.all.reverse
+        render 'api/reviews/index'
+    end
+
     def update 
         @review = Review.find_by(id: params[:id]) 
 

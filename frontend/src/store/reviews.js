@@ -30,21 +30,20 @@ export const getReview = (reviewId) => (state) => {
     }
 };
 
-export const getReviews = (restoId) => (state) => {
+export const getReviews = (state) => {
     if (state.reviews) {
-        return Object.values(state.reviews)
+        return Object.values(state.reviews);
     } else {
         return [];
     }
-};
+}
 
 export const fetchAllReviews = () => async (dispatch) => {
     const res = await csrfFetch('/api/reviews'); 
 
     if (res.ok) {
-        const data = await res.json();
-        dispatch(receiveReviews(data)); 
-        return res;
+        const reviews = await res.json();
+        dispatch(receiveReviews(reviews)); 
     }
 };
 

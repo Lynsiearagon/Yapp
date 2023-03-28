@@ -15,14 +15,13 @@ import * as reviewActions from '../../store/reviews';
 import MyStickyContactInfo from "./MyStickyContactInfo";
 import WriteAReviewButton from "../WriteAReviewButton/WriteAReviewButton";
 import './RestaurantShowPage.css';
-import { fetchAllReviews } from "../../store/reviews";
 
 
 const RestaurantShowPage = () => {
     const dispatch = useDispatch();
     const { restaurantId } = useParams();
     const restaurant = useSelector(getRestaurant(restaurantId));
-    const reviews = useSelector(reviewActions.getReviews(restaurantId))
+    const reviews = useSelector(reviewActions.getReviews);
 
     useEffect(() => {
         dispatch(fetchRestaurant(restaurantId))
@@ -30,8 +29,9 @@ const RestaurantShowPage = () => {
 
     useEffect(() => {
         dispatch(reviewActions.fetchAllRestaurantReviews(restaurantId))
-    }, [dispatch]);
+    }, [restaurantId, dispatch]);
 
+    console.log(reviews)
 
     if (!restaurant) {
         return (

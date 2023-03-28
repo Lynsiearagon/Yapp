@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :update, :destroy]
   end
 
-  get "/api/reviews/restaurants/:restaurant_id", to: 'api/reviews#restaurant_reviews_index'
+  get '/api/reviews/restaurants/:restaurant_id', to: "api/reviews#restaurant_reviews_index"
+  get '/api/reviews', to: "api/reviews#all_reviews"
   get '*path', to: "static_pages#frontend_index"
 
 end

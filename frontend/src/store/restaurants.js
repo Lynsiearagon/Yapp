@@ -42,9 +42,8 @@ export const fetchRestaurants = () => async (dispatch) => {
     const res = await csrfFetch('/api/restaurants');
     
     if (res.ok) {
-        const data = await res.json();
-        dispatch(receiveRestaurants(data));
-        return res; 
+        const restaurants = await res.json();
+        dispatch(receiveRestaurants(restaurants));
     };
 };
 
