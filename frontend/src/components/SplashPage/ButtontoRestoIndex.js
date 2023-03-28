@@ -1,7 +1,12 @@
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 const ToRestoIndexButton = () => {
+    const history = useHistory();
+
+    const goToRestaurantsIndexPage = () => {
+        history.push("/restaurants")
+    }
 
     return (
         <div id="toRestaurantIndexButton">
@@ -11,10 +16,8 @@ const ToRestoIndexButton = () => {
                 </h1>
             </div>
 
-            <div id="findRestoButtonLink">
-                <Link to="/restaurants">
-                    <button id="findRestoButtonLink">Find Restaurants</button>
-                </Link> 
+            <div id="findRestoButtonLink" onClick={goToRestaurantsIndexPage}>
+                <button id="findRestoButtonLink">Find Restaurants</button>
             </div>
         </div>
     )
