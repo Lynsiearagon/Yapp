@@ -51,7 +51,7 @@ const RecentActivityItem = () => {
                             <Link to={`/restaurants/${review.restaurantId}`}  
                                 id="restoName" 
                                 key={review.id} 
-                                onClick={scrollToTop}> {review.restaurant} 
+                                onClick={scrollToTop}> {restaurants[review.restaurantId - 1].restaurantName} 
                             </Link>
                         </li>
                         <li >

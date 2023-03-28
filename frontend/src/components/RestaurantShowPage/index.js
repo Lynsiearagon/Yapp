@@ -31,14 +31,12 @@ const RestaurantShowPage = () => {
         dispatch(reviewActions.fetchAllRestaurantReviews(restaurantId))
     }, [restaurantId, dispatch]);
 
-    console.log(reviews)
 
     if (!restaurant) {
         return (
             <div>loading..</div>
         )
     }
-
 
     return (
         
@@ -124,12 +122,13 @@ const RestaurantShowPage = () => {
                     <div>
                         <h2 id="reviewsHeader">Recommended Reviews</h2>
                         <div id="ReviewsSection">
-
-                            { reviews ? 
-                                reviews.map((review) => <div key={review.id}><Review review={review} /></div>) : 
-                                <div>{`${restaurant.restaurantName} doesn't have reviews yet.`}</div> 
+                            { 
+                                !reviews.length ? 
+                                <div>{`${restaurant.restaurantName} doesn't have reviews yet. Be the first to write a review!`}</div> :
+                                
+                                reviews.map((review) => 
+                                <div key={review.id}><Review review={review} restaurantId={restaurant.id} /></div>)
                             }
-                        
                         </div>
                     </div>
 
