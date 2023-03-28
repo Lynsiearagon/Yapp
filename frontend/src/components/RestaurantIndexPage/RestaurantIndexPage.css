@@ -36,6 +36,7 @@
 #restoListings {
     width: 63%;
     min-height: 240px;
+    max-height: 300px;
     display: flex;
     flex-direction: column;
     display: flex;
