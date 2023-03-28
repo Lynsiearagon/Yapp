@@ -29,8 +29,8 @@ const RestaurantShowPage = () => {
     }, [restaurantId, dispatch]);
 
     useEffect(() => {
-        dispatch(fetchAllReviews())
-    }, [dispatch])
+        dispatch(reviewActions.fetchAllRestaurantReviews(restaurantId))
+    }, [dispatch]);
 
 
     if (!restaurant) {
@@ -38,16 +38,6 @@ const RestaurantShowPage = () => {
             <div>loading..</div>
         )
     }
-
-    console.log(restaurant)
-    console.log(restaurant.id)
-    
-    // reviews.map(review => {
-    //     if (review.restaurantId === restaurant.id) {
-    //         console.log(review)
-    //     }
-    // })
-
 
 
     return (

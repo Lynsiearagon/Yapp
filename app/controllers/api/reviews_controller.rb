@@ -15,8 +15,14 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
-    def index 
-        @reviews = Review.all 
+    def restaurant_reviews_index
+        @reviews = Restaurant.find_by(id: params[:restaurant_id])&.reviews
+
+        if @reviews 
+            render 'api/reviews/index'
+        else 
+            render json: {errors: "Cannot find restaurant reviews."}, status: 404
+        end
     end
 
     def update 
@@ -44,7 +50,14 @@ class Api::ReviewsController < ApplicationController
     private 
 
     def review_params
-        params.require(:review).permit(:body, :star_rating, :reviewer_id, :restaurant_id)
+        params.require(:review).permit(
+            :body, 
+            :star_rating, 
+            :reviewer_id, 
+            :reviewer_first_name,
+            :reviewer_last_name, 
+            :restaurant_id
+        )
     end
 
 end

@@ -10,9 +10,10 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :show, :destroy]
     resources :restaurants, only: [:index, :show]
-    resources :reviews, only: [:create, :index, :show, :update, :destroy]
+    resources :reviews, only: [:create, :update, :destroy]
   end
 
+  get "/api/reviews/restaurants/:restaurant_id", to: 'api/reviews#restaurant_reviews_index'
   get '*path', to: "static_pages#frontend_index"
 
 end
