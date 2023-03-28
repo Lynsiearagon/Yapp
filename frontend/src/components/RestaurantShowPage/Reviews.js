@@ -3,9 +3,6 @@ import { BsStarFill } from "react-icons/bs"
 
 const Reviews = ({review}) => {
 
-    console.log("IN REVIEW COMPONENT")
-    console.log(review.id)
-
     return (
         <div id="reviewDiv">
             <div id="starRating">
