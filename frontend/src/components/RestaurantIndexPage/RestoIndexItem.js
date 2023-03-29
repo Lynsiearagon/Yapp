@@ -45,8 +45,7 @@ const RestaurantIndexItem = () => {
                             <h2 className="restoName">
                                 {i+1}. {resto.restaurantName}
                             </h2>
-                            <li> 
-                                Star placeholder; 
+                            <li>
                                 <VisualAverageStarRating restaurant={resto} />
                             </li>
                             <li>
