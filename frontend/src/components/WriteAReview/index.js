@@ -111,6 +111,9 @@ const WriteAReview = () => {
                         placeholder="Doesn't look like much when you walk past, but I was practially dying of hunger so I popped in. The definition of hole-in-the-wall. I got the regular hamburger and wow... there are no words. A classic burger done right. Crisp bun, juicy patty, stuffed with essentials (ketchup, shredded lettuce, tomato, and pickles). There's about a million options available between the menu board and wall full of specials, so it can get a little overwhelming, but you really can't go wrong. Not much else to say besides go see for yourself! You won't be disappointed."
                         >
                     </textarea>
+                    <ul>
+                    {errors.map(error => <li id="createReviewErrors" key={error}>{error}</li>)}
+                    </ul>
                 </div>
 
                 <button
@@ -119,9 +122,7 @@ const WriteAReview = () => {
                         Post Review
                 </button>
             </form>
-            <ul>
-                {errors.map(error => <li id="errorsLi" key={error}>{error}</li>)}
-            </ul>
+
         </div>
         </div>
         

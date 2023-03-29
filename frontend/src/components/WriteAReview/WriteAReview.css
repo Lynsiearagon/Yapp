@@ -1,3 +1,8 @@
+#createReviewErrors {
+    padding-top: 30px;
+    color: red;
+}
+
 
 #restoNameHeaderWAR {
     font-size: 28px;
@@ -23,7 +28,8 @@
 
 #reviewBodyInputField {
     width: 575px;
-    height: 216px;
+    height: auto;
+    min-height: 216px;
     box-sizing: border-box;
     background-color: white;
     resize: none;
@@ -37,6 +43,7 @@
 
 #ratingAndReviewBorder {
     border: lightgrey solid 1px;
+    border-radius: 4px;
     padding: 25px;
 }
 
