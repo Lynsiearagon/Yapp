@@ -14,6 +14,7 @@ import Review from "./Reviews";
 import * as reviewActions from '../../store/reviews';
 import MyStickyContactInfo from "./MyStickyContactInfo";
 import WriteAReviewButton from "../WriteAReviewButton/WriteAReviewButton";
+import VisualAverageStarRating from "../Stars/Index"
 import './RestaurantShowPage.css';
 
 
@@ -44,10 +45,7 @@ const RestaurantShowPage = () => {
             <header id="RestoHeaderDiv">
                 <h1 id="restoNameHeader">{restaurant.restaurantName}</h1>
                 <div id="starsOnRestoShowPageDiv">
-                    <BsStarFill className="starsOnRestoShowPage"/>
-                    <BsStarFill className="starsOnRestoShowPage"/>
-                    <BsStarFill className="starsOnRestoShowPage"/>
-                    <BsStarFill className="starsOnRestoShowPage"/>
+                    <VisualAverageStarRating restaurant={restaurant} />
                 </div>
                 <div id="priceAndCuisineWrapper">
                     <div id="priceRange">

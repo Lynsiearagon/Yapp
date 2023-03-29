@@ -25,7 +25,7 @@ const RecentActivityItem = () => {
 
     return (
     
-        reviews.map((review) => {
+        Object.values(reviews).reverse().map((review) => {
 
             return (
                 <ul className="RAIUserInfo" key={review.id}>

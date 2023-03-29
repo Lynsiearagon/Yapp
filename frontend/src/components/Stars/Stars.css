@@ -1,0 +1,64 @@
+.darkOrangeStars {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 136, 0);
+    height: 15px;
+    width: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+.greyStars {
+    color: rgb(255, 255, 255);
+    background-color: lightgrey;
+    height: 15px;
+    width: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+.orangeStars{
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 177, 31);
+    height: 15px;
+    width: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+.orangeRedStars {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 79, 25);
+    height: 15px;
+    width: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 3px
+}
+
+.yellowStars {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 220, 80);
+    height: 15px;
+    width: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+.redStars {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 21, 0);
+    height: 15px;
+    width: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+.greyStarsDiv {
+    display: flex;
+    flex-direction: row;
+}

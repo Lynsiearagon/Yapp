@@ -4,12 +4,12 @@ import { useSelector } from 'react-redux'
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import RestaurantIndexItemButton from './RestoIndexItemButton';
-import { BsStarFill } from 'react-icons/bs';
 import { RestoHoursSingleLine } from './RestoHours';
 import { BsClock } from 'react-icons/bs';
 import RestaurantAmenitiesListings from './RestoAmenitiesListings';
 import { Link } from 'react-router-dom';
 import RestoIndexReview from './IndexReview';
+import { VisualAverageStarRating } from '../Stars/Index'
 
 
 const RestaurantIndexItem = () => {
@@ -45,12 +45,8 @@ const RestaurantIndexItem = () => {
                             <h2 className="restoName">
                                 {i+1}. {resto.restaurantName}
                             </h2>
-                            <li> 
-                                <BsStarFill className="starIcon"/>
-                                <BsStarFill className="starIcon"/>
-                                <BsStarFill className="starIcon"/>
-                                <BsStarFill className="starIcon"/>
-                                1139
+                            <li>
+                                <VisualAverageStarRating restaurant={resto} />
                             </li>
                             <li>
                                 <RestaurantIndexItemButton name={resto.cuisine} id="cuisineFilterButton" /> • {resto.price} • {resto.neighborhood}
