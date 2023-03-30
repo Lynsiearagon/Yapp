@@ -17,7 +17,7 @@ const WriteAReviewButton = ({restaurantId}) => {
     const mustBeLoggedInToWriteReview = (e) => {
         e.preventDefault();
         history.push("/login");
-        dispatch(sessionActions.login());
+        dispatch(sessionActions.login(sessionUser));
         history.go(-1);
     };
 
