@@ -1,4 +1,5 @@
-import { BsStarFill } from "react-icons/bs"
+import React from 'react';
+import { VisualSingleReviewStarRating } from '../Stars/Index';
 
 
 const Reviews = ({review, restaurantId}) => {
@@ -7,8 +8,11 @@ const Reviews = ({review, restaurantId}) => {
         return (
         
             <div id="reviewDiv">
+                <div>
+                    Photo placeholder
+                </div>
                 <div id="starRating">
-                    {review.starRating}
+                    <VisualSingleReviewStarRating review={review} />
                 </div>
                 
                 <div id="review">

@@ -14,7 +14,7 @@ import Review from "./Reviews";
 import * as reviewActions from '../../store/reviews';
 import MyStickyContactInfo from "./MyStickyContactInfo";
 import WriteAReviewButton from "../WriteAReviewButton/WriteAReviewButton";
-import VisualAverageStarRating from "../Stars/Index"
+import { VisualAverageStarRating } from "../Stars/Index"
 import './RestaurantShowPage.css';
 
 

@@ -16,10 +16,10 @@ const WriteAReview = () => {
     const { restaurantId } = useParams();
     const restaurant = useSelector(getRestaurant(restaurantId));
     const [body, setBody] = useState('');
-    const [starRating, setStarRating] = useState(0);
+    const [starRating, setStarRating] = useState('');
+    const sessionUser = useSelector(state => state.session.user);
     const [hover, setHover] = useState(0);
     const [errors, setErrors] = useState([]);
-    const sessionUser = useSelector(state => state.session.user);
 
     useEffect(() => {
         dispatch(fetchRestaurant(restaurantId))
@@ -29,25 +29,15 @@ const WriteAReview = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        return dispatch(reviewActions.createReview({
+        
+        dispatch(reviewActions.createReview({
             body, 
-            starRating, 
-            restaurantId: restaurant.id, 
-            reviewerId: sessionUser.id,
-            reviewerFirstName: sessionUser.firstName, 
-            reviewerLastName: sessionUser.lastName
+            starRating,
+            restaurantId
         }))
-            .catch(async (res) => {
-                let data; 
-                try {
-                    data = await res.clone().json();
-                } catch {
-                    data = await res.text();
-                }
-                if (data?.errors) setErrors(data.errors); 
-                else if (data) setErrors([data]); 
-                else setErrors([res.statusText])
-            }); 
+
+        restaurant.totalNumReviews += 1;
+        history.push(`/restaurants/${restaurantId}`);
     }
 
     // const starRatingBackgroundColor = (indexNum) => {
@@ -107,12 +97,12 @@ const WriteAReview = () => {
                         id="reviewBodyInputField"
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
-                        required
                         placeholder="Doesn't look like much when you walk past, but I was practially dying of hunger so I popped in. The definition of hole-in-the-wall. I got the regular hamburger and wow... there are no words. A classic burger done right. Crisp bun, juicy patty, stuffed with essentials (ketchup, shredded lettuce, tomato, and pickles). There's about a million options available between the menu board and wall full of specials, so it can get a little overwhelming, but you really can't go wrong. Not much else to say besides go see for yourself! You won't be disappointed."
+                        required
                         >
                     </textarea>
                     <ul>
-                    {errors.map(error => <li id="createReviewErrors" key={error}>{error}</li>)}
+                        {errors.map(error => <li id="createReviewErrors" key={error}>{error}</li>)}
                     </ul>
                 </div>
 

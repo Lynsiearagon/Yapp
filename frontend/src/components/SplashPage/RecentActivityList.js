@@ -1,28 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import RecentActivityItem from './RecentActivityItem';
-import { useLocation } from 'react-router-dom';
+import * as reviewActions from '../../store/reviews';
 
 
 const RecentActivity = () => {
-    const location = useLocation();
+    const reviews = useSelector(reviewActions.getReviews);
 
-    if (location.pathname === '/') 
     return (
         <div id="recentActivityWrapper">
             <h1 className="splashTitles">Recent Activity</h1>
-
-    {/* Once the restos are set up, map through and populate info */}
-
             <div >
                 <ul className="RAGrid">
-                    <RecentActivityItem />
-                    <RecentActivityItem />
-                    <RecentActivityItem />
-                    <RecentActivityItem />
+                    {
+                        Object.values(reviews).reverse().map((review) => {
+                            return <li><RecentActivityItem review={review} /></li>    
+                        })
+                    }
                 </ul>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default RecentActivity;

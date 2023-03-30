@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { BsStarFill } from 'react-icons/bs'; 
-import * as reviewActions from '../../store/reviews'
-import './Stars.css'
+import * as reviewActions from '../../store/reviews';
+import './Stars.css';
 
 
 export const VisualAverageStarRating = ({restaurant}) => {
@@ -20,69 +20,111 @@ export const VisualAverageStarRating = ({restaurant}) => {
 
     let average = Math.floor(totalStarCount / totalRestoReviews);
     
-
-    if (average === 0 || !average) {
-        return <>
-                <div id="greyStarsDiv">
-                    <BsStarFill className="greyStars"/>
-                    <BsStarFill className="greyStars"/>
-                    <BsStarFill className="greyStars"/>
-                    <BsStarFill className="greyStars"/>
-                    <BsStarFill className="greyStars"/>
-                </div>
-            </>
-    } else if (average === 1) {
-        return <>
-                <div id="greyStarsDiv">
-                    <BsStarFill className="yelloStars"/>
-                    <BsStarFill className="greyStars"/>
-                    <BsStarFill className="greyStars"/>
-                    <BsStarFill className="greyStars"/>
-                    <BsStarFill className="greyStars"/>
-                </div>
-            </>
-    } else if (average === 2) {
-        return <>
-                <div id="greyStarsDiv">
-                    <BsStarFill className="orangeStars"/>
-                    <BsStarFill className="orangeStars"/>
-                    <BsStarFill className="greyStars"/>
-                    <BsStarFill className="greyStars"/>
-                    <BsStarFill className="greyStars"/>
-                </div>
-            </>
-    } else if (average === 3) {
-        return <>
-                <div id="greyStarsDiv">
-                    <BsStarFill className="darkOrangeStars"/>
-                    <BsStarFill className="darkOrangeStars"/>
-                    <BsStarFill className="darkOrangeStars"/>
-                    <BsStarFill className="greyStars"/>
-                    <BsStarFill className="greyStars"/>
-                </div>
-            </>
-    } else if (average === 4) {
-        return <>
-                <div id="greyStarsDiv">
-                    <BsStarFill className="orangeRedStars"/>
-                    <BsStarFill className="orangeRedStars"/>
-                    <BsStarFill className="orangeRedStars"/>
-                    <BsStarFill className="orangeRedStars"/>
-                    <BsStarFill className="greyStars"/>
-                </div>
-            </>
-    } else if (average === 5) {
-        return <>
-            <div id="greyStarsDiv">
-                <BsStarFill className="redStars"/>
-                <BsStarFill className="redStars"/>
-                <BsStarFill className="redStars"/>
-                <BsStarFill className="redStars"/>
-                <BsStarFill className="redStars"/>
-            </div>
-        </>
-    }
-    
+    switch(average) {
+        case 1: 
+            return <div id="greyStarsDiv">
+                        <BsStarFill className="yelloStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                    </div>
+        case 2:
+            return <div id="greyStarsDiv">
+                        <BsStarFill className="orangeStars"/>
+                        <BsStarFill className="orangeStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                    </div>
+        case 3:
+            return <div id="greyStarsDiv">
+                        <BsStarFill className="darkOrangeStars"/>
+                        <BsStarFill className="darkOrangeStars"/>
+                        <BsStarFill className="darkOrangeStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                    </div>
+        case 4:
+            return <div id="greyStarsDiv">
+                        <BsStarFill className="orangeRedStars"/>
+                        <BsStarFill className="orangeRedStars"/>
+                        <BsStarFill className="orangeRedStars"/>
+                        <BsStarFill className="orangeRedStars"/>
+                        <BsStarFill className="greyStars"/>
+                    </div>
+        case 5: 
+            return <div id="greyStarsDiv">
+                        <BsStarFill className="redStars"/>
+                        <BsStarFill className="redStars"/>
+                        <BsStarFill className="redStars"/>
+                        <BsStarFill className="redStars"/>
+                        <BsStarFill className="redStars"/>
+                    </div>
+        default:
+            return  <div id="greyStarsDiv">
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                    </div>
+    };
 };
 
-export default VisualAverageStarRating;
+
+
+export const VisualSingleReviewStarRating = ({review}) => {
+    const rating = review.starRating; 
+
+    switch(rating) {
+        case 1:
+            return <div id="greyStarsDiv">
+                        <BsStarFill className="yelloStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                    </div>
+        case 2:
+            return <div id="greyStarsDiv">
+                        <BsStarFill className="orangeStars"/>
+                        <BsStarFill className="orangeStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                    </div>
+        case 3:
+            return <div id="greyStarsDiv">
+                        <BsStarFill className="darkOrangeStars"/>
+                        <BsStarFill className="darkOrangeStars"/>
+                        <BsStarFill className="darkOrangeStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                    </div>
+        case 4:
+            return <div id="greyStarsDiv">
+                        <BsStarFill className="orangeRedStars"/>
+                        <BsStarFill className="orangeRedStars"/>
+                        <BsStarFill className="orangeRedStars"/>
+                        <BsStarFill className="orangeRedStars"/>
+                        <BsStarFill className="greyStars"/>
+                    </div>
+        case 5:
+            return  <div id="greyStarsDiv">
+                        <BsStarFill className="redStars"/>
+                        <BsStarFill className="redStars"/>
+                        <BsStarFill className="redStars"/>
+                        <BsStarFill className="redStars"/>
+                        <BsStarFill className="redStars"/>
+                    </div>
+        default:
+            return <div id="greyStarsDiv">
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                        <BsStarFill className="greyStars"/>
+                    </div>
+    };
+};

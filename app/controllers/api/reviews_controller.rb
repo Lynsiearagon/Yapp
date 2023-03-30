@@ -1,12 +1,14 @@
 class Api::ReviewsController < ApplicationController
 
-    wrap_parameters include: Review.attribute_names
+    wrap_parameters include: Review.attribute_names + ["restaurantId", "starRating", "reviewerFirstName", "reviewerLastName"]
 
     before_action :require_logged_in, only: [:create, :update, :destroy]
 
     def create 
         @review = Review.new(review_params)
         @review.reviewer_id = current_user.id 
+        @review.reviewer_first_name = current_user.first_name
+        @review.reviewer_last_name = current_user.last_name
 
         if @review.save
             redirect_to api_restaurant_url(@review.restaurant_id)
