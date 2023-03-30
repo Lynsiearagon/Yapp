@@ -1,6 +1,6 @@
 class Api::RestaurantsController < ApplicationController
 
-    wrap_parameters include: Restaurant.attribute_names
+    wrap_parameters include: Restaurant.attribute_names + ["restaurantId", "restaurantName"]
 
     def index 
         @restaurants = Restaurant.all 
