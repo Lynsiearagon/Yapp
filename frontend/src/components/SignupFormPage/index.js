@@ -86,7 +86,7 @@ const SignupFormPage = () => {
                 <span>
                     <p id="termsAndConditions">By continuing, you agree to Yapp's 
                         <a href="#" className="externalsignupFormLinks"> Terms of Service</a> and 
-                        aknowledge Yapp's
+                        acknowledge Yapp's
                         <a href="#" 
                         className="externalsignupFormLinks"> Privacy Policy</a>.
                     </p>

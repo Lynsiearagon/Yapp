@@ -17,7 +17,6 @@ const WriteAReview = () => {
     const restaurant = useSelector(getRestaurant(restaurantId));
     const [body, setBody] = useState('');
     const [starRating, setStarRating] = useState('');
-    const sessionUser = useSelector(state => state.session.user);
     const [hover, setHover] = useState(0);
     const [errors, setErrors] = useState([]);
 
@@ -40,26 +39,6 @@ const WriteAReview = () => {
         history.push(`/restaurants/${restaurantId}`);
     }
 
-    // const starRatingBackgroundColor = (indexNum) => {
-    //     let backgroundColor; 
-
-    //     switch(indexNum) {
-    //         case 1: 
-    //             return backgroundColor = "rgb(253, 225, 64)"
-    //         case 2:
-    //             return backgroundColor = "rgb(255, 186, 67)"
-    //         case 3: 
-    //             return backgroundColor = "rgb(254, 114, 44)"
-    //         case 4: 
-    //             return backgroundColor = "rgb(254, 75, 44)"
-    //         case 5: 
-    //             return backgroundColor = "rgb(254, 44, 44)"
-    //         default:
-    //             return backgroundColor = "lightgrey"
-    //     }
-    // }
-
-
     return (
         <>
         <div id="writeAReviewPageWrapper">
@@ -75,6 +54,7 @@ const WriteAReview = () => {
                     <div id="starRatingDiv">
                         {[...Array(5)].map((star, index) => {
                             index += 1; 
+                            
                             return (
                                 <button
                                     type="button"

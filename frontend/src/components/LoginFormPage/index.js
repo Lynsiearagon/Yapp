@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import linkedin from '../../images/icons8-linkedin-32.png';
 import github from '../../images/icons8-github-24.png';
 import wellfound from '../../images/wellfound-symbol-black.png'
@@ -10,16 +10,18 @@ import './LoginForm.css'
 
 const LoginFormPage = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
 
-    if (sessionUser) return <Redirect to='/' />
+    if (sessionUser) return history.go(-1);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
+        
         return dispatch(sessionActions.login({email, password}))
             .catch(async (res) => {
                 let data; 
@@ -31,8 +33,8 @@ const LoginFormPage = () => {
                 if (data?.errors) setErrors(data.errors);
                 else if (data) setErrors([data]); 
                 else setErrors([res.statusText]);
-                
             });
+        
     }
 
     const scrollToTop = () => {
