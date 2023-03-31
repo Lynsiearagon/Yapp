@@ -40,7 +40,7 @@ const RecentActivityItem = ({review}) => {
                             onClick={scrollToTop}> {restaurants[review.restaurantId - 1].restaurantName} 
                         </Link>
                     </li>
-                    <li>
+                    <li id="starsOnSplashPage">
                         <VisualSingleReviewStarRating review={review} />
                     </li>
                     <li >
