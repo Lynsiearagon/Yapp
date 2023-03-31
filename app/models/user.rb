@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  first_name      :string           not null
+#  last_name       :string           not null
+#  email           :string           not null
+#  photo_url       :string
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  zipcode         :string           not null
+#  birthday        :date
+#  month           :string
+#  day             :string
+#  year            :string
+#
 class User < ApplicationRecord
 
   validates :first_name, presence: true 

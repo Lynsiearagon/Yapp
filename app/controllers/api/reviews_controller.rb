@@ -33,9 +33,9 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update 
-        @review = Review.find_by(id: params[:id]) 
+        @review = Review.find(id: params[:id]) 
 
-        if @review.reviewer_id == current_user.id && review.update
+        if @review && @review.update(review_params)
             redirect_to api_restaurant_url(@review.restaurant_id)
         else 
             render json: { errors: @review.errors.full_messages}, status: 422 

@@ -13,14 +13,12 @@ const DeleteReviewButton = ({review}) => {
         dispatch(reviewActions.deleteReview(review.id));
     };
 
-    if (sessionUser.id === review.reviewerId) {
+    if ( sessionUser && sessionUser.id === review.reviewerId) {
         return (
             <div onClick={deleteThisReview} id="deleteReviewIcon" title="Delete review">
                 <BiTrash />
             </div>
         )
-    } else {
-        return null
     };
 };
 

@@ -38,6 +38,16 @@ export const getReviews = (state) => {
     }
 }
 
+export const fetchReview = (reviewId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/reviews/${reviewId}`); 
+
+    if (res.ok) {
+        const review = await res.json(); 
+        dispatch(receiveReview(review))
+    }
+    return res;
+}
+
 export const fetchAllReviews = () => async (dispatch) => {
     const res = await csrfFetch('/api/reviews'); 
 
@@ -45,6 +55,7 @@ export const fetchAllReviews = () => async (dispatch) => {
         const reviews = await res.json();
         dispatch(receiveReviews(reviews)); 
     }
+    return res; 
 };
 
 export const fetchAllRestaurantReviews = (restaurantId) => async (dispatch) => {
@@ -66,8 +77,8 @@ export const createReview = (review) => async (dispatch) => {
     if (res.ok) {
         const review = await res.json();
         dispatch(receiveReview(review));
-        return res; 
     }
+    return res
 };
 
 export const updateReview = (review) => async (dispatch) => {
@@ -79,8 +90,8 @@ export const updateReview = (review) => async (dispatch) => {
     if (res.ok) {
         const review = await res.json();
         dispatch(receiveReview(review)); 
-        return res;
     }
+    return res;
 };
 
 export const deleteReview = (reviewId) => async (dispatch) => {

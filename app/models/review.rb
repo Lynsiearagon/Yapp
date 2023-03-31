@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id                  :bigint           not null, primary key
+#  body                :text             not null
+#  star_rating         :integer          not null
+#  reviewer_id         :bigint           not null
+#  restaurant_id       :bigint           not null
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  photo_url           :string
+#  reviewer_first_name :string           not null
+#  reviewer_last_name  :string
+#
 class Review < ApplicationRecord
     validates :body, length: { minimum: 200 }
     validates :star_rating, inclusion: { in: 1..5 }

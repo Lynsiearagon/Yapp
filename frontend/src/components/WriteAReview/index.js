@@ -14,30 +14,53 @@ const WriteAReview = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { restaurantId } = useParams();
+    const { reviewId } = useParams();
+    
+    const formType = reviewId ? 'Update Review' : 'Post Review';
+
+    let review = useSelector(reviewActions.getReview(reviewId));
+
+    if (formType === 'Post Review') review = {
+        starRating: '',
+        body: '',
+        restaurantId
+    };
+
     const restaurant = useSelector(getRestaurant(restaurantId));
-    const [body, setBody] = useState('');
-    const [starRating, setStarRating] = useState('');
+    const [body, setBody] = useState(review.body);
+    const [starRating, setStarRating] = useState(review.starRating);
     const [hover, setHover] = useState(0);
     const [errors, setErrors] = useState([]);
 
     useEffect(() => {
         dispatch(fetchRestaurant(restaurantId))
-    }, [restaurantId, dispatch])
+    }, [restaurantId, dispatch]);
 
+    useEffect(() => {
+        if (reviewId) {
+            dispatch(reviewActions.fetchReview(reviewId))
+        }
+    }, [reviewId])
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        
-        dispatch(reviewActions.createReview({
-            body, 
-            starRating,
-            restaurantId
-        }))
 
-        restaurant.totalNumReviews += 1;
+        const requestFunction = reviewId ? reviewActions.updateReview : reviewActions.createReview
+        
+        const formData = {
+            body: body, 
+            star_rating: starRating,
+            reviewId
+        };
+
+        dispatch(requestFunction(formData));
+
+        if (!reviewId) restaurant.totalNumReviews += 1;
         history.push(`/restaurants/${restaurantId}`);
     }
+
+    const buttonText = reviewId ? 'Update Review' : 'Post Review';
 
     return (
         <>
@@ -89,7 +112,7 @@ const WriteAReview = () => {
                 <button
                     type="submit"
                     id="submitAReviewButton">
-                        Post Review
+                        {buttonText}
                 </button>
             </form>
 

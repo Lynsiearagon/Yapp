@@ -24,6 +24,9 @@ function App() {
           <Route path='/seeyousoon'>
             <SeeYouSoonPage />
           </Route>
+          <Route path='/restaurants/:restaurantId/edit/:reviewId/write-a-review'>
+            <WriteAReview />
+          </Route>
           <Route path='/restaurants/:restaurantId/write-a-review'>
             <WriteAReview />
           </Route>
