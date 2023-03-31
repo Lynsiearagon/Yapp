@@ -13,6 +13,10 @@ const RecentActivityItem = ({review}) => {
         window.scrollTo(0, 0)
     };
 
+    if (!restaurants) {
+        return <div>Loading...</div>
+    };
+
     return (
             <ul className="RAIUserInfo" key={review.id}>
                 <div id="iconUNWroteAReviewWrapper">

@@ -10,7 +10,6 @@ import * as reviewActions from '../../store/reviews';
 
 const SplashPage = () => {
     const dispatch = useDispatch();
-    const reviews = useSelector(reviewActions.getReviews);
     
     useEffect(() => {
         dispatch(restaurantActions.fetchRestaurants());

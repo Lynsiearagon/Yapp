@@ -2,6 +2,8 @@ import React from 'react';
 import { VisualSingleReviewStarRating } from '../Stars/Index';
 import { FaUserCircle } from "react-icons/fa";
 import ReviewDate from '../ReviewDate/ReviewDate';
+import DeleteReviewButton from '../DeleteReviewButton/DeleteReviewButton';
+import UpdateReviewButton from '../UpdateReview/UpdateReview';
 
 
 const Reviews = ({review, restaurantId}) => {
@@ -16,6 +18,12 @@ const Reviews = ({review, restaurantId}) => {
                     </div>
                     <div id="reviewerNameDiv">
                         {review.reviewerFirstName} {review.reviewerLastName[0]}.
+                    </div>
+                    <div>
+                        <DeleteReviewButton review={review} />
+                    </div>
+                    <div>
+                        <UpdateReviewButton review={review} />
                     </div>
                 </div>
                 <div id="starRatingDivRestoShow">

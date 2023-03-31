@@ -1,0 +1,7 @@
+#updateReviewIconDiv {
+    cursor: pointer;
+    color: grey;
+    border: lightgrey solid 1px;
+    padding: 3px;
+    border-radius: 3px;
+}

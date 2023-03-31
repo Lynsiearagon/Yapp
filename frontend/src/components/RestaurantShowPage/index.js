@@ -30,14 +30,14 @@ const RestaurantShowPage = () => {
 
     useEffect(() => {
         dispatch(reviewActions.fetchAllRestaurantReviews(restaurantId))
-    }, [restaurantId, dispatch, reviews.length]);
+    }, [restaurantId, reviews.length, dispatch]);
 
 
     if (!restaurant) {
         return (
             <div>loading..</div>
         )
-    }
+    };
 
     return (
         
