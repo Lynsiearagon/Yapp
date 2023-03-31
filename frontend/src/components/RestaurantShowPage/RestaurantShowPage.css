@@ -9,7 +9,7 @@ height: auto;
 #aboutTheRestoHeader {
     font-weight: 800;
     font-size: 20px;
-    padding-top: 20px;
+    margin-top: 30px;
 }
 
 #aboutTheRestoBlurb {
@@ -52,7 +52,7 @@ height: auto;
 #amenitiesAndMoreHeader {
     font-weight: 800;
     font-size: 20px;
-    padding-top: 20px;
+    margin-top: 30px;
 }
 
 #amenitiesAndMoreWrapper {
@@ -103,6 +103,27 @@ height: auto;
     border: lightgrey solid 1px;
     border-radius: 4px;
     font-size: 14px;
+}
+
+#emptyDivForAttention {
+    width: 10px;
+    background-color: rgb(0, 98, 255);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#exclamationIcon {
+    color: rgb(0, 98, 255);
+    width: 25px;
+    height: 25px;
+}
+
+#exclamationIconDiv {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 #getDirectionsDiv {
@@ -180,6 +201,7 @@ height: auto;
     position: -webkit-sticky;
     position: sticky;
     top: 150px;
+    background-color: white;
 }
 
 
@@ -216,6 +238,7 @@ height: auto;
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
+    background-color: white;
 }
 
 #restoWebsiteLinkDiv {
@@ -336,10 +359,29 @@ height: auto;
     color: black;
 }
 
+#reviewBody {
+    display: block;
+    color: rgb(64, 64, 64);
+    height: auto;
+    line-height: 20px;
+    font-size: 14px;
+    width: 90%;
+}
+
+#reviewDate{
+    color: rgb(135, 135, 135);
+}
+
+#reviewerNameDiv {
+    font-weight: bold;
+}
+
 #reviewsHeader {
+    width: 95%;
     font-weight: 800;
     font-size: 20px;
     padding-bottom: 20px;
+    margin-top: 30px;
 }
 
 #ReviewsSection {
@@ -347,14 +389,26 @@ height: auto;
     flex-direction: column;
 }
 
-#reviewDiv {
+#reviewItemDivWrapper {
     margin-bottom: 25px;
+}
+
+#reviewsSectionWrapper {
+    border-top: lightgrey solid 1px;
+    width: 95%;
 }
 
 
 #reviewIcon {
     padding-bottom: 3px;
     padding-right: 5px;
+}
+
+#reviewerInfoDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 #smallMapLocation {
@@ -380,6 +434,16 @@ height: auto;
     margin-right: 5px;
 }
 
+#starRatingDivRestoShow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+
+}
+
 #stickyContactMeHeaderDiv {
     font-weight: 800;
     font-size: 20px;
@@ -398,6 +462,24 @@ height: auto;
     font-weight: bold;
 }
 
+#trustBanner {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background-color: rgb(229, 243, 253);
+    height: 60px;
+    width: 786px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+#trustBannerMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #dayAndTodayTagWrapper {
     display: flex;
     justify-content: space-between;
@@ -408,6 +490,12 @@ height: auto;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+#userPhotoIconRestoShow {
+    width: 60px;
+    height: 60px;
+    color: lightgrey;
 }
 
 #writeAReviewButton {

@@ -1,5 +1,7 @@
 import React from 'react';
 import { VisualSingleReviewStarRating } from '../Stars/Index';
+import { FaUserCircle } from "react-icons/fa";
+import ReviewDate from '../ReviewDate/ReviewDate';
 
 
 const Reviews = ({review, restaurantId}) => {
@@ -7,19 +9,21 @@ const Reviews = ({review, restaurantId}) => {
     if (review.restaurantId === restaurantId) {
         return (
         
-            <div id="reviewDiv">
-                <div>
-                    Photo placeholder
+            <div id="reviewItemDivWrapper">
+                <div id="reviewerInfoDiv">
+                    <div id="reviewerPhotoDiv">
+                        <FaUserCircle id="userPhotoIconRestoShow" />
+                    </div>
+                    <div id="reviewerNameDiv">
+                        {review.reviewerFirstName} {review.reviewerLastName[0]}.
+                    </div>
                 </div>
-                <div id="starRating">
-                    <VisualSingleReviewStarRating review={review} />
+                <div id="starRatingDivRestoShow">
+                    <VisualSingleReviewStarRating review={review} /> <ReviewDate datePosted={review.createdAt} />
                 </div>
                 
-                <div id="review">
-                    <ol>
-                        <li>{review.reviewerFirstName}</li>
-                        <li>{review.body}</li>
-                    </ol>
+                <div id="reviewBody">
+                    {review.body}
                 </div>
             </div>
         )

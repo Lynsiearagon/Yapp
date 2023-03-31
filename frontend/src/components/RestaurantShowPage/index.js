@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchRestaurant, getRestaurant } from "../../store/restaurants";
 import { RestoHoursFullList, RestoHoursSingleLine } from "../RestaurantIndexPage/RestoHours";
-import { BsStarFill } from 'react-icons/bs';
+import { VisualAverageStarRating } from "../Stars/Index";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
+import * as reviewActions from '../../store/reviews';
 import MapWrapper from "../Map/Map";
 import RestaurantIndexItemButton from "../RestaurantIndexPage/RestoIndexItemButton";
 import Address from "./Address";
@@ -11,10 +13,8 @@ import RestaurantAmenitiesListings from "../RestaurantIndexPage/RestoAmenitiesLi
 import AboutTheRestaurant from "./AboutResto";
 import StickyRestoContactInfo from "./StickyRestoContactInfo";
 import Review from "./Reviews";
-import * as reviewActions from '../../store/reviews';
 import MyStickyContactInfo from "./MyStickyContactInfo";
 import WriteAReviewButton from "../WriteAReviewButton/WriteAReviewButton";
-import { VisualAverageStarRating } from "../Stars/Index"
 import './RestaurantShowPage.css';
 
 
@@ -30,7 +30,7 @@ const RestaurantShowPage = () => {
 
     useEffect(() => {
         dispatch(reviewActions.fetchAllRestaurantReviews(restaurantId))
-    }, [restaurantId, dispatch]);
+    }, [restaurantId, dispatch, reviews.length]);
 
 
     if (!restaurant) {
@@ -117,8 +117,19 @@ const RestaurantShowPage = () => {
                     </div>
 
 
-                    <div>
+                    <div id="reviewsSectionWrapper">
                         <h2 id="reviewsHeader">Recommended Reviews</h2>
+
+                        <div id="trustBanner">
+                            <div id="emptyDivForAttention"></div>
+                            <div id="exclamationIconDiv">
+                                <AiOutlineExclamationCircle id="exclamationIcon" />
+                            </div>
+                            <div id="trustBannerMessage">
+                                <span style={{fontWeight: "bold"}}>Your trust is our top concern</span><span>, so businesses can't pay to alter or remove their reviews.</span>
+                            </div>
+                        </div>
+
                         <div id="ReviewsSection">
                             { 
                                 !reviews.length ? 

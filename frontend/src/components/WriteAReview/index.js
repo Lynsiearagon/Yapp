@@ -4,8 +4,8 @@ import { fetchRestaurant } from '../../store/restaurants';
 import { getRestaurant } from '../../store/restaurants';
 import { useParams, useHistory } from 'react-router-dom';
 import * as reviewActions from '../../store/reviews';
-import { BsFillStarFill } from 'react-icons/bs'
-import './WriteAReview.css'
+import { BsFillStarFill } from 'react-icons/bs';
+import './WriteAReview.css';
 
 
 
