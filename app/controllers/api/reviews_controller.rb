@@ -57,8 +57,6 @@ class Api::ReviewsController < ApplicationController
         if @review && @review.reviewer_id == current_user.id
             @review.destroy
         end
-        
-        redirect_to api_restaurant_url(@review.restaurant_id)
     end 
 
 

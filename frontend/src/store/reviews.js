@@ -15,9 +15,9 @@ export const receiveReviews = (reviews) => ({
     reviews
 }); 
 
-export const removeReview = (review) => ({
+export const removeReview = (reviewId) => ({
     type: REMOVE_REVIEW,
-    review
+    reviewId
 });
 
 
@@ -100,8 +100,7 @@ export const deleteReview = (reviewId) => async (dispatch) => {
     }); 
 
     if (res.ok) {
-        const review = await res.json();
-        dispatch(removeReview(review)); 
+        dispatch(removeReview(reviewId)); 
     }
 };
 
