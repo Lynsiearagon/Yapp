@@ -11,7 +11,6 @@ class Api::ReviewsController < ApplicationController
         @review.reviewer_last_name = current_user.last_name
 
         if @review.save
-            # render "/api/reviews/show"
             redirect_to api_restaurant_url(@review.restaurant_id)
         else
             render json: { errors: @review.errors.full_messages}, status: 422
@@ -39,13 +38,12 @@ class Api::ReviewsController < ApplicationController
     # end
 
     def update 
-        @review = Review.find(params[:id])
+        @review = Review.find_by(id: params[:id])
         @review.reviewer_id = current_user.id 
         @review.reviewer_first_name = current_user.first_name
         @review.reviewer_last_name = current_user.last_name
 
         if @review && @review.update(review_params)
-            # render "/api/reviews/index"
             redirect_to api_restaurant_url(@review.restaurant_id)
         else 
             render json: { errors: @review.errors.full_messages}, status: 422 

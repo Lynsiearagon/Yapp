@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRestaurant } from '../../store/restaurants';
 import { getRestaurant } from '../../store/restaurants';
 import { useParams, useHistory } from 'react-router-dom';
 import * as reviewActions from '../../store/reviews';
@@ -23,21 +22,27 @@ const WriteAReview = () => {
     const [hover, setHover] = useState(0);
     const [errors, setErrors] = useState([]);
 
-    // console.log(reviewId)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
 
-        const requestFunction = reviewId ? reviewActions.updateReview : reviewActions.createReview;
+        // const requestFunction = reviewId ? reviewActions.updateReview : reviewActions.createReview;
         
-        const formData = {
-            body, 
-            star_rating: starRating,
-            restaurant_id: restaurantId
-        };
+            let formData = {
+                body, 
+                star_rating: starRating,
+                restaurant_id: restaurantId
+            };
 
-        dispatch(requestFunction(formData));
+
+        if (reviewId) {
+            dispatch(reviewActions.updateReview(formData, reviewId));
+        } else {
+            dispatch(reviewActions.createReview(formData));
+        }
+
+        // dispatch(requestFunction(formData));
 
         if (!reviewId) restaurant.totalNumReviews += 1;
         history.push(`/restaurants/${restaurantId}`);

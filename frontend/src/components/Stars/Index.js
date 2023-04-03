@@ -23,7 +23,7 @@ export const VisualAverageStarRating = ({restaurant}) => {
     switch(average) {
         case 1: 
             return <div id="greyStarsDiv">
-                        <BsStarFill className="yelloStars"/>
+                        <BsStarFill className="yellowStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
@@ -80,7 +80,7 @@ export const VisualSingleReviewStarRating = ({review}) => {
     switch(rating) {
         case 1:
             return <div id="greyStarsDiv">
-                        <BsStarFill className="yelloStars"/>
+                        <BsStarFill className="yellowStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
