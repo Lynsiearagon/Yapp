@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
 
-    wrap_parameters include: Review.attribute_names + ["restaurantId", "starRating", "reviewerFirstName", "reviewerLastName"]
+    wrap_parameters include: Review.attribute_names + ["starRating", "reviewerFirstName", "reviewerLastName"]
 
     before_action :require_logged_in, only: [:create, :update, :destroy]
 
@@ -11,31 +11,41 @@ class Api::ReviewsController < ApplicationController
         @review.reviewer_last_name = current_user.last_name
 
         if @review.save
+            # render "/api/reviews/show"
             redirect_to api_restaurant_url(@review.restaurant_id)
         else
             render json: { errors: @review.errors.full_messages}, status: 422
         end
     end
 
-    def restaurant_reviews_index
-        @reviews = Restaurant.find_by(id: params[:restaurant_id])&.reviews
-
-        if @reviews 
-            render 'api/reviews/index'
-        else 
-            render json: {errors: "Cannot find restaurant reviews."}, status: 404
-        end
+    def index 
+        @reviews = Review.all 
+        render '/api/reviews/index'
     end
 
-    def all_reviews
-        @reviews = Review.all.reverse
-        render 'api/reviews/index'
-    end
+    # def restaurant_reviews_index
+    #     @reviews = Restaurant.find_by(id: params[:restaurant_id])&.reviews
+
+    #     if @reviews 
+    #         render 'api/reviews/index'
+    #     else 
+    #         render json: {errors: "Cannot find restaurant reviews."}, status: 404
+    #     end
+    # end
+
+    # def all_reviews
+    #     @reviews = Review.all
+    #     # render 'api/reviews/index'
+    # end
 
     def update 
-        @review = Review.find(id: params[:id]) 
+        @review = Review.find(params[:id])
+        @review.reviewer_id = current_user.id 
+        @review.reviewer_first_name = current_user.first_name
+        @review.reviewer_last_name = current_user.last_name
 
         if @review && @review.update(review_params)
+            # render "/api/reviews/index"
             redirect_to api_restaurant_url(@review.restaurant_id)
         else 
             render json: { errors: @review.errors.full_messages}, status: 422 

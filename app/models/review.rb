@@ -14,7 +14,7 @@
 #  reviewer_last_name  :string
 #
 class Review < ApplicationRecord
-    validates :body, length: { minimum: 200 }
+    validates :body, length: { minimum: 100, message: ['Give us a little more detail...'] }
     validates :star_rating, inclusion: { in: 1..5 }
     # validates :reviewer_id, presence: true, uniqueness: true 
     # validates :restaurant_id, presence: true, uniqueness: true

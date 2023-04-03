@@ -15,43 +15,26 @@ const WriteAReview = () => {
     const history = useHistory();
     const { restaurantId } = useParams();
     const { reviewId } = useParams();
-    
-    const formType = reviewId ? 'Update Review' : 'Post Review';
-
     let review = useSelector(reviewActions.getReview(reviewId));
 
-    if (formType === 'Post Review') review = {
-        starRating: '',
-        body: '',
-        restaurantId
-    };
-
     const restaurant = useSelector(getRestaurant(restaurantId));
-    const [body, setBody] = useState(review.body);
-    const [starRating, setStarRating] = useState(review.starRating);
+    const [body, setBody] = useState(reviewId ? review.body : "");
+    const [starRating, setStarRating] = useState(reviewId ? review.starRating : "");
     const [hover, setHover] = useState(0);
     const [errors, setErrors] = useState([]);
 
-    useEffect(() => {
-        dispatch(fetchRestaurant(restaurantId))
-    }, [restaurantId, dispatch]);
-
-    useEffect(() => {
-        if (reviewId) {
-            dispatch(reviewActions.fetchReview(reviewId))
-        }
-    }, [reviewId])
+    // console.log(reviewId)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
 
-        const requestFunction = reviewId ? reviewActions.updateReview : reviewActions.createReview
+        const requestFunction = reviewId ? reviewActions.updateReview : reviewActions.createReview;
         
         const formData = {
-            body: body, 
+            body, 
             star_rating: starRating,
-            reviewId
+            restaurant_id: restaurantId
         };
 
         dispatch(requestFunction(formData));

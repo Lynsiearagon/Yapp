@@ -29,8 +29,8 @@ const RestaurantShowPage = () => {
     }, [restaurantId, dispatch]);
 
     useEffect(() => {
-        dispatch(reviewActions.fetchAllRestaurantReviews(restaurantId))
-    }, [restaurantId, reviews.length, dispatch]);
+        dispatch(reviewActions.fetchAllReviews())
+    }, [reviews.length, dispatch]);
 
 
     if (!restaurant) {
