@@ -26,7 +26,9 @@ footer {
 .footerCol {
     display: flex;
     justify-content: center;
-    padding: 0px 100px 100px 100px;
+    padding: 50px 100px 100px 100px;
+    margin-top: 50px;
+
 }
 
 #copyright {

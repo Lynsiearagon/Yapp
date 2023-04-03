@@ -26,25 +26,20 @@ const WriteAReview = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-
-        // const requestFunction = reviewId ? reviewActions.updateReview : reviewActions.createReview;
         
-            let formData = {
-                body, 
-                star_rating: starRating,
-                restaurant_id: restaurantId
-            };
-
+        let formData = {
+            body, 
+            star_rating: starRating,
+            restaurant_id: restaurantId
+        };
 
         if (reviewId) {
             dispatch(reviewActions.updateReview(formData, reviewId));
         } else {
             dispatch(reviewActions.createReview(formData));
-        }
+            restaurant.totalNumReviews += 1;
+        };
 
-        // dispatch(requestFunction(formData));
-
-        if (!reviewId) restaurant.totalNumReviews += 1;
         history.push(`/restaurants/${restaurantId}`);
     }
 
