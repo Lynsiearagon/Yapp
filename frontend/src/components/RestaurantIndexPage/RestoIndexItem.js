@@ -1,25 +1,15 @@
-import './RestaurantIndexPage.css'
-import * as restaurantActions from '../../store/restaurants'
-import { useSelector } from 'react-redux'
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import './RestaurantIndexPage.css';
 import RestaurantIndexItemButton from './RestoIndexItemButton';
 import { RestoHoursSingleLine } from './RestoHours';
 import { BsClock } from 'react-icons/bs';
 import RestaurantAmenitiesListings from './RestoAmenitiesListings';
 import { Link } from 'react-router-dom';
 import RestoIndexReview from './IndexReview';
-import { VisualAverageStarRating } from '../Stars/Index'
+import { VisualAverageStarRating } from '../Stars/Index';
 
 
-const RestaurantIndexItem = () => {
-    const dispatch = useDispatch();
-    const restaurants = useSelector(restaurantActions.getRestaurants);
+const RestaurantIndexItem = ({restaurants}) => {
     
-    useEffect(() => {
-        dispatch(restaurantActions.fetchRestaurants())
-    }, []);
-
     const scrollToTop = () => {
         window.scrollTo(0, 0)
     };
@@ -38,7 +28,7 @@ const RestaurantIndexItem = () => {
                 rel="noreferrer"
                 >
                 <div id='imageAndRestoInfo'>   
-                    <img src="https://b.zmtcdn.com/data/pictures/1/19820841/6e14f718013d279f0f4525d4731cd985.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A" id="restoImage"/>                      
+                    <img src="https://b.zmtcdn.com/data/pictures/1/19820841/6e14f718013d279f0f4525d4731cd985.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A" id="restoImage" alt="Restaurant Banner"/>                      
                     <ul 
                         id="restoListings" 
                         key={resto.id}>

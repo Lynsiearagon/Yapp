@@ -1,15 +1,38 @@
-import React from 'react'; 
+// import React, { useState } from 'react'; 
 import './Filters.css'; 
-import PriceFilters from './PriceFilters';
+// import PriceFilters from './PriceFilters';
 
 
-const Filters = () => {
+const Filters = ({restaurants}) => {
+    // const [selectedFilter, setSelectedFilter] = useState(null)
+
+
+    // const displayRestaurantsByPrice = (e) => {
+
+    //     restaurants.filter(resto => resto.price === value);
+
+    // }
 
 
     return (
         <>
-        <h3 id="filterHeader">Filters</h3>
-        <div><PriceFilters /></div>
+        <h3 id="filterHeader">
+            Filters
+        </h3>
+        <div id="priceButtonsList">
+            <button id="oneDollarSign" value='$'>
+                $
+            </button>
+            <button value='$$'>
+                $$
+            </button>
+            <button value='$$$'>
+                $$$
+            </button>
+            <button id="fourDollarSigns" value='$$$$'>
+                $$$$
+            </button>
+        </div>
         </>
     )
 
