@@ -17,10 +17,15 @@ const RestaurantIndexPage = () => {
 
             <div id="indexListingsDiv" className="restoIdxColumn">
                 <RestaurantIndexItem />
+                <RestaurantIndexItem />
+                <RestaurantIndexItem />
+                <RestaurantIndexItem />
             </div>
 
             <div id="mapDiv" className="restoIdxColumn">
-                <MapWrapper />
+                <div className="sticky">
+                    <MapWrapper />
+                </div>
             </div>
 
         </div>

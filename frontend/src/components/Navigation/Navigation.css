@@ -28,7 +28,19 @@
 }
 
 #logoutButtonInDropDown {
+    border: none;
+    border-top: lightgrey solid 1px;
+    background-color: white;
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
+#logoutButtonInDropDown:hover {
+    background-color: rgb(240, 237, 237);
+    border-radius: 4px;
 }
 
 #navBar {
@@ -38,9 +50,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid;
-    border-color: #e7e6e6;
     z-index: 1;
+    top: 0;
+    background-color: white;
 }
 
 #signUpHPButton {
@@ -107,6 +119,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    margin-right: 40px;
 }
 
 #searchButton {
@@ -140,23 +154,27 @@
     width: 50px;
     height: 50px;
     margin-right: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
+    position: absolute;
+    z-index: 10;
 }
 
 #userDropDownMenu {
     background-color: white;
+    box-shadow: 0 0 5px 0 #d2d2d2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 40px;
-    width: 100px;
-    height: 50px;
-    gap: 15px;
-    padding: 15px;
+    width: 120px;
+    height: 110px;
+    gap: 10px;
+    padding: 15px 15px 0px 15px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 10;
+    margin-right: 110px;
+    top: 25px;
 }
 
 #userPhotoIconInNav {

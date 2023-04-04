@@ -33,6 +33,14 @@
     width: 33%;
 }
 
+.sticky {
+    width: 100%;
+    height: 825px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 100px;
+}
+
 #restoListings {
     width: 63%;
     min-height: 240px;

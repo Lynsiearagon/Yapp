@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom';
 const Navigation = () => {
     const location = useLocation();
     let position;
+    let borderBottom;
 
     if (location.pathname === '/restaurants') {
         position = 'sticky'
@@ -17,8 +18,14 @@ const Navigation = () => {
         position = 'relative'
     }
 
+    if (location.pathname === '/') {
+        borderBottom = 'none'
+    } else {
+        borderBottom = '#e7e6e6 1px solid'
+    }
+
     return (
-        <nav id="navBar" style={{position: position}}>
+        <nav id="navBar" style={{position: position, borderBottom: borderBottom}}>
             <Logo />
             <SearchBar />
             <PersonalLinks />

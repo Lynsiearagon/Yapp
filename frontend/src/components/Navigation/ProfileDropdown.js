@@ -43,7 +43,7 @@ const ProfileDropdown = () => {
 
                 {showMenu && (
                     <ul id="userDropDownMenu">
-                        <li>{sessionUser.firstName} {sessionUser.lastName}</li>
+                        <li style={{marginBottom: "5px"}}>{sessionUser.firstName} {sessionUser.lastName[0]}.</li>
                         <li><LogoutButton /></li>
                     </ul>
                 )}
