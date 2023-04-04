@@ -11,21 +11,24 @@ const Navigation = () => {
     const location = useLocation();
     let position;
     let borderBottom;
+    let backgroundColor; 
 
     if (location.pathname === '/restaurants') {
-        position = 'sticky'
+        position = 'sticky';
+        backgroundColor = 'white';
     } else {
-        position = 'relative'
+        position = 'relative';
+        backgroundColor = 'transparent';
     }
 
     if (location.pathname === '/') {
-        borderBottom = 'none'
+        borderBottom = 'none';
     } else {
-        borderBottom = '#e7e6e6 1px solid'
+        borderBottom = '#e7e6e6 1px solid';
     }
 
     return (
-        <nav id="navBar" style={{position: position, borderBottom: borderBottom}}>
+        <nav id="navBar" style={{position: position, borderBottom: borderBottom, backgroundColor: backgroundColor}}>
             <Logo />
             <SearchBar />
             <PersonalLinks />
