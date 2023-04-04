@@ -1,4 +1,4 @@
-#logInHPButton {
+.logInHPButton {
     font-size: 16px;
     width: 80px;
     height: 40px;
@@ -11,7 +11,7 @@
     border-width: 2px;
 }
 
-#logInHPButton:hover {
+.logInHPButton:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -121,4 +121,23 @@
 #magGlass {
    height: 60%;
    width: auto;
+}
+
+#userDropDownInNavBar {
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#userPhotoIconInNav {
+    display: flex;
+    width: 50px !important;
+    height: 50px !important;
+    color: lightgrey;
 }

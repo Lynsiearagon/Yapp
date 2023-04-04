@@ -21,7 +21,10 @@ const SessionNavigation = () => {
         sessionLinks = (
             <>
                 <NavLink to="/login">
-                    <button id="logInHPButton" style={{color: color, borderColor: color}}>Log In</button>
+                    <button className="logInHPButton" 
+                        style={{color: color, borderColor: "lightgrey"}}>
+                            Log In
+                    </button>
                 </NavLink>
                 <NavLink to="/signup">
                     <button id="signUpHPButton">Sign Up</button>
@@ -30,7 +33,7 @@ const SessionNavigation = () => {
         )
     } else if (sessionUser) {
         sessionLinks = (
-            <NavLink to="/seeyousoon"> <ProfileDropdown /> </NavLink> 
+            <ProfileDropdown />
         )
     };
 
@@ -42,4 +45,4 @@ const SessionNavigation = () => {
 
 }
 
-export default SessionNavigation
+export default SessionNavigation;

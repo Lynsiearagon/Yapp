@@ -1,31 +1,52 @@
-import React from 'react'; 
+import React, { useState, useEffect } from 'react';
 import LogoutButton from "./Logout";
 import { useSelector } from 'react-redux';
 import { FaUserCircle } from "react-icons/fa";
-// import {  }
-
+import './Navigation.css'
 
 const ProfileDropdown = () => {
-    // const dispatch = useDispatch();
-    const sessionUser = useSelector(state => state.session.user)
+    const sessionUser = useSelector(state => state.session.user);
+    const [showMenu, setShowMenu] = useState(false);
 
-    // let profilePhoto;
+    const openMenu = () => {
+        if (showMenu) return;
+        setShowMenu(true);
+    };
 
-    // console.log(sessionUser)
+    useEffect(() => {
+        if (!showMenu) return;
 
-    // if (sessionUser.profilePhoto === null) {
-    //     return profilePhoto = <FaUserCircle id="userPhotoIcon" /> 
-    // } else {
-    //     return profilePhoto = sessionUser.profilePhoto
-    // }
+        const closeMenu = () => {
+            setShowMenu(false);
+        };
 
-    // console.log(profilePhoto)
+        document.addEventListener('click', closeMenu);
+
+        return () => document.removeEventListener('click', closeMenu);
+    }, [showMenu]);
+
+
+    let profilePhoto;
+
+    if (!sessionUser.photoUrl) {
+        profilePhoto = <FaUserCircle id="userPhotoIconInNav" /> 
+    } else {
+        profilePhoto = sessionUser.photoUrl;
+    }
 
     return (
-        <div>
-            <FaUserCircle id="userPhotoIcon" />
-            <LogoutButton />
-        </div>
+        <>
+            <button onClick={openMenu} id="userDropDownInNavBar">
+                {profilePhoto}
+            </button>
+
+            {showMenu && (
+                <ul id="userDropDownMenu">
+                    <li>{sessionUser.firstName} {sessionUser.lastName}</li>
+                    <li><LogoutButton /></li>
+                </ul>
+            )}
+        </>
     )
 
 }

@@ -213,13 +213,18 @@
 #iconUNWroteAReviewWrapper {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 15px;
     gap: 10px;
 }
 
 #userPhotoIcon {
-    width: 30px;
-    height: 30px;
+    width: 40px !important;
+    height: 40px !important;
+    color: lightgrey;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 #restoName {
