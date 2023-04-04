@@ -82,7 +82,7 @@ const RestaurantShowPage = () => {
                         <div id="mapImageAndHoursWrapper">
                             <div id="mapAndAddressWrapper">
                                 <div id="smallMapLocation">
-                                    <MapWrapper />
+                                    <MapWrapper zoom={15} />
                                 </div>
                                 <div id="underMapAddressWrapper">
                                     <Address 
