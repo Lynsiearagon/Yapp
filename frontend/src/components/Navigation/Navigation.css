@@ -27,6 +27,10 @@
     display: flex;
 }
 
+#logoutButtonInDropDown {
+
+}
+
 #navBar {
     height: 100px;
     min-width: 1057px;
@@ -98,6 +102,13 @@
     justify-content: center;
 }
 
+#ProfileDropdownWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #searchButton {
     background: #d32323;
     border-color: #d32323;
@@ -135,9 +146,22 @@
     cursor: pointer;
 }
 
+#userDropDownMenu {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    width: 100px;
+    height: 50px;
+    gap: 15px;
+    padding: 15px;
+}
+
 #userPhotoIconInNav {
     display: flex;
-    width: 50px !important;
-    height: 50px !important;
+    width: 45px !important;
+    height: 45px !important;
     color: lightgrey;
 }

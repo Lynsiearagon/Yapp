@@ -36,16 +36,19 @@ const ProfileDropdown = () => {
 
     return (
         <>
-            <button onClick={openMenu} id="userDropDownInNavBar">
-                {profilePhoto}
-            </button>
+            <div id="ProfileDropdownWrapper">
+                <button onClick={openMenu} id="userDropDownInNavBar">
+                    {profilePhoto}
+                </button>
 
-            {showMenu && (
-                <ul id="userDropDownMenu">
-                    <li>{sessionUser.firstName} {sessionUser.lastName}</li>
-                    <li><LogoutButton /></li>
-                </ul>
-            )}
+                {showMenu && (
+                    <ul id="userDropDownMenu">
+                        <li>{sessionUser.firstName} {sessionUser.lastName}</li>
+                        <li><LogoutButton /></li>
+                    </ul>
+                )}
+
+            </div>
         </>
     )
 
