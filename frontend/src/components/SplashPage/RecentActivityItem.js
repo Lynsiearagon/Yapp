@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { VisualSingleReviewStarRating } from "../Stars/Index";

@@ -136,6 +136,15 @@
     height: 15px;
 }
 
+#starRatingOnRestoIndexPage > .redStars, 
+#starRatingOnRestoIndexPage > .yellowStars, 
+#starRatingOnRestoIndexPage > .orangeRedStars, 
+#starRatingOnRestoIndexPage > .orangeStars, 
+#starRatingOnRestoIndexPage > .greyStars, 
+#starRatingOnRestoIndexPage > .darkOrangeStars {
+    width: 15px;
+}
+
 #amenitiesListing {
     display: flex;
     /* justify-content: center; */

@@ -11,8 +11,7 @@ const LogoutButton = () => {
     const logout = async (e) => {
         e.preventDefault();
         await dispatch(sessionActions.logoutUser());
-        history.push("/seeyousoon")
-        // return <Redirect to="/seeyousoon" />
+        history.push("/seeyousoon");
     }
 
     return (

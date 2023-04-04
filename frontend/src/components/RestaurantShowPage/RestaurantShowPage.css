@@ -449,11 +449,11 @@ height: auto;
 }
 
 #starRatingDivRestoShow > .redStars, 
-#starsOnRestoShowPageDiv > .yellowStars, 
-#starsOnRestoShowPageDiv > .orangeRedStars, 
-#starsOnRestoShowPageDiv > .orangeStars, 
-#starsOnRestoShowPageDiv > .greyStars, 
-#starsOnRestoShowPageDiv > .darkOrangeStars {
+#starRatingDivRestoShow > .yellowStars, 
+#starRatingDivRestoShow > .orangeRedStars, 
+#starRatingDivRestoShow > .orangeStars, 
+#starRatingDivRestoShow > .greyStars, 
+#starRatingDivRestoShow > .darkOrangeStars {
     width: 15px;
 }
 

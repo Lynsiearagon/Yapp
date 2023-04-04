@@ -6,7 +6,9 @@ import { useLocation } from 'react-router-dom';
 const Footer = () => {
     const location = useLocation();
 
-    if (location.pathname !== '/restaurants/1/write-a-review') {
+    if (location.pathname.includes("write-a-review")) {
+        return null;
+    } else {
         return (
             <footer>
                 <div className="footerCol">

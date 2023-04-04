@@ -14,7 +14,7 @@ const RecentActivity = () => {
                 <ul className="RAGrid">
                     {
                         Object.values(reviews).reverse().map((review) => {
-                            return <li><RecentActivityItem review={review} /></li>   
+                            return <li key={review.id}><RecentActivityItem review={review} /></li>   
                         })
                     }
                 </ul>
