@@ -22,53 +22,53 @@ export const VisualAverageStarRating = ({restaurant}) => {
     
     switch(average) {
         case 1: 
-            return <div id="greyStarsDiv">
+            return <>
                         <BsStarFill className="yellowStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
-                    </div>
+                    </>
         case 2:
-            return <div id="greyStarsDiv">
+            return <>
                         <BsStarFill className="orangeStars"/>
                         <BsStarFill className="orangeStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
-                    </div>
+                    </>
         case 3:
-            return <div id="greyStarsDiv">
+            return <>
                         <BsStarFill className="darkOrangeStars"/>
                         <BsStarFill className="darkOrangeStars"/>
                         <BsStarFill className="darkOrangeStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
-                    </div>
+                    </>
         case 4:
-            return <div id="greyStarsDiv">
+            return <>
                         <BsStarFill className="orangeRedStars"/>
                         <BsStarFill className="orangeRedStars"/>
                         <BsStarFill className="orangeRedStars"/>
                         <BsStarFill className="orangeRedStars"/>
                         <BsStarFill className="greyStars"/>
-                    </div>
+                    </>
         case 5: 
-            return <div id="greyStarsDiv">
+            return <>
                         <BsStarFill className="redStars"/>
                         <BsStarFill className="redStars"/>
                         <BsStarFill className="redStars"/>
                         <BsStarFill className="redStars"/>
                         <BsStarFill className="redStars"/>
-                    </div>
+                    </>
         default:
-            return  <div id="greyStarsDiv">
+            return  <>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
-                    </div>
+                    </>
     };
 };
 
@@ -79,52 +79,52 @@ export const VisualSingleReviewStarRating = ({review}) => {
 
     switch(rating) {
         case 1:
-            return <div id="greyStarsDiv">
+            return <>
                         <BsStarFill className="yellowStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
-                    </div>
+                    </>
         case 2:
-            return <div id="greyStarsDiv">
+            return <>
                         <BsStarFill className="orangeStars"/>
                         <BsStarFill className="orangeStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
-                    </div>
+                    </>
         case 3:
-            return <div id="greyStarsDiv">
+            return <>
                         <BsStarFill className="darkOrangeStars"/>
                         <BsStarFill className="darkOrangeStars"/>
                         <BsStarFill className="darkOrangeStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
-                    </div>
+                    </>
         case 4:
-            return <div id="greyStarsDiv">
+            return <>
                         <BsStarFill className="orangeRedStars"/>
                         <BsStarFill className="orangeRedStars"/>
                         <BsStarFill className="orangeRedStars"/>
                         <BsStarFill className="orangeRedStars"/>
                         <BsStarFill className="greyStars"/>
-                    </div>
+                    </>
         case 5:
-            return  <div id="greyStarsDiv">
+            return  <>
                         <BsStarFill className="redStars"/>
                         <BsStarFill className="redStars"/>
                         <BsStarFill className="redStars"/>
                         <BsStarFill className="redStars"/>
                         <BsStarFill className="redStars"/>
-                    </div>
+                    </>
         default:
-            return <div id="greyStarsDiv">
+            return <>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
                         <BsStarFill className="greyStars"/>
-                    </div>
+                    </>
     };
 };

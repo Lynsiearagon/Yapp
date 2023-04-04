@@ -264,5 +264,18 @@
 }
 
 #starsOnSplashPage {
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    height: 12px;
+    gap: 3px;
+}
+
+#starsOnSplashPage > .redStars, 
+#starsOnSplashPage > .yellowStars, 
+#starsOnSplashPage > .orangeRedStars, 
+#starsOnSplashPage > .orangeStars, 
+#starsOnSplashPage > .greyStars, .darkOrangeStars {
+    width: 12px;
 }
