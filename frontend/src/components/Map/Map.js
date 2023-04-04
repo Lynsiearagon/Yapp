@@ -4,7 +4,7 @@ import { Wrapper } from '@googlemaps/react-wrapper';
 import './Map.css'
 
 
-const Map = ({restaurants, mapOptions = {}, mapEventHandlers = {}, markerEventHandlers = {}, zoom={zoom}}) => {
+const Map = ({restaurants, mapOptions = {}, mapEventHandlers = {}, markerEventHandlers = {}, zoom}) => {
     const [map, setMap] = useState(null);
     const mapRef = useRef(null);
     // const markers = useRef();
@@ -22,7 +22,7 @@ const Map = ({restaurants, mapOptions = {}, mapEventHandlers = {}, markerEventHa
                 ...mapOptions,
             }))
         }
-    }, [mapRef, map, mapOptions]);
+    }, [mapRef, map, mapOptions, zoom]);
 
 
     return (
