@@ -1,20 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { VisualSingleReviewStarRating } from "../Stars/Index";
-import * as restaurantActions from '../../store/restaurants';
 
 
-const RecentActivityItem = ({review}) => {
-    const restaurants = useSelector(restaurantActions.getRestaurants);
+const RecentActivityItem = ({review, restaurants}) => {
+    const history = useHistory();
 
     const scrollToTop = () => {
         window.scrollTo(0, 0)
     };
 
     if (!restaurants) {
-        return <div>Loading...</div>
+        history.push('/')
     };
 
     return (

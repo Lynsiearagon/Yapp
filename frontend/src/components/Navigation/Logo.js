@@ -1,9 +1,20 @@
-import React from "react";
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useLocation, Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import * as reviewActions from '../../store/reviews';
+import * as restaurantActions from '../../store/restaurants';
+
 
 const Logo = () => {
     const location = useLocation();
+    const dispatch = useDispatch();
+    
+
+    useEffect(() => {
+        dispatch(restaurantActions.fetchRestaurants());
+        dispatch(reviewActions.fetchAllReviews());
+    }, [dispatch]);
+
 
     const logoColor = () => {
         if (location.pathname === '/') {
@@ -21,8 +32,9 @@ const Logo = () => {
         }
     }
 
+    
     return (
-         <div className="logoDiv">{logoColor()}</div> 
+        <div className="logoDiv">{logoColor()}</div> 
     )
 
 }

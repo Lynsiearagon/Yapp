@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import RecentActivityItem from './RecentActivityItem';
 import * as reviewActions from '../../store/reviews';
 
 
-const RecentActivity = () => {
-    const reviews = useSelector(reviewActions.getReviews)
+const RecentActivity = ({restaurants}) => {
+    const reviews = useSelector(reviewActions.getReviews);
 
     return (
         <div id="recentActivityWrapper">
@@ -14,7 +14,7 @@ const RecentActivity = () => {
                 <ul className="RAGrid">
                     {
                         Object.values(reviews).reverse().map((review) => {
-                            return <li key={review.id}><RecentActivityItem review={review} /></li>   
+                            return <li key={review.id}><RecentActivityItem review={review} restaurants={restaurants} /></li>   
                         })
                     }
                 </ul>

@@ -10,17 +10,20 @@ import * as reviewActions from '../../store/reviews';
 
 const SplashPage = () => {
     const dispatch = useDispatch();
+    const restaurants = useSelector(restaurantActions.getRestaurants);
+
     
     useEffect(() => {
         dispatch(restaurantActions.fetchRestaurants());
         dispatch(reviewActions.fetchAllReviews());
-    }, []);
+    }, [dispatch]);
 
+    
     return (
         <main id="splashPageMain">
             <ToRestoIndexButton />
             <SplashPageImage />
-            <RecentActivity />
+            <RecentActivity restaurants={restaurants} />
             <Categories />
         </main>
     )
