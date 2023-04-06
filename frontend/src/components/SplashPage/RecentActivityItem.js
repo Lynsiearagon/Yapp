@@ -11,7 +11,7 @@ const RecentActivityItem = ({review, restaurants}) => {
         window.scrollTo(0, 0)
     };
 
-    if (!restaurants) {
+    if (!restaurants.restaurantName) {
         history.push('/')
     };
 

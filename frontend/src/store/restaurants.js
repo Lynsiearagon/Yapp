@@ -38,7 +38,7 @@ export const getRestaurant = (restaurantId) => state => {
 }
 
 
-export const fetchRestaurants = () => async (dispatch) => {
+export const fetchRestaurants = (queryString = '') => async (dispatch) => {
     const res = await csrfFetch('/api/restaurants');
     
     if (res.ok) {

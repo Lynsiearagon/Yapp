@@ -13,6 +13,10 @@ const Filters = ({restaurants}) => {
 
     // }
 
+    // const handleClick = () => {
+
+    // }
+
 
     return (
         <>
