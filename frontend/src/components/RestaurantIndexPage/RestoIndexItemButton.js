@@ -1,19 +1,25 @@
 import { Link } from "react-router-dom";
 
 
-const RestaurantIndexItemButton = ({name}) => {
+const RestaurantIndexItemButton = ({cuisine}) => {
 
-    const names = name.split(",")
+    let cuisineTypes;
+
+    if (!cuisine) {
+        return <div></div>
+    } else {
+        cuisineTypes = cuisine.split(",");
+    }
     
     return (
 
-            names.map((n) => {
-                return (
-                    <button id="cuisineFilterButton" key={n}>
-                        <Link to={`/restaurants?cuisine=${n}`}>{n}</Link>
-                    </button>
-                )
-            })
+        cuisineTypes.map((cuisineType) => {
+            return (
+                <button id="cuisineFilterButton" key={cuisineType}>
+                    <Link to={`/restaurants?cuisine=${cuisineType}`}>{cuisineType}</Link>
+                </button>
+            )
+        })
         
     )
 }

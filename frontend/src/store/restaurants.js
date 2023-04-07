@@ -38,8 +38,8 @@ export const getRestaurant = (restaurantId) => state => {
 }
 
 
-export const fetchRestaurants = (queryString = '') => async (dispatch) => {
-    const res = await csrfFetch('/api/restaurants');
+export const fetchRestaurants = (queryString='') => async (dispatch) => {
+    const res = await csrfFetch(`/api/restaurants/${queryString}`);
     
     if (res.ok) {
         const restaurants = await res.json();

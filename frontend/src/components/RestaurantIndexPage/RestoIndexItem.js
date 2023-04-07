@@ -39,7 +39,7 @@ const RestaurantIndexItem = ({restaurants}) => {
                                 <VisualAverageStarRating restaurant={resto} />
                             </li>
                             <li>
-                                <RestaurantIndexItemButton name={resto.cuisine} id="cuisineFilterButton" /> • {resto.price} • {resto.neighborhood}
+                                <RestaurantIndexItemButton cuisine={resto.cuisine} id="cuisineFilterButton" /> • {resto.price} • {resto.neighborhood}
                             </li>
                             <li>
                                 <BsClock className="clockIcon" /> <RestoHoursSingleLine times={resto.hours} />
