@@ -2,16 +2,17 @@ import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { VisualSingleReviewStarRating } from "../Stars/Index";
+import { useSelector } from "react-redux";
+import { getRestaurants } from "../../store/restaurants"
 
-
-const RecentActivityItem = ({review, restaurants}) => {
-
+const RecentActivityItem = ({review}) => {
+    const restaurants = useSelector(getRestaurants)
     const scrollToTop = () => {
         window.scrollTo(0, 0)
     };
 
-    if (!restaurants.restaurantName) {
-        return <div>Loading...</div>
+    if (!restaurants) {
+        return <div>Loading</div>
     };
 
     return (

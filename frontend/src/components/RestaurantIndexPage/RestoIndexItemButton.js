@@ -1,41 +1,39 @@
-import React from 'react';
-// import { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
+import { fetchRestaurantsWithQueryString } from '../../store/restaurants';
 
 
 const RestaurantIndexItemButton = ({cuisine}) => {
-    // const history = useHistory();
-    // const [cuisineSearch, setCuisineSearch] = useState('');
+    const history = useHistory();
+    const location = useLocation();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchRestaurantsWithQueryString(location.search))
+    }, [dispatch, location.search])
     
     let cuisineTypes;
 
     if (!cuisine) {
         return <div></div>
     } else {
-        cuisineTypes = cuisine.split(",");
+        cuisineTypes = cuisine.split(", ");
     }
-
-    // const handleClick = (cuisineSearch) => {
-    //     setCuisineSearch(cuisineSearch);
-
-    //     history.push({
-    //         pathname: `/restaurants`,
-    //         queryString: `?cuisine=${cuisineSearch}`
-    //     })
-    // }
 
 
     return (
 
         cuisineTypes.map((cuisineType) => {
             return (
-                <button id="cuisineFilterButton" 
+                <Link to={`/restaurants?cuisine=${cuisineType}`} 
+                    id="cuisineFilterButton"
                     key={cuisineType}
-                    // value={cuisineSearch}
-                    // onClick={handleClick(cuisineSearch)}
                     >
-                    {cuisineType}
-                </button>
+                        {cuisineType}
+                </Link>
             )
         })
         
