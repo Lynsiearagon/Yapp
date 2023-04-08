@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from 'react';
+// import { useState } from "react";
+// import { useHistory } from "react-router-dom";
 
 
 const RestaurantIndexItemButton = ({cuisine}) => {
-    const history = useHistory();
-    const [cuisineSearch, setCuisineSearch] = useState('');
+    // const history = useHistory();
+    // const [cuisineSearch, setCuisineSearch] = useState('');
     
     let cuisineTypes;
 
@@ -14,14 +15,14 @@ const RestaurantIndexItemButton = ({cuisine}) => {
         cuisineTypes = cuisine.split(",");
     }
 
-    const handleClick = (cuisineSearch) => {
-        setCuisineSearch(cuisineSearch);
+    // const handleClick = (cuisineSearch) => {
+    //     setCuisineSearch(cuisineSearch);
 
-        history.push({
-            pathname: `/restaurants`,
-            queryString: `?cuisine=${cuisineSearch}`
-        })
-    }
+    //     history.push({
+    //         pathname: `/restaurants`,
+    //         queryString: `?cuisine=${cuisineSearch}`
+    //     })
+    // }
 
 
     return (
@@ -30,8 +31,8 @@ const RestaurantIndexItemButton = ({cuisine}) => {
             return (
                 <button id="cuisineFilterButton" 
                     key={cuisineType}
-                    value={cuisineSearch}
-                    onClick={handleClick(cuisineSearch)}
+                    // value={cuisineSearch}
+                    // onClick={handleClick(cuisineSearch)}
                     >
                     {cuisineType}
                 </button>
