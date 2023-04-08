@@ -5,14 +5,14 @@ import { VisualSingleReviewStarRating } from "../Stars/Index";
 
 
 const RecentActivityItem = ({review, restaurants}) => {
-    const history = useHistory();
+    // const history = useHistory();
 
     const scrollToTop = () => {
         window.scrollTo(0, 0)
     };
 
     if (!restaurants.restaurantName) {
-        history.push('/')
+        return <div>Loading...</div>
     };
 
     return (
