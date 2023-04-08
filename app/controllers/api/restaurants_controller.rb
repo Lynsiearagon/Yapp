@@ -3,9 +3,9 @@ class Api::RestaurantsController < ApplicationController
     wrap_parameters include: Restaurant.attribute_names + ["restaurantId", "restaurantName"]
 
     def index 
-        cuisine_type = params[:cuisine]
-        price_filter = params[:price]
-        search_term = params[:search_term]
+        cuisine_type = params[:cuisine] ||= ''
+        price_filter = params[:price] ||= ''
+        search_term = params[:search_term] ||= ''
 
         if cuisine_type == '' && search_term == '' && price_filter == ''
             @restaurants = Restaurant.all 

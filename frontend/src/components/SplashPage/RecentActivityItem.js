@@ -1,11 +1,10 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
-import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { VisualSingleReviewStarRating } from "../Stars/Index";
 
 
 const RecentActivityItem = ({review, restaurants}) => {
-    // const history = useHistory();
 
     const scrollToTop = () => {
         window.scrollTo(0, 0)

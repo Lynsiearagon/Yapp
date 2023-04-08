@@ -3,17 +3,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import RestaurantIndexItem from './RestoIndexItem'
 import MapWrapper from '../Map/Map';
 import Filters from '../Filters/Index';
-import { fetchRestaurants, getRestaurants } from '../../store/restaurants';
+import { fetchRestaurantsWithQueryString, getRestaurants } from '../../store/restaurants';
 import './RestaurantIndexPage.css'
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 const RestaurantIndexPage = () => {
     const dispatch = useDispatch();
+    const location = useLocation();
     const restaurants = useSelector(getRestaurants);
 
     useEffect(() => {
-        dispatch(fetchRestaurants())
-    }, [dispatch]);
+        dispatch(fetchRestaurantsWithQueryString(location.search))
+    }, [dispatch, location.search]);
+
 
     return (
 

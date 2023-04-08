@@ -38,17 +38,24 @@ export const getRestaurant = (restaurantId) => state => {
 }
 
 
-export const fetchRestaurants = (queryString) => async (dispatch) => {
-    if (!queryString) {
-        queryString = null;
-    }
-
-    const res = await csrfFetch(`/api/restaurants/${queryString}`);
+export const fetchRestaurants = () => async (dispatch) => {
+    const res = await csrfFetch(`/api/restaurants`);
     
     if (res.ok) {
         const restaurants = await res.json();
         dispatch(receiveRestaurants(restaurants));
+        return res;
     };
+};
+
+export const fetchRestaurantsWithQueryString = (queryString) => async (dispatch) => {
+    const res = await csrfFetch(`/api/restaurants${queryString}`);
+
+    if (res.ok) {
+        const restaurants = await res.json();
+        dispatch(receiveRestaurants(restaurants));
+        return res;
+    }
 };
 
 export const fetchRestaurant = (restaurantId) => async (dispatch) => {
