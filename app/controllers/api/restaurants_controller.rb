@@ -4,15 +4,15 @@ class Api::RestaurantsController < ApplicationController
 
     def index 
 
-        cuisine_type = params[:cuisine] ||= ''
+        params[:cuisine] ? cuisine_type = params[:cuisine] : nil 
         # price_filter = params[:price] ||= ''
         # search_term = params[:search_term] ||= ''
 
-        if cuisine_type != ''   # && search_term == '' && price_filter == ''
-            @restaurants = Restaurant.where("cuisine ILIKE ?", "%" + cuisine_type + "%") 
+        if cuisine_type != ''  # && search_term == '' && price_filter == ''
+            @restaurants = Restaurant.where("cuisine ILIKE ?", "%" + cuisine_type + "%")
         else
-            cuisine_type == ''  # && search_term == '' && price_filter == ''
-            @restaurants = Restaurant.all
+            cuisine_type  # && search_term == '' && price_filter == ''
+            @restaurants = Restaurant.all 
         # elsif 
         #     cuisine_type == '' && search_term != '' && price_filter == ''
         #     @restaurants = Restaurant.where("restaurant_name ILIKE ?", "%#{search_term}%") || 
