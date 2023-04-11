@@ -4,19 +4,19 @@ class Api::RestaurantsController < ApplicationController
 
     def index
 
-        p "PARAMS PRESENCE IS: #{params[:cuisine].present?}"
 
-        if !params[:cuisine].present?
+        cuisine_type = params[:cuisine]
+        price_type = params[:price]
+
+        if !cuisine_type.present? && !price_type.present?
             @restaurants = Restaurant.all
-        else  
-           @restaurants = Restaurant.where("cuisine ILIKE ?", "%" + params[:cuisine] + "%")
+
+        elsif cuisine_type.present? && !price_type.present?
+            @restaurants = Restaurant.where("cuisine ILIKE ?", "%" + cuisine_type + "%") 
+        
+        elsif !cuisine_type.present? && price_type.present?
+            @restaurants = Restaurant.where("price = ?", price_type)
         end
-
-        p "RESTAURANTS IS: #{@restaurants}"
-
-        # if params[:cuisine].present?
-        #     @restaurants = Restaurant.where("cuisine ILIKE ?", "%" + params[:cuisine] + "%")
-        # end
         
         render '/api/restaurants/index'
 

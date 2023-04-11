@@ -1,22 +1,12 @@
 // import React, { useState } from 'react'; 
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import './Filters.css'; 
 // import PriceFilters from './PriceFilters';
 
 
 const Filters = ({restaurants}) => {
-    // const [selectedFilter, setSelectedFilter] = useState(null)
 
-
-    // const displayRestaurantsByPrice = (e) => {
-
-    //     restaurants.filter(resto => resto.price === value);
-
-    // }
-
-    // const handleClick = () => {
-
-    // }
-
+    const priceFilters = ['$', '$$', '$$$', '$$$$']
 
     return (
         <>
@@ -24,6 +14,19 @@ const Filters = ({restaurants}) => {
             Filters
         </h3>
         <div id="priceButtonsList">
+
+            {
+                priceFilters.map((price) => {
+                    return (
+                        <Link to={`/restaurants?price=${price}`}>
+                            <div>{price}</div>
+                        </Link>
+                    )
+                })
+            }
+
+
+{/* 
             <button id="oneDollarSign" value='$'>
                 $
             </button>
@@ -35,7 +38,7 @@ const Filters = ({restaurants}) => {
             </button>
             <button id="fourDollarSigns" value='$$$$'>
                 $$$$
-            </button>
+            </button> */}
         </div>
         </>
     )

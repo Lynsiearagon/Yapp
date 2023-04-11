@@ -13,8 +13,6 @@ const RestaurantIndexPage = () => {
     const location = useLocation();
     const restaurants = useSelector(getRestaurants);
 
-    console.log(location.search)
-
     useEffect(() => {
         dispatch(fetchRestaurantsWithQueryString(location.search))
     }, [location.search, dispatch]);
