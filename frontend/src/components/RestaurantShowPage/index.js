@@ -133,7 +133,7 @@ const RestaurantShowPage = () => {
 
                         <div id="ReviewsSection">
                             { 
-                                !reviews.length ? 
+                                !reviews ? 
                                 <div>{`${restaurant.restaurantName} doesn't have reviews yet. Be the first to write a review!`}</div> :
                                 
                                 Object.values(reviews).reverse().map((review) => 

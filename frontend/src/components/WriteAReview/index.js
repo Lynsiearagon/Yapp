@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRestaurant } from '../../store/restaurants';
 import { useParams, useHistory } from 'react-router-dom';
@@ -35,12 +35,23 @@ const WriteAReview = () => {
 
         if (reviewId) {
             dispatch(reviewActions.updateReview(formData, reviewId));
-        } else {
-            dispatch(reviewActions.createReview(formData));
-            restaurant.totalNumReviews += 1;
+            history.push(`/restaurants/${restaurantId}`);
+        } else if (!reviewId) {
+            dispatch(reviewActions.createReview(formData, restaurantId, history))
+            .catch(async (res) => {
+                let data; 
+                try {
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text();
+                }
+                if (data?.errors) setErrors(data.errors);
+                else if (data) setErrors([data]);
+                else setErrors([res.statusText]);
+            }); 
         };
 
-        history.push(`/restaurants/${restaurantId}`);
+        return errors;
     }
 
     const buttonText = reviewId ? 'Update Review' : 'Post Review';
@@ -68,7 +79,7 @@ const WriteAReview = () => {
                                     className={index <= (hover || star) ? "on" : "off"}
                                     onMouseEnter={() => setHover(index)}
                                     onMouseLeave={() => setHover(starRating)}
-                                    onClick={() => setStarRating(index)}
+                                    onClick={(e) => setStarRating(index)}
                                     value={starRating}
                                     required
                                     >
@@ -88,13 +99,16 @@ const WriteAReview = () => {
                         >
                     </textarea>
                     <ul>
-                        {errors.map(error => <li id="createReviewErrors" key={error}>{error}</li>)}
+                        {errors ? errors.map(error => <li id="createReviewErrors" key={error}>{error}</li>) : <div></div>}
                     </ul>
                 </div>
 
                 <button
                     type="submit"
-                    id="submitAReviewButton">
+                    id="submitAReviewButton"
+                    onClick={(e) => setStarRating(starRating)}
+                    onChange={(e) => setBody(body)}
+                    >
                         {buttonText}
                 </button>
             </form>
