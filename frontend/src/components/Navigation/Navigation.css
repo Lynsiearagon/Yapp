@@ -124,13 +124,15 @@
 
 #searchButton {
     background: #d32323;
-    border-color: #d32323;
-    border-style: solid;
+    border-color: #d32323 solid;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     width: 6%;
     cursor: pointer;
-    padding: 5px;    
+    padding: 5px;  
+    display: flex;  
+    justify-content: center;
+    align-items: center;
 }
 
 #searchButton:hover {
@@ -143,8 +145,12 @@
 }
 
 #magGlass {
-   height: 60%;
+   height: 65%;
    width: auto;
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-content: center;
 }
 
 #userDropDownInNavBar {

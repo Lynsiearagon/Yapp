@@ -4,38 +4,24 @@ class Api::RestaurantsController < ApplicationController
 
     def index
 
-
         cuisine_type = params[:cuisine]
         price_type = params[:price]
+        query_term = params[:query]
 
-        if !cuisine_type.present? && !price_type.present?
+        if !cuisine_type.present? && !price_type.present? && !query_term.present?
             @restaurants = Restaurant.all
 
-        elsif cuisine_type.present? && !price_type.present?
+        elsif cuisine_type.present? && !price_type.present? && !query_term.present?
             @restaurants = Restaurant.where("cuisine ILIKE ?", "%" + cuisine_type + "%") 
         
-        elsif !cuisine_type.present? && price_type.present?
+        elsif !cuisine_type.present? && price_type.present? && !query_term.present?
             @restaurants = Restaurant.where("price = ?", price_type)
+
+        elsif !cuisine_type.present? && !price_type.present? && query_term.present?
+            @restaurants = Restaurant.where("restaurant_name || cuisine ILIKE ?", "%" + query_term + "%")
         end
         
         render '/api/restaurants/index'
-
-
-        # CODE TO USE LATER.....
-
-        # price_filter = params[:price] ||= ''
-        # search_term = params[:search_term] ||= ''
-
-        # USE LATER: && search_term == '' && price_filter == ''
-        # USE LATER: && search_term == '' && price_filter == ''
-
-        # elsif 
-        #     cuisine_type == '' && search_term != '' && price_filter == ''
-        #     @restaurants = Restaurant.where("restaurant_name ILIKE ?", "%#{search_term}%") || 
-        #                    Restaurant.where("cuisine ILIKE ?", "%#{search_term}%")
-        # elsif 
-        #     cuisine_type == '' && search_term == '' && price_filter != ''
-        #     @restaurants = Restaurant.where("price = #{price_filter}")
 
     end
 
