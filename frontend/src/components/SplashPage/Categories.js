@@ -37,6 +37,7 @@ const Categories = () => {
                         <Link to={`/restaurants?category=${category[0]}`} 
                             onClick={scrollToTop} 
                             className="catButtonDiv"
+                            key={category[0]}
                             >
                             <div className="catButtonDiv">
                                 <button className="catButton"> 
@@ -56,7 +57,7 @@ const Categories = () => {
                     </div>
                 </Link>
             </div>
-            
+
         </div>
     )
 }
