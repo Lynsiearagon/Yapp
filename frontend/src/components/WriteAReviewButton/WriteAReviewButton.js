@@ -18,7 +18,7 @@ const WriteAReviewButton = ({restaurantId}) => {
         e.preventDefault();
         history.push("/login");
         dispatch(sessionActions.login(sessionUser));
-        history.go(-1);
+        // history.push(`/restaurants/${restaurantId}`);
     };
 
     if (!sessionUser) {
