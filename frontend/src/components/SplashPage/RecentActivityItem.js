@@ -31,7 +31,7 @@ const RecentActivityItem = ({review}) => {
                     </div>
                 </div>
                 <li>
-                    <img src="#" alt="" id="recentActivityImg" />
+                    <img src="https://storage.googleapis.com/cafebabareeba_bucket/wp-content/uploads/Cafe-Ba-Ba-Reeba_Social-Events_Private-Parties_Catering_40-scaled.jpg" alt="Restaurant interior" id="recentActivityImg" />
                 </li>
 
                 <div id="restoNameAndReview">

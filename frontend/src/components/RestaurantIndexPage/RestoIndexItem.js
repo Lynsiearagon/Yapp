@@ -28,7 +28,7 @@ const RestaurantIndexItem = ({restaurants}) => {
                 rel="noreferrer"
                 >
                 <div id='imageAndRestoInfo'>   
-                    <img src="https://b.zmtcdn.com/data/pictures/1/19820841/6e14f718013d279f0f4525d4731cd985.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A" id="restoImage" alt="Restaurant Banner"/>                      
+                    <img src="https://media.istockphoto.com/id/833390070/photo/arabic-dishes-and-meze.jpg?s=612x612&w=0&k=20&c=MtWWS3THa19Mnb96iOGfpxOGwdmYNM-Xi0_zAEW9mTY=" id="restoImage" alt="Restaurant Banner"/>                      
                     <ul 
                         id="restoListings" 
                         key={resto.id}>
