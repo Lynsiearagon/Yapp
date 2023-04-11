@@ -17,66 +17,47 @@ const Categories = () => {
 
     const scrollToTop = () => {
         window.scrollTo(0, 0)
-    }
+    };
+
+    const foodCategories = [
+        ['Pizza', <FaPizzaSlice />], ['Bars', <FaCocktail />], ['Sea Food', <FaFish />],
+        ['Coffee', <FaCoffee />], ['Steak', <GiSteak />], ['Hamburger', <FaHamburger />],
+        ['Brunch', <FaBacon />]
+    ];
 
     if (location.pathname === '/') 
-    return (
-            <div id="categorySectionWrapper">
-                <h1 className="splashTitles">Categories</h1>
 
-                <div id="categoryButtonGrid">
-                    <div className="catButtonDiv">
-                        <button className="catButton"> 
-                            <FaPizzaSlice /> 
-                            <p>Pizza</p>
-                        </button>
-                    </div>
-                    <div className="catButtonDiv">
-                        <button className="catButton">
-                            <FaCocktail />
-                            <p>Bar</p>
-                        </button>
-                    </div>
-                    <div className="catButtonDiv">
-                        <button className="catButton">
-                            <FaFish />
-                            <p>Sea Food</p>
-                        </button>
-                    </div>
-                    <div className="catButtonDiv">
-                        <button className="catButton">
-                            <FaCoffee />
-                            <p>Coffee</p>
-                        </button>
-                    </div>
+    return (
+        <div id="categorySectionWrapper">
+            <h1 className="splashTitles">Categories</h1>
+
+            <div id="categoryButtonGrid">
+                { foodCategories.map((category) => {
+                    return (
+                        <Link to={`/restaurants?category=${category[0]}`} 
+                            onClick={scrollToTop} 
+                            className="catButtonDiv"
+                            >
+                            <div className="catButtonDiv">
+                                <button className="catButton"> 
+                                    {category[1]} 
+                                    <p>{category[0]}</p>
+                                </button>
+                            </div>
+                        </Link>
+                    )})
+                }
+                <Link to="/restaurants" onClick={scrollToTop} className="catButtonDiv"> 
                     <div className="catButtonDiv">
                         <button className="catButton">
-                            <GiSteak />
-                            <p>Steak</p>
+                            <CiCircleMore /> 
+                            <p>More</p>
                         </button>
                     </div>
-                    <div className="catButtonDiv">
-                        <button className="catButton">
-                            <FaHamburger />
-                            <p>Hamburger</p>
-                        </button>
-                    </div>
-                    <div className="catButtonDiv">
-                        <button className="catButton">
-                            <FaBacon />
-                            <p>Brunch</p>
-                        </button>
-                    </div>
-                    <Link to="/restaurants" onClick={scrollToTop} className="catButtonDiv"> 
-                        <div className="catButtonDiv">
-                            <button className="catButton">
-                                <CiCircleMore /> 
-                                <p>More</p>
-                            </button>
-                        </div>
-                    </Link>
-                </div>
+                </Link>
             </div>
+            
+        </div>
     )
 }
 
