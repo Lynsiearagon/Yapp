@@ -19,8 +19,6 @@ const RestaurantIndexPage = () => {
         dispatch(fetchRestaurantsWithQueryString(location.search))
     }, [location.search, dispatch]);
 
-    // debugger
-
     return (
 
         <div id="restoIndexPageWrapper">

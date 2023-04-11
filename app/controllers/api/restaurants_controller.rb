@@ -12,6 +12,8 @@ class Api::RestaurantsController < ApplicationController
            @restaurants = Restaurant.where("cuisine ILIKE ?", "%" + params[:cuisine] + "%")
         end
 
+        p "RESTAURANTS IS: #{@restaurants}"
+
         # if params[:cuisine].present?
         #     @restaurants = Restaurant.where("cuisine ILIKE ?", "%" + params[:cuisine] + "%")
         # end

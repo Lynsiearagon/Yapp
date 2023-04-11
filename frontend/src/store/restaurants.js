@@ -3,6 +3,7 @@ import csrfFetch from "./csrf";
 const RECEIVE_RESTAURANT = 'restaurants/receiveRestaurant';
 const RECEIVE_RESTAURANTS = 'restaurants/receiveRestaurants';
 const REMOVE_RESTAURANT = 'restaurants/removeRestaurant';
+const CLEAR_RESTAURANTS = 'restaurants/clearRestaurants'
 
 export const receiveRestaurants = (restaurants) => ({
     type: RECEIVE_RESTAURANTS, 
@@ -21,13 +22,17 @@ export const removeRestaurant = (restaurantId) => ({
     restaurantId
 });
 
+export const clearRestaurantsFromState = (restaurants) => ({
+    type: CLEAR_RESTAURANTS
+});
+
 export const getRestaurants = (state) => {
     if (state.restaurants) {
         return Object.values(state.restaurants)
     } else {
         return []
     }
-}
+};
 
 export const getRestaurant = (restaurantId) => state => {
     if (state.restaurants) {
@@ -35,8 +40,7 @@ export const getRestaurant = (restaurantId) => state => {
     } else {
         return null
     }
-}
-
+};
 
 export const fetchRestaurants = () => async (dispatch) => {
     const res = await csrfFetch(`/api/restaurants`);
@@ -51,8 +55,13 @@ export const fetchRestaurants = () => async (dispatch) => {
 export const fetchRestaurantsWithQueryString = (queryString) => async (dispatch) => {
     const res = await csrfFetch(`/api/restaurants${queryString}`);
 
-    if (res.ok) {
+    if (res.ok && !queryString) {
         const restaurants = await res.json();
+        dispatch(receiveRestaurants(restaurants));
+        return res;
+    } else if (res.ok && queryString) {
+        const restaurants = await res.json();
+        dispatch(clearRestaurantsFromState(restaurants)); 
         dispatch(receiveRestaurants(restaurants));
         return res;
     }
@@ -79,6 +88,7 @@ export const deleteRestaurant = (restaurantId) => async (dispatch) => {
 };
 
 
+
 const restaurantReducer = (state = {}, action) => {
     const newState = { ...state};
 
@@ -91,6 +101,8 @@ const restaurantReducer = (state = {}, action) => {
         case REMOVE_RESTAURANT:
             delete newState[action.restaurantId];
             return newState;
+        case CLEAR_RESTAURANTS: 
+            return {}
         default:
             return newState;
     };
