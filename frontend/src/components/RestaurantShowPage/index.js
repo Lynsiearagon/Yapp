@@ -133,9 +133,13 @@ const RestaurantShowPage = () => {
 
                         <div id="ReviewsSection">
                             {
-                                !document.getElementById("ReviewsSection") ? <div>No reviews yet.</div> :
                                 Object.values(reviews).reverse().map((review) => 
                                 <div key={review.id}><Review review={review} restaurantId={restaurant.id} /></div>)
+                            }
+
+                            { (!document.getElementById("reviewItemDivWrapper")) ?
+                                <div id="noReviewsYetDiv">{`${restaurant.restaurantName} doesn't have reviews yet. Be the first to write a review!`}</div> 
+                                : null
                             }
                         </div>
                     </div>
@@ -151,7 +155,8 @@ const RestaurantShowPage = () => {
                 </div>
             </div>
         </div>
-    )
+    ) 
+    
 
 }
 

@@ -12,11 +12,6 @@ import './RestaurantShowPage.css'
 const Reviews = ({review, restaurantId}) => {
     const restaurant = useSelector(getRestaurant(restaurantId))
 
-    if (!review) {
-        return (
-            <div id="noReviewsYetDiv">{`${restaurant.restaurantName} doesn't have reviews yet. Be the first to write a review!`}</div>
-        )
-    }
 
     if (review.restaurantId === restaurantId) {
         return (
@@ -45,7 +40,7 @@ const Reviews = ({review, restaurantId}) => {
                 </div>
             </div>
         )
-    }
+    } 
 }
 
 export default Reviews;

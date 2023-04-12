@@ -205,8 +205,9 @@ height: auto;
 }
 
 #noReviewsYetDiv {
-    background-color: pink;
-    height: 100px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
 }
 
 
