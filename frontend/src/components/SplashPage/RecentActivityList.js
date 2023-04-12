@@ -8,6 +8,7 @@ const RecentActivity = ({restaurants}) => {
     const reviews = useSelector(reviewActions.getReviews);
 
     return (
+
         <div id="recentActivityWrapper">
             <h1 className="splashTitles">Recent Activity</h1>
             <div >
