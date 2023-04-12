@@ -49,7 +49,7 @@ export const fetchReview = (reviewId) => async (dispatch) => {
 }
 
 export const fetchAllReviews = () => async (dispatch) => {
-    const res = await csrfFetch('/api/reviews'); 
+    const res = await csrfFetch(`/api/reviews/`); 
 
     if (res.ok) {
         const reviews = await res.json();
@@ -59,7 +59,7 @@ export const fetchAllReviews = () => async (dispatch) => {
 };
 
 // export const fetchAllRestaurantReviews = (restaurantId) => async (dispatch) => {
-//     const res = await csrfFetch(`/api/reviews/restaurants/${restaurantId}`);
+//     const res = await csrfFetch(`/api/reviews/restaurant/${restaurantId}`);
 
 //     if (res.ok) {
 //         const data = await res.json();

@@ -18,8 +18,12 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index 
-        @reviews = Review.all 
+        @reviews = Review.all
         render '/api/reviews/index'
+
+        # if params[:id]
+        #     @reviews = Review.where("restaurant_id = ?", params[:id])
+        # end
     end
 
     # def restaurant_reviews_index

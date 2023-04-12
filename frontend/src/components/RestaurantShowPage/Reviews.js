@@ -4,9 +4,19 @@ import { FaUserCircle } from "react-icons/fa";
 import ReviewDate from '../ReviewDate/ReviewDate';
 import DeleteReviewButton from '../DeleteReviewButton/DeleteReviewButton';
 import UpdateReviewButton from '../UpdateReview/UpdateReview';
+import { useSelector } from 'react-redux';
+import { getRestaurant } from '../../store/restaurants';
+import './RestaurantShowPage.css'
 
 
 const Reviews = ({review, restaurantId}) => {
+    const restaurant = useSelector(getRestaurant(restaurantId))
+
+    if (!review) {
+        return (
+            <div id="noReviewsYetDiv">{`${restaurant.restaurantName} doesn't have reviews yet. Be the first to write a review!`}</div>
+        )
+    }
 
     if (review.restaurantId === restaurantId) {
         return (

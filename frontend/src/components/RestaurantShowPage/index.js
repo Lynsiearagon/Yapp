@@ -30,7 +30,7 @@ const RestaurantShowPage = () => {
 
     useEffect(() => {
         dispatch(reviewActions.fetchAllReviews())
-    }, [reviews.length, dispatch]);
+    }, [reviews.length, restaurantId, dispatch]);
 
 
     if (!restaurant) {
@@ -132,10 +132,8 @@ const RestaurantShowPage = () => {
                         </div>
 
                         <div id="ReviewsSection">
-                            { 
-                                !reviews ? 
-                                <div>{`${restaurant.restaurantName} doesn't have reviews yet. Be the first to write a review!`}</div> :
-                                
+                            {
+                                !document.getElementById("ReviewsSection") ? <div>No reviews yet.</div> :
                                 Object.values(reviews).reverse().map((review) => 
                                 <div key={review.id}><Review review={review} restaurantId={restaurant.id} /></div>)
                             }

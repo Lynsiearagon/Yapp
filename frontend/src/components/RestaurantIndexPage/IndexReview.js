@@ -11,7 +11,7 @@ const RestoIndexReview = ({restaurantId}) => {
 
     useEffect(() => {
         dispatch(fetchAllReviews());
-    }, [])
+    }, [dispatch])
 
     let newerReviews = Object.values(reviews).reverse();
 
@@ -26,8 +26,11 @@ const RestoIndexReview = ({restaurantId}) => {
                 </>
             )
         } else {
-            continue;
+            if (i === newerReviews.length - 1 && !document.getElementById(restaurantId)) {
+                return <p id="onIndexReviewBody">No reviews yet. Be the first to review!</p>
+            }
         }
+        
     };
 
 };
