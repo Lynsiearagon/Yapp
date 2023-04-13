@@ -1,27 +1,28 @@
 import { Link, useHistory, useLocation } from 'react-router-dom';
-// import React, { useState } from 'react'
+import React from 'react'
 import './Filters.css'; 
 
 
 const Filters = () => {
     const history = useHistory();
     const location = useLocation();
-    // const [checked, setChecked] = useState(false);
-
     const priceFilters = ['$', '$$', '$$$', '$$$$']
-    // const neighborhoods = ['Chelsea', 'Flatiron', 'Gramercy', 'Union Square', 'West Village']
+    const neighborhoods = ['Chelsea', 'Flatiron', 'Gramercy', 'Union Square', 'West Village']
     let bTLR;
     let bBLR;
     let bTRR;
     let bBRR; 
+
 
     const handleClickClearFilters = (e) => {
         e.preventDefault();
         history.push('/restaurants')
     }
 
+
     return (
         <>
+        <div id="stickyFiltersDiv">
         <div id="filterHeaderAndClearFilterDiv">
             <h3 id="filterHeader">Filters</h3>
             {location.search ? 
@@ -66,20 +67,28 @@ const Filters = () => {
                 )
             })}
         </div>
-        {/* <div id="neighborhoodsFilter">
-            <h4>Neighborhood</h4>
-            <label>
-                {
-                    neighborhoods.map((neighborhood) => {
-                        return <Checkbox value={checked} /> {neighborhood}
-                    })
-                }
-            </label>
-        </div> */}
+        
+        <div id="neighborhoodsFilter">
+            <h4 id="neighborhoodLabel"> Neighborhoods </h4>
+            <ul id="neighborhoodList">
+                { neighborhoods.map((hood) => {
+                    return (
+                        <Link to={`/restaurants?neighborhood=${hood}`}
+                            id="neighborhoodFilterItem"
+                            key={hood}
+                            >
+                            <li id="neighborhoodListItem">{hood}</li>
+                        </Link>
+                    )
+                })}
+            </ul>
+        </div>
+        </div>
+        
         </>
     )
 
 }
 
 
-export default Filters 
+export default Filters;
