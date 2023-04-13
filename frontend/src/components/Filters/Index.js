@@ -22,6 +22,7 @@ const Filters = () => {
 
     return (
         <>
+        <div id="stickyFiltersDiv">
         <div id="filterHeaderAndClearFilterDiv">
             <h3 id="filterHeader">Filters</h3>
             {location.search ? 
@@ -68,30 +69,26 @@ const Filters = () => {
         </div>
         
         <div id="neighborhoodsFilter">
-            <label id="neighborhoodLabelDiv">
-                Neighborhood
-                <ul id="neighborhoodList">
-                {
-                    neighborhoods.map((hood) => {
-                        return (
-                            <Link to={`/restaurants?neighborhood=${hood}`}
-                                id="neighborhoodFilterItem"
-                                key={hood}
-                                >
-                                <li id="neighborhoodListItem">{hood}</li>
-                            </Link>
-                        )
-                    })
-                }
-                </ul>
-
-            </label>
-
+            <h4 id="neighborhoodLabel"> Neighborhoods </h4>
+            <ul id="neighborhoodList">
+                { neighborhoods.map((hood) => {
+                    return (
+                        <Link to={`/restaurants?neighborhood=${hood}`}
+                            id="neighborhoodFilterItem"
+                            key={hood}
+                            >
+                            <li id="neighborhoodListItem">{hood}</li>
+                        </Link>
+                    )
+                })}
+            </ul>
         </div>
+        </div>
+        
         </>
     )
 
 }
 
 
-export default Filters 
+export default Filters;

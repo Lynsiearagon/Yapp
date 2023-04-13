@@ -16,9 +16,12 @@
     display: flex;
 }
 
-#filtersSideBar {
+#stickyFiltersDiv {
     width: 12%;
     min-width: 220px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 140px;
 }
 
 #indexListingsDiv {
@@ -117,6 +120,8 @@
 }
 
 #filtersSideBar {
+    width: 12%;
+    min-width: 220px;
     display: flex;
     flex-direction: column;
     padding-top: 40px;
