@@ -7,18 +7,22 @@ class Api::RestaurantsController < ApplicationController
         cuisine_type = params[:cuisine]
         price_type = params[:price]
         query_term = params[:query]
+        neighborhood = params[:neighborhood]
 
-        if !cuisine_type.present? && !price_type.present? && !query_term.present?
+        if !cuisine_type.present? && !price_type.present? && !query_term.present? && !neighborhood.present?
             @restaurants = Restaurant.all
 
-        elsif cuisine_type.present? && !price_type.present? && !query_term.present?
+        elsif cuisine_type.present? && !price_type.present? && !query_term.present?  && !neighborhood.present?
             @restaurants = Restaurant.where("cuisine ILIKE ?", "%" + cuisine_type + "%") 
         
-        elsif !cuisine_type.present? && price_type.present? && !query_term.present?
+        elsif !cuisine_type.present? && price_type.present? && !query_term.present?  && !neighborhood.present?
             @restaurants = Restaurant.where("price = ?", price_type)
 
-        elsif !cuisine_type.present? && !price_type.present? && query_term.present?
+        elsif !cuisine_type.present? && !price_type.present? && query_term.present?  && !neighborhood.present?
             @restaurants = Restaurant.where("restaurant_name || cuisine ILIKE ?", "%" + query_term + "%")
+
+        elsif !cuisine_type.present? && !price_type.present? && !query_term.present?  && neighborhood.present?
+            @restaurants = Restaurant.where("neighborhood = ?", neighborhood)
         end
         
         render '/api/restaurants/index'
