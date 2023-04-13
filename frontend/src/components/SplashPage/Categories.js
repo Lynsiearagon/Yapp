@@ -34,7 +34,7 @@ const Categories = () => {
             <div id="categoryButtonGrid">
                 { foodCategories.map((category) => {
                     return (
-                        <Link to={`/restaurants?category=${category[0]}`} 
+                        <Link to={`/restaurants?cuisine=${category[0]}`} 
                             onClick={scrollToTop} 
                             className="catButtonDiv"
                             key={category[0]}
