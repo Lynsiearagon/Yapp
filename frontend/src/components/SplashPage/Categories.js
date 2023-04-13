@@ -20,8 +20,8 @@ const Categories = () => {
     };
 
     const foodCategories = [
-        ['Pizza', <FaPizzaSlice />], ['Bars', <FaCocktail />], ['Sea Food', <FaFish />],
-        ['Coffee', <FaCoffee />], ['Steak', <GiSteak />], ['Hamburger', <FaHamburger />],
+        ['Pizza', <FaPizzaSlice />], ['Bars', <FaCocktail />], ['Seafood', <FaFish />],
+        ['Coffee', <FaCoffee />], ['Steak', <GiSteak />], ['Burgers', <FaHamburger />],
         ['Brunch', <FaBacon />]
     ];
 
