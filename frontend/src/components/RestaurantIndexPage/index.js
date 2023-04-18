@@ -31,7 +31,7 @@ const RestaurantIndexPage = () => {
 
             <div id="mapDiv" className="restoIdxColumn">
                 <div className="sticky">
-                    <MapWrapper zoom={13} restaurants={restaurants} />
+                    <MapWrapper zoom={14} restaurants={restaurants} />
                 </div>
             </div>
 
