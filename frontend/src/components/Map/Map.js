@@ -6,7 +6,7 @@ import './Map.css'
 
 const Map = ({
     restaurants, 
-    highlightedRestaurants, 
+    highlightedRestaurant, 
     mapOptions = {}, 
     mapEventHandlers = {}, 
     markerEventHandlers = {}, 
@@ -48,15 +48,44 @@ const Map = ({
 
     useEffect(() => {
         if (map) {
-            restaurants.forEach((restaurant) => {
+            restaurants.map((restaurant, i) => {
                 if (markers.current[restaurant.id]) return;
 
                 const marker = new window.google.maps.Marker({
                     map, 
-                    position: new window.google.maps.LatLng(restaurant.latitude, restaurant.longitude)
+                    position: new window.google.maps.LatLng(restaurant.latitude, restaurant.longitude),
+                    label: {
+                        text: `${(i+1).toString()}`,
+                        frontWeight: 'bold',
+                        color: 'white'
+                    }
+                });
+
+                Object.entries(markerEventHandlers).forEach(([event, handler]) => {
+                    marker.addListener(event, () => handler(restaurant));
                 })
+                markers.current[restaurant.id] = marker;
             })
-        }
+
+            Object.entries(markers.current).forEach(([restaurantId, marker]) => {
+                if (restaurants.some(restaurant => restaurant.id.toString() === restaurantId)) return;
+
+                marker.setMap(null);
+                delete markers.current[restaurantId];
+            })
+        } 
+    }, [restaurants, history, map, markerEventHandlers]);
+
+
+    useEffect(() => {
+        Object.entries(markers.current).forEach(([restaurantId, marker]) => {
+            const label = marker.getLabel();
+            const icon = marker.getIcon();
+
+            if (parseInt(restaurantId) === highlightedRestaurant) {
+                marker.setLabel({ ...label, color: 'white'})
+            }
+        })
     })
 
 
