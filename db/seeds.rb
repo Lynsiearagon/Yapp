@@ -402,8 +402,8 @@ ApplicationRecord.transaction do
       state: "NY",
       country: "United States",
       menu_link: '',
-      latitude: 40.74637911923202, 
-      longitude: -73.98463725831266,
+      latitude: 40.73657216609884, 
+      longitude: -73.986722665649,
       hours: '{
         "Mon:   4:00 PM - 2:00 AM",
         "Tue:  12:00 PM - 2:00 AM",
@@ -422,6 +422,42 @@ ApplicationRecord.transaction do
       total_one_star_reviews: 0
     )
 
+    #Restaurant 11
+    Restaurant.create!(
+      restaurant_name: "Joe's Pizza",
+      cuisine: "Pizza",
+      price: "$",
+      neighborhood: "West Village",
+      photo_url: '',
+      amenities: "Delivery, Takeout",
+      phone_number: "(212) 366-1182",
+      website_link: "http://www.joespizzanyc.com",
+      about_restaurant: "Established in 1975 by Joe Pozzuoli, originally of Naples, Italy - the birthplace of pizza, Joe's Pizza is a Greenwich Village institution offering the classic New York slice for over 40 years. A perennial top 10 listing in restaurant guides and publications, we serve the best slice in the city. New York Magazine names Joe's Pizza 'Best of New York' and in subsequent reviews has referred to us as 'the quintessential New York slice.' In 2009, GQ Magazine listed us as one of the 'Best 25 Pizzas on Earth.' Throughout the years, our Greenwich Village location has become just as popular with tourists and visitors as it is with native New Yorkers who know where to come for an authentic New York street slice of pizza. After 40 years, we remain an independently owned and operated business, personally supervised by Joe himself. We are still what we've always been: a classic NY slice joint. No glossy corporate backing, no fancy pants pies, no pretensions nonsense, and no gimmicky budget pizza. We are tried and true; the real deal. Try us for the best NY slice around.",
+      street_address: "7 Carmine St",
+      city: "New York",
+      zipcode: "10014",
+      state: "NY",
+      country: "United States",
+      menu_link: '',
+      latitude: 40.730830433012784, 
+      longitude: -74.00221361534452,
+      hours: '{
+        "Mon:  10:00 AM - 4:30 AM",
+        "Tue:  10:00 AM - 4:30 PM",
+        "Wed:  10:00 AM - 10:00 PM",
+        "Thu:  10:00 AM - 11:00 PM",
+        "Fri:  10:00 AM - 5:00 AM",
+        "Sat:  10:00 AM - 5:00 AM",
+        "Sun:  10:00 AM - 5:00 AM"
+      }',
+      overall_rating: 0,
+      total_num_reviews: 0, 
+      total_five_star_reviews: 0,
+      total_four_star_reviews: 0,
+      total_three_star_reviews: 0,
+      total_two_star_reviews: 0,
+      total_one_star_reviews: 0
+    )
 
 
     puts 'Creating Reviews...'
