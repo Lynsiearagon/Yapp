@@ -1,3 +1,11 @@
+#couldNotFindRestaurants {
+    font-weight: bolder;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
 #restoIndexPageWrapper {
     width: 100%;
     height: auto;

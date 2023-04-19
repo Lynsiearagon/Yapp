@@ -14,6 +14,7 @@ const RestaurantIndexItem = ({restaurants}) => {
         window.scrollTo(0, 0)
     };
 
+
     return (   
 
         restaurants.map((resto, i) => {
