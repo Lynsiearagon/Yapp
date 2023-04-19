@@ -22,7 +22,7 @@ class Api::RestaurantsController < ApplicationController
             @restaurants = Restaurant.where("restaurant_name || cuisine ILIKE ?", "%" + query_term + "%")
 
         elsif !cuisine_type.present? && !price_type.present? && !query_term.present?  && neighborhood.present?
-            @restaurants = Restaurant.where("neighborhood = ?", neighborhood)
+            @restaurants = Restaurant.where("neighborhood ILIKE ?", neighborhood)
         end
         
         render '/api/restaurants/index'

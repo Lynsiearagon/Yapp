@@ -40,7 +40,7 @@ const Footer = () => {
                     <div>
                         <ul className='languageLists'>
                             <h2 className="ulFooterListTitle">Future Features</h2>
-                            <li className='language'>AWS S3</li>
+                            <li className='language'>AWS and Photos</li>
                             <li className='language'>User Profile</li>
                             <li className='language'>Review Reactions</li>
                         </ul>
