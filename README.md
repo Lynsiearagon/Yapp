@@ -2,7 +2,7 @@
 
 # Yapp 
 
-## Live site link: https://yapp.onrender.com
+### Live link: https://yapp.onrender.com
 
 ## Background 
 Yapp is a full stack clone of Yelp; it allows for a user to search for and review restaurants with full CRUD functionality. 
@@ -37,8 +37,10 @@ Yapp has seven core features:
 5. Restaurant Index page / Restaurant Show page 
 
 ![Restaurant show page](./readme_images/restoShowPage.png)
+
 6. Hosting on Render.com
     - https://yapp.onrender.com
+
 7. Production ReadME
 
 ## Future Features
@@ -59,5 +61,5 @@ Yapp has seven core features:
 - Database: PostgreSQL
 - Backend: Ruby on Rails
 - Frontend: JavaScript, React, Redux, JSX, DOM Manipulation Vanilla JS, React Icons, Icons 8, Font Awesome 
-
+-
 
