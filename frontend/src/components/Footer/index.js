@@ -37,6 +37,14 @@ const Footer = () => {
                             <li className='language'>Font Awesome</li>
                         </ul>
                     </div>
+                    <div>
+                        <ul className='languageLists'>
+                            <h2 className="ulFooterListTitle">Future Features</h2>
+                            <li className='language'>AWS S3</li>
+                            <li className='language'>User Profile</li>
+                            <li className='language'>Review Reactions</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div id="copyright">
