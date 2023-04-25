@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 import { getRestaurants } from "../../store/restaurants"
 
 const RecentActivityItem = ({review}) => {
-    const restaurants = useSelector(getRestaurants)
+    const restaurants = useSelector(getRestaurants);
+    
     const scrollToTop = () => {
         window.scrollTo(0, 0)
     };
