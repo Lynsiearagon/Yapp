@@ -459,6 +459,43 @@ ApplicationRecord.transaction do
       total_one_star_reviews: 0
     )
 
+    #Restaurant 12
+    Restaurant.create!(
+      restaurant_name: "Chama Mama",
+      cuisine: "Georgian, Wine Bars, Cocktail Bars",
+      price: "$$",
+      neighborhood: "Chelsea",
+      photo_url: '',
+      amenities: "Outdoor sesating, Delivery, Takeout",
+      phone_number: "(646) 438-9007",
+      website_link: "https://www.chamamama.com",
+      about_restaurant: "We are Chama Mama - Classic Georgian cuisine with a modern spin! We are excited to introduce you to our three key ingredients that help lay the foundation for Georgian cuisine and Chama Mama as a restaurant - The Tone, khachapuri, and the qvevri! Our Natural Qvevri wines are quite rarely available outside of Georgia.",
+      street_address: "149 W 14th St",
+      city: "New York",
+      zipcode: "10011",
+      state: "NY",
+      country: "United States",
+      menu_link: '',
+      latitude: 40.73907981165881,
+      longitude: -73.99904151747157 ,
+      hours: '{
+        "Mon:  11:00 AM - 11:30 PM",
+        "Tue:  11:00 AM - 11:30 PM",
+        "Wed:  11:00 AM - 11:00 PM",
+        "Thu:  11:00 AM - 11:00 PM",
+        "Fri:  11:00 AM - 11:00 PM",
+        "Sat:  11:00 AM - 11:00 PM",
+        "Sun:  11:00 AM - 11:00 PM"
+      }',
+      overall_rating: 0,
+      total_num_reviews: 0, 
+      total_five_star_reviews: 0,
+      total_four_star_reviews: 0,
+      total_three_star_reviews: 0,
+      total_two_star_reviews: 0,
+      total_one_star_reviews: 0
+    )
+
 
     puts 'Creating Reviews...'
 

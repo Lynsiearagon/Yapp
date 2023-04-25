@@ -13,7 +13,7 @@ const RestaurantIndexPage = () => {
     const location = useLocation();
     const restaurants = useSelector(getRestaurants);
     const searchBar = document.getElementById("searchBar");
-    const searchBarValue = searchBar.getAttribute("value");
+    const searchBarValue = searchBar.getAttribute("value") ? searchBar.getAttribute("value") : '';
 
     useEffect(() => {
         dispatch(fetchRestaurantsWithQueryString(location.search))

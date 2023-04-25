@@ -61,5 +61,5 @@ Yapp has seven core features:
 - Database: PostgreSQL
 - Backend: Ruby on Rails
 - Frontend: JavaScript, React, Redux, JSX, DOM Manipulation Vanilla JS, React Icons, Icons 8, Font Awesome 
--
+
 
