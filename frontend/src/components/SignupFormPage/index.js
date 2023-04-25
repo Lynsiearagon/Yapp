@@ -21,8 +21,12 @@ const SignupFormPage = () => {
     const [year, setYear] = useState('');
     const [errors, setErrors] = useState([]);
     const years = range(1901, 2023, 1);
-    
 
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    };
+
+    
     if (sessionUser) return <Redirect to="/" />;
     
     const handleSubmit = (e) => {
@@ -51,14 +55,11 @@ const SignupFormPage = () => {
                 else setErrors([res.statusText]);
             });
         return setErrors(['Invalid information provided. Try again.']);
+        scrollToTop();
     };
 
-        const scrollToTop = () => {
-            window.scrollTo(0, 0)
-        };
 
-
-        const demoUserLogin = (e) => {
+    const demoUserLogin = (e) => {
         e.preventDefault();
         dispatch(sessionActions.login({
             email: 'demo@user.io', 

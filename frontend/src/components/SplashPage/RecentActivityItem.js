@@ -23,7 +23,7 @@ const RecentActivityItem = ({review}) => {
                     </li>
                     <div id="userNameWroteAReviewWrapper">
                         <li>
-                            <h1 id="userName">{review.reviewerFirstName} {review.reviewerLastName[0]}.</h1>
+                            <h1 id="userName">{review?.reviewerFirstName} {review?.reviewerLastName[0]}.</h1>
                         </li>
                         <li>
                             <p className="recentActivitySmallText">Wrote a Review</p>
