@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useLocation, Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import * as reviewActions from '../../store/reviews';
@@ -9,11 +9,11 @@ const Logo = () => {
     const location = useLocation();
     const dispatch = useDispatch();
     
-
-    useEffect(() => {
+    const fetchWhenReturnToSplashPage = () => {
         dispatch(restaurantActions.fetchRestaurants());
         dispatch(reviewActions.fetchAllReviews());
-    }, [dispatch]);
+    };
+
 
 
     const logoColor = () => {
@@ -30,13 +30,13 @@ const Logo = () => {
                 </Link>
             )
         }
-    }
+    };
 
     
     return (
-        <div className="logoDiv">{logoColor()}</div> 
+        <div className="logoDiv" onClick={fetchWhenReturnToSplashPage}>{logoColor()}</div> 
     )
 
-}
+};
 
-export default Logo 
+export default Logo;

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 import { VisualSingleReviewStarRating } from "../Stars/Index";
 import { useSelector } from "react-redux";
 import { getRestaurants } from "../../store/restaurants"

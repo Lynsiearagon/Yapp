@@ -33,7 +33,7 @@ const SignupFormPage = () => {
         e.preventDefault();
         setErrors([]); 
 
-        return dispatch(sessionActions.signUpUser({
+        dispatch(sessionActions.signUpUser({
             firstName,
             lastName,
             email,
@@ -55,7 +55,6 @@ const SignupFormPage = () => {
                 else setErrors([res.statusText]);
             });
         return setErrors(['Invalid information provided. Try again.']);
-        scrollToTop();
     };
 
 
@@ -86,9 +85,9 @@ const SignupFormPage = () => {
                 </span>
                 <span>
                     <p id="termsAndConditions">By continuing, you agree to Yapp's 
-                        <a href="#" className="externalsignupFormLinks"> Terms of Service</a> and 
+                        <a href="https://terms.yelp.com/tos/en_us/20200101_en_us/" className="externalsignupFormLinks"> Terms of Service</a> and 
                         acknowledge Yapp's
-                        <a href="#" 
+                        <a href="https://terms.yelp.com/privacy/en_us/20220831_en_us/" 
                         className="externalsignupFormLinks"> Privacy Policy</a>.
                     </p>
                 </span>
@@ -227,6 +226,7 @@ const SignupFormPage = () => {
                 <button 
                     id="submitFormButton" 
                     className="signupFormButtons" 
+                    onClick={scrollToTop}
                     type="submit">Sign Up
                 </button>
 
