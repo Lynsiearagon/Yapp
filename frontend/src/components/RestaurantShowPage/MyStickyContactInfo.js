@@ -25,7 +25,7 @@ const MyStickyContactInfo = () => {
                 <input type="text" placeholder="Lynsie.aragon@gmail.com" id="emailInputField"/>
             </div>
             <div id="resumeDownloadRestoShow">
-                <a href={Resume} id="resumeLink" download>Download Resume</a>
+                <a href={Resume} id="resumeLink" target='_blank' rel="noreferrer" download>Download Resume</a>
             </div>
         </div>
     )
