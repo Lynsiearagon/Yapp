@@ -367,6 +367,7 @@ height: auto;
 
 #reviewBody {
     display: block;
+    word-wrap: break-word;
     color: rgb(64, 64, 64);
     height: auto;
     line-height: 20px;
