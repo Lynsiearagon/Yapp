@@ -17,8 +17,7 @@ const RestoIndexReview = ({restaurantId}) => {
 
     for (let i=0; i < newerReviews.length; i++) {
         if (!document.getElementById(restaurantId) &&
-            newerReviews[i].restaurantId === restaurantId && 
-            newerReviews[i].starRating > 3) {
+            newerReviews[i].restaurantId === restaurantId) {
             return (
                 <> 
                     <FaRegCommentAlt className="commentIcon" /> 
