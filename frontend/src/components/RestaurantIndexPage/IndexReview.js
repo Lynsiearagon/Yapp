@@ -11,7 +11,7 @@ const RestoIndexReview = ({restaurantId}) => {
 
     useEffect(() => {
         dispatch(fetchAllReviews());
-    }, [dispatch])
+    }, [reviews, dispatch])
 
     let newerReviews = Object.values(reviews).reverse();
 
