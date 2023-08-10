@@ -8,31 +8,24 @@ import { useLocation } from 'react-router-dom';
 
 
 const Navigation = () => {
+
+    // setting conditional styling based on path location
     const location = useLocation();
-    let position;
-    let borderBottom;
-    let backgroundColor; 
+    let position = location.pathname === '/restaurants' ? 'sticky' : 'relative';
+    let borderBottom = location.pathname === '/' ? 'none' : '#e7e6e6 1px solid';
+    let backgroundColor = location.pathname === '/restaurants' ? 'white' : 'transparent';
 
-    if (location.pathname === '/restaurants') {
-        position = 'sticky';
-        backgroundColor = 'white';
-    } else {
-        position = 'relative';
-        backgroundColor = 'transparent';
-    }
 
-    if (location.pathname === '/') {
-        borderBottom = 'none';
-    } else {
-        borderBottom = '#e7e6e6 1px solid';
-    }
-
+    // Nav bar component holds/renders following components: 
+    // logo, search bar, personal links, session buttons
     return (
-        <nav id="navBar" style={{position: position, borderBottom: borderBottom, backgroundColor: backgroundColor}}>
-            <Logo />
-            <SearchBar />
-            <PersonalLinks />
-            <SessionNavigation />
+        <nav 
+            id="navBar" 
+            style={{position: position, borderBottom: borderBottom, backgroundColor: backgroundColor}}>
+                <Logo />
+                <SearchBar />
+                <PersonalLinks />
+                <SessionNavigation />
         </nav>
     )
 };
