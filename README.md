@@ -5,7 +5,7 @@
 ### Live link: https://yapp.onrender.com
 
 ## Background 
-July 2024 Update: Yapp is a full stack clone of Yelp, and was the first application I created as a junior full stack developer in early 2023. After completing my MVPs, I was proud of the accomplishment of creating a solo full-stack project. I am most fond of the frontend work I did on this project, as it really showcases my eye for details while developing. 
+July 2024 Update: Yapp is a full stack clone of Yelp, and was the first application I created as a junior full stack developer in early 2023. After completing my MVPs, I was proud of the accomplishment of creating a solo full-stack project. I am most fond of the frontend work I did on this project, as it really showcases my eye for details while developing. I now work as a full-stack developer at Agility Consultants and have learned new ways of developing that are more efficient from how I developed Yapp back in 2023.
 
 ## About Yapp
 - Yapp allows for a user to search for and review restaurants with full CRUD functionality. 
