@@ -48,19 +48,6 @@ Yapp has seven core features:
 
 7. Production ReadME
 
-## Future Features
-
-- Set up AWS
-    - This will allow for: 
-        - Independent restaurant banners and thumb nail images 
-        - Upload review images 
-- User Profile 
-    - Will allow users to:
-        - Update personal information
-        - Access all user's reviews in one place
-- Review Reactions
-    - Will allow users to react to reviews, deciding if the review was useful, funny, or cool
-
 ## Technologies, Libraries, APIs
 
 - Database: PostgreSQL
@@ -77,3 +64,16 @@ As I have become a better developer during my time at Agility Consultants, LLC, 
 -- I made this choice at the time because I was still learning how to make better SQL queries, but now I have a better understanding of how to do so. I also knew that because my application was small, the loop would not slow the application down.
 -- If this was a large scale application, I recognize that this approach would not have been ideal.
 - I would use more css classes for styling, rather than styling too many individual element Ids on the page. 
+
+## Future Features
+
+- Set up AWS
+    - This will allow for: 
+        - Independent restaurant banners and thumb nail images 
+        - Upload review images 
+- User Profile 
+    - Will allow users to:
+        - Update personal information
+        - Access all user's reviews in one place
+- Review Reactions
+    - Will allow users to react to reviews, deciding if the review was useful, funny, or cool
