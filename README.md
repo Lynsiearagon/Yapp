@@ -12,7 +12,7 @@ I am most fond of the frontend work I did on this project, as it really showcase
 ## About Yapp
 - Yapp allows for a user to search for and review restaurants with full CRUD functionality. 
 - To write, update, and delete a review, a user must create an account and/or sign in to their account.
--- A demo-user login option is provided if a user does not wish to create an account, yet still wants to experience the full functionality of Yapp.
+- A demo-user login option is provided if a user does not wish to create an account, yet still wants to experience the full functionality of Yapp.
 - Yapp was developed using Ruby on Rails, PostgreSQL, JavaScript, React, and Redux (thunk). 
 
 
@@ -58,11 +58,11 @@ Yapp has seven core features:
 As I have become a better developer during my time at Agility Consultants, LLC, I have thought about how I would have developed Yapp differently than I did back in 2023.
 
 - Ensure that all error handling for user inputs are handled on the frontend.
--- Currently, there are some validations that are checked solely in Ruby on Rails that can be caught on the frontend instead.
--- This can be done using custom functions in React components, npm packages, or libraries.
+    - Currently, there are some validations that are checked solely in Ruby on Rails that can be caught on the frontend instead.
+    - This can be done using custom functions in React components, npm packages, or libraries.
 - I would change how the Recent Activity data is being assembled by creating a custom SQL query (using Ruby's Active Record) that searches for the 9 most recently created Reviewes, rather than looping through all of my data
--- I made this choice at the time because I was still learning how to make better SQL queries, but now I have a better understanding of how to do so. I also knew that because my application was small, the loop would not slow the application down.
--- If this was a large scale application, I recognize that this approach would not have been ideal.
+    - I made this choice at the time because I was still learning how to make better SQL queries, but now I have a better understanding of how to do so. I also knew that because my application was small, the loop would not slow the application down.
+    - If this was a large scale application, I recognize that this approach would not have been ideal.
 - I would use more css classes for styling, rather than styling too many individual element Ids on the page. 
 
 ## Future Features
