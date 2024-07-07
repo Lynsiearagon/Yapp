@@ -5,10 +5,13 @@
 ### Live link: https://yapp.onrender.com
 
 ## Background 
-Yapp is a full stack clone of Yelp; it allows for a user to search for and review restaurants with full CRUD functionality. 
-To write, update, and delete a review, a user must be signed in to their account. 
+July 2024 Update: Yapp is a full stack clone of Yelp, and was the first application I created as a junior full stack developer in early 2023. After completing my MVPs, I was proud of the accomplishment of creating a solo full-stack project. I am most fond of the frontend work I did on this project, as it really showcases my eye for details while developing. 
 
-Yapp was developed using Ruby on Rails and PostgreSQL for its backend, and JavaScript, React, and Redux for its frontend.
+## About Yapp
+- Yapp allows for a user to search for and review restaurants with full CRUD functionality. 
+- To write, update, and delete a review, a user must create an account and/or sign in to their account.
+-- A demo-user login option is provided if a user does not wish to create an account, yet still wants to experience the full functionality of Yapp.
+- Yapp was developed using Ruby on Rails, PostgreSQL, JavaScript, React, and Redux (thunk). 
 
 
 ![Yapp restaurant index page](./readme_images/YappIndexPage.png)
@@ -60,6 +63,14 @@ Yapp has seven core features:
 
 - Database: PostgreSQL
 - Backend: Ruby on Rails
-- Frontend: JavaScript, React, Redux, JSX, DOM Manipulation Vanilla JS, React Icons, Icons 8, Font Awesome 
+- Frontend: JavaScript, React, Redux, JSX, DOM Manipulation Vanilla JS, React Icons, Icons 8, Font Awesome
 
+## What I Learned and What I Would Refactor
+As I have become a better developer during my time at Agility Consultants, LLC, I have thought about how I would have developed Yapp differently than I did back in 2023.
 
+- Ensure that all error handling for user inputs are handled on the frontend.
+-- Currently, there are some validations that are checked solely in Ruby on Rails that can be caught on the frontend instead.
+-- This can be done using custom functions in React components, npm packages, or libraries.
+- I would change how the Recent Activity data is being assembled by creating a custom SQL query (using Ruby's Active Record) that searches for the 9 most recently created Reviewes, rather than looping through all of my data
+-- I made this choice at the time because I was still learning how to make better SQL queries, but now I have a better understanding of how to do so. I also knew that because my application was small, the loop would not slow the application down.
+-- If this was a large scale application, I recognize that this approach would not have been ideal. 
