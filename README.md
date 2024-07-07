@@ -5,7 +5,9 @@
 ### Live link: https://yapp.onrender.com
 
 ## Background 
-July 2024 Update: Yapp is a full stack clone of Yelp, and was the first application I created as a junior full stack developer in early 2023. After completing my MVPs, I was proud of the accomplishment of creating a solo full-stack project. I am most fond of the frontend work I did on this project, as it really showcases my eye for details while developing. I now work as a full-stack developer at Agility Consultants and have learned new ways of developing that are more efficient from how I developed Yapp back in 2023.
+July 2024 Update: Yapp is a full stack clone of Yelp, and was the first application I created as a junior full-stack developer in early 2023. After a career change and completing my MVPs, I was proud of the accomplishment of creating my first full-stack project. 
+
+I am most fond of the frontend work I did on this project, as it really showcases my eye for details when developing. I now work as a full-stack developer at Agility Consultants and have learned new ways of developing that are more efficient from how I developed Yapp back in 2023.
 
 ## About Yapp
 - Yapp allows for a user to search for and review restaurants with full CRUD functionality. 
@@ -73,4 +75,5 @@ As I have become a better developer during my time at Agility Consultants, LLC, 
 -- This can be done using custom functions in React components, npm packages, or libraries.
 - I would change how the Recent Activity data is being assembled by creating a custom SQL query (using Ruby's Active Record) that searches for the 9 most recently created Reviewes, rather than looping through all of my data
 -- I made this choice at the time because I was still learning how to make better SQL queries, but now I have a better understanding of how to do so. I also knew that because my application was small, the loop would not slow the application down.
--- If this was a large scale application, I recognize that this approach would not have been ideal. 
+-- If this was a large scale application, I recognize that this approach would not have been ideal.
+- I would use more css classes for styling, rather than styling too many individual element Ids on the page. 
